@@ -1,0 +1,237 @@
+<html lang="en"><head><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    
+    
+    
+    
+        <title>그로우앤조이::관리자페이지-이벤트관리</title>
+        
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=dege"> <!-- 인터넷익스프로러로 접근시 엣지로 연결되게 함 -->
+    <meta http-equiv="Author" content="그로우앤조이 콘텐츠 제작팀">
+    <meta http-equiv="Publisher" content="그로우앤조이 콘텐츠 제작팀">
+    <meta http-equiv="Copyright" content="Copyright@grownjoy.co.kr">
+    
+    <!-- 검색엔진 최적화(SEO) -->
+    <meta name="Subject" content="그로우앤조이, 그로우앤조이IT">
+    <meta name="Keyword" content="그로우앤조이, 그로우앤조이 IT, 교재, 이벤트">
+    <meta name="Description" content="그로우앤조이는 교육 교재 정보, 커뮤니티, 게시판">
+    <meta name="Robots" content="index, follow">
+    
+    <!-- 오픈 그래프(Open graph)-->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="그로우앤조이">
+    <meta property="og:description" content="모두와 함께하며 소통으로 함께하는 기업">
+    <meta property="og:image" content="https://github.com/chunjae-luigi/project1/image/logo.png">
+    <meta property="og:url" content="https://github.com/chunjae-luigi/project1">
+    
+    <!-- 트위터 -->
+    <meta name="twitter:card" content="picture">
+    <meta name="twitter:title" content="그로우앤조이">
+    <meta name="twitter:description" content="앞선 생각으로 더 큰 미래의 교육을 준비하는 기업">
+    <meta name="twitter:image" content="https://github.com/chunjae-luigi/project1/image/logo.png">
+    
+    <!-- 파비콘 설정 -->
+    <!-- 16x16, 24x24, 32x32, 48x48, 64x64, 96x96, 114x114, 128x128, 256x256 등을 활용-->
+    <!-- 표준 파비콘 -->
+    <link rel="shortcut icon" href="../image/common/logo_32.ico">
+    <!-- 애플 계열 모바일 -->
+    <link rel="apple-touch-icon-precomposed" href="../image/common/logo_64.png">
+    <!-- IE 계열 브라우저 -->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="../image/common/logo_48.png">
+    <!-- 파이어폭스, 오페라, 또는 구형 크롬/사파리 -->
+    <link rel="icon" href="../image/common/logo_16.png" sizes="16x16">
+    <link rel="icon" href="../image/common/logo_32.png" sizes="32x32">
+    <link rel="icon" href="../image/common/logo_48.png" sizes="48x48">
+    <link rel="icon" href="../image/common/logo_64.png" sizes="64x64">
+    
+    <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
+    <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
+    
+    <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
+    <link rel="stylesheet" href="../css/google.css">
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/hd.css">
+    <link rel="stylesheet" href="../css/ft.css">
+    
+    <!-- 필요한 플러그인 연결 -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    
+    <link rel="stylesheet" href="../css/jquery.dataTables.css">
+    <script src="../js/jquery.dataTables.js"></script>
+    
+    <!-- 불펌 방지 -->
+    <script>
+        document.oncontextmenu = function() { return false; }
+        document.ondragstart = function() { return false; }
+        document.onselectstart = function() { return false; }
+    </script>
+        <link rel="stylesheet" href="../css/admin.css">
+        <style>
+            img {width:10%; height:auto; margin-bottom: 20px;}
+            .img_tb {word-wrap: break-word}
+    
+            .card {display:inline-block;width:24%;margin-left:1%;}
+            .card:nth-child(4n + 1) {margin-left:0;}
+        </style>
+    </head>
+    
+    <body>
+    <div class="admin_wrap">
+        <header class="admin_hd" id="adminHd">
+            
+    
+    <div class="admin_hd_wrap" id="adminHdWrap">
+        <a href="../index.html" class="logo">
+            <img src="../image/common/logo.png" alt="그로우앤조이 로고타입">
+        </a>
+        <nav id="adminHdGnb">
+            <h2>관리자페이지</h2>
+            <ul class="menu">
+                <li class="item1">
+                    <a href="../admin/memberList.html" class="dp1">회원 관리</a>
+                </li>
+                <li class="item2">
+                    <a href="../admin/qnaList.html" class="dp1">문의 관리</a>
+                </li>
+                <li class="item3">
+                    <a href="../admin/admin_event_list.html" class="dp1">이벤트 관리</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    
+    <script>
+    </script>
+        </header>
+        <div class="admin_contents" id="adminContents">
+            <h2>이벤트 관리</h2>
+            <section class="page"><div class="page_wrap"><form action="admin_event_delete.html">
+                <ul class="card_con">
+                
+                <li class="card">
+                    <a href="../admin/admin_event_get.html?eno=1">
+                        
+                        <img class="card-img-top" src="../admin/event_img/1.jpg" alt="eventing">
+                        
+                        <div class="card-body">
+                            <h5 class="card-title"><input type="checkbox" name="isdelete" value="1"> 진행중 이벤트1</h5>
+                            <p class="card-text">
+                                
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                
+                <li class="card">
+                    <a href="../admin/admin_event_get.html?eno=2">
+                        
+                        <img class="card-img-top" src="../admin/event_img/2.jpg" alt="eventing">
+                        
+                        <div class="card-body">
+                            <h5 class="card-title"><input type="checkbox" name="isdelete" value="2"> 진행중 이벤트2</h5>
+                            <p class="card-text">
+                                
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                
+                <li class="card">
+                    <a href="../admin/admin_event_get.html?eno=3">
+                        
+                        <img class="card-img-top" src="../admin/event_img/3.jpg" alt="eventing">
+                        
+                        <div class="card-body">
+                            <h5 class="card-title"><input type="checkbox" name="isdelete" value="3"> 진행중 이벤트3</h5>
+                            <p class="card-text">
+                                
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                
+                <li class="card">
+                    <a href="../admin/admin_event_get.html?eno=4">
+                        
+                        <img class="card-img-top" src="../admin/event_img/4.jpg" alt="eventing">
+                        
+                        <div class="card-body">
+                            <h5 class="card-title"><input type="checkbox" name="isdelete" value="4"> 진행중 이벤트4</h5>
+                            <p class="card-text">
+                                
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                
+                <li class="card">
+                    <a href="../admin/admin_event_get.html?eno=5">
+                        
+                        <img class="card-img-top" src="../admin/event_img/5.jpg" alt="eventing">
+                        
+                        <div class="card-body">
+                            <h5 class="card-title"><input type="checkbox" name="isdelete" value="5"> 지난 이벤트1</h5>
+                            <p class="card-text">
+                                
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                
+                <li class="card">
+                    <a href="../admin/admin_event_get.html?eno=6">
+                        
+                        <img class="card-img-top" src="../admin/event_img/6.jpg" alt="eventing">
+                        
+                        <div class="card-body">
+                            <h5 class="card-title"><input type="checkbox" name="isdelete" value="6"> 지난 이벤트2</h5>
+                            <p class="card-text">
+                                
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                
+                <li class="card">
+                    <a href="../admin/admin_event_get.html?eno=7">
+                        
+                        <img class="card-img-top" src="../admin/event_img/7.jpg" alt="eventing">
+                        
+                        <div class="card-body">
+                            <h5 class="card-title"><input type="checkbox" name="isdelete" value="7"> 지난 이벤트3</h5>
+                            <p class="card-text">
+                                
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                
+                <li class="card">
+                    <a href="../admin/admin_event_get.html?eno=8">
+                        
+                        <img class="card-img-top" src="../admin/event_img/8.jpg" alt="eventing">
+                        
+                        <div class="card-body">
+                            <h5 class="card-title"><input type="checkbox" name="isdelete" value="8"> 지난 이벤트4</h5>
+                            <p class="card-text">
+                                
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                
+                </ul>
+            </form></div></section>
+            <div class="btn_group">
+                <a href="../admin/admin_event_add.html" class="inBtn inBtn1">이벤트 추가</a>
+                <input type="submit" class="inBtn inBtn2" value="이벤트 삭제">
+            </div>
+        </div>
+    </div>
+    
+    </body></html>

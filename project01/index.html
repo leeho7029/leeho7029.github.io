@@ -1,0 +1,365 @@
+<html lang="en"><head>
+    <title>그로우앤조이</title>
+    
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=dege"> <!-- 인터넷익스프로러로 접근시 엣지로 연결되게 함 -->
+<meta http-equiv="Author" content="그로우앤조이 콘텐츠 제작팀">
+<meta http-equiv="Publisher" content="그로우앤조이 콘텐츠 제작팀">
+<meta http-equiv="Copyright" content="Copyright@grownjoy.co.kr">
+
+<!-- 검색엔진 최적화(SEO) -->
+<meta name="Subject" content="그로우앤조이, 그로우앤조이IT">
+<meta name="Keyword" content="그로우앤조이, 그로우앤조이 IT, 교재, 이벤트">
+<meta name="Description" content="그로우앤조이는 교육 교재 정보, 커뮤니티, 게시판">
+<meta name="Robots" content="index, follow">
+
+<!-- 오픈 그래프(Open graph)-->
+<meta property="og:type" content="website">
+<meta property="og:title" content="그로우앤조이">
+<meta property="og:description" content="모두와 함께하며 소통으로 함께하는 기업">
+<meta property="og:image" content="https://github.com/chunjae-luigi/project1/image/logo.png">
+<meta property="og:url" content="https://github.com/chunjae-luigi/project1">
+
+<!-- 트위터 -->
+<meta name="twitter:card" content="picture">
+<meta name="twitter:title" content="그로우앤조이">
+<meta name="twitter:description" content="앞선 생각으로 더 큰 미래의 교육을 준비하는 기업">
+<meta name="twitter:image" content="https://github.com/chunjae-luigi/project1/image/logo.png">
+
+<!-- 파비콘 설정 -->
+<!-- 16x16, 24x24, 32x32, 48x48, 64x64, 96x96, 114x114, 128x128, 256x256 등을 활용-->
+<!-- 표준 파비콘 -->
+<link rel="shortcut icon" href="./image/common/logo_32.ico">
+<!-- 애플 계열 모바일 -->
+<link rel="apple-touch-icon-precomposed" href="./image/common/logo_64.png">
+<!-- IE 계열 브라우저 -->
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="./image/common/logo_48.png">
+<!-- 파이어폭스, 오페라, 또는 구형 크롬/사파리 -->
+<link rel="icon" href="./image/common/logo_16.png" sizes="16x16">
+<link rel="icon" href="./image/common/logo_32.png" sizes="32x32">
+<link rel="icon" href="./image/common/logo_48.png" sizes="48x48">
+<link rel="icon" href="./image/common/logo_64.png" sizes="64x64">
+
+<!-- 스타일 초기화 : reset.css 또는 normalize.css -->
+<link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
+
+<!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
+<link rel="stylesheet" href="./css/google.css">
+<link rel="stylesheet" href="./css/fonts.css">
+<link rel="stylesheet" href="./css/common.css">
+<link rel="stylesheet" href="./css/hd.css">
+<link rel="stylesheet" href="./css/ft.css">
+
+<!-- 필요한 플러그인 연결 -->
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+
+<link rel="stylesheet" href="./css/jquery.dataTables.css">
+<script src="./js/jquery.dataTables.js"></script>
+
+<!-- 불펌 방지 -->
+<script>
+    document.oncontextmenu = function() { return false; }
+    document.ondragstart = function() { return false; }
+    document.onselectstart = function() { return false; }
+</script>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+<div class="wrap">
+    <header class="hd" id="hd">
+        
+
+<div class="hd_wrap" id="hdWrap">
+    <a href="index.html" class="logo">
+        <img src="./image/common/logo.png" alt="그로우앤조이 로고타입">
+    </a>
+    <nav class="gnb" id="hdGnb">
+        <ul class="menu">
+            <li class="item1">
+                <a href="./company01.html" class="dp1">회사소개</a>
+                <ul class="sub">
+                    <li><a href="./company01.html">인사말</a></li>
+                    <li><a href="./company02.html">연혁</a></li>
+                    <li><a href="./company03.html">오시는 길</a></li>
+                </ul>
+            </li>
+            <li class="item2">
+                <a href="./service.html" class="dp1">조이서비스</a>
+                <ul class="sub">
+                    <li><a href="./bookbook/Booklit.html">도서</a></li>
+                    <li><a href="./service.html">서비스</a></li>
+                </ul>
+            </li>
+            <li class="item3">
+                <a href="./board/listNotice.html" class="dp1">커뮤니티</a>
+                <ul class="sub">
+                    <li><a href="./board/listNotice.html">공지사항</a></li>
+                    <li><a href="./board/listBoard.html">자유게시판</a></li>
+                    <li><a href="./qna/qnaList.html">QnA</a></li>
+                </ul>
+            </li>
+            <li class="item4">
+                <a href="./event/eventing_list.html" class="dp1">이벤트</a>
+                <ul class="sub">
+                    <li><a href="./event/eventing_list.html">진행중인 이벤트</a></li>
+                    <li><a href="./event/evented_list.html">종료된 이벤트</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <nav class="tnb">
+        <ul class="menu">
+            <li><a href="./member/mypage.html">마이페이지</a></li>
+            <li><a href="./admin/memberList.html">관리자페이지</a></li>
+            <li><a href="./member/login.html">로그인</a></li>
+            <li><a href="./member/term.html">회원가입</a></li>
+            <li><a href="./company03.html">오시는 길</a></li>
+        </ul>
+    </nav>
+</div>
+
+<script>
+    var gnb = document.getElementById("hdGnb");
+    var hdWrap = document.getElementById("hdWrap");
+    gnb.addEventListener("mouseover", function() {
+        hdWrap.classList.add("hoverMenu");
+    });
+
+    gnb.addEventListener("mouseleave", function () {
+        hdWrap.classList.remove("hoverMenu");
+    });
+</script>
+    </header>
+    <div class="contents" id="contents">
+        <figure class="vs">
+            <ul class="img_box">
+                <li class="item1 active">
+                    <input type="radio" name="vs_ra" id="vs_ra1" class="vs_ra" checked="">
+                    <div class="bg_box"></div>
+                    <h2 class="vs_tit">교육에 대한 끊임없는 도전<br>
+                        <strong>행복한 내일을 함께 합니다</strong></h2>
+                </li>
+                <li class="item2">
+                    <input type="radio" name="vs_ra" id="vs_ra2" class="vs_ra">
+                    <div class="bg_box"></div>
+                    <h2 class="vs_tit">“나눔의 힘! 실천의 힘!”<br>
+                        <strong>작은 따뜻함으로 세상을 <br>바꿉니다</strong>
+                    </h2>
+                </li>
+            </ul>
+            <ul class="btn_box">
+                <li class="item1 active"><label for="vs_ra1" class="vs_btn"></label></li>
+                <li class="item2"><label for="vs_ra2" class="vs_btn"></label></li>
+            </ul>
+            <button type="button" class="play_btn"></button>
+        </figure>
+        <script>
+            $(function(){
+                $(".btn_box li .vs_btn").click(function(){
+                    var par = $(this).parents("li").index();
+                    $(".img_box li").removeClass("active");
+                    $(".img_box li").eq(par).addClass("active");
+                    $(".btn_box li").removeClass("active");
+                    $(".btn_box li").eq(par).addClass("active");
+                });
+                var sw = 1;
+                var int1 = setInterval(function(){
+                    if(sw==1){
+                        autoplay(1);
+                        sw = 0;
+                    } else {
+                        autoplay(0);
+                        sw = 1;
+                    }
+                }, 3500);
+
+                function autoplay(n){
+                    $(".img_box li").removeClass("active");
+                    $(".img_box li").eq(n).addClass("active");
+                    $(".btn_box li").removeClass("active");
+                    $(".btn_box li").eq(n).addClass("active");
+                }
+
+                $(".play_btn").click(function(){
+                    if($(this).hasClass("active")){
+                        $(this).removeClass("active");
+                        sw = 1;
+                        int1 = setInterval(function(){
+                            if(sw==1){
+                                autoplay(1);
+                                sw = 0;
+                            } else {
+                                autoplay(0);
+                                sw = 1;
+                            }
+                        }, 3500);
+                    } else {
+                        $(this).addClass("active");
+                        sw = 0;
+                        clearInterval(int1);
+                    }
+                });
+            });
+        </script>
+        <section class="page" id="page1">
+            <div class="page_wrap">
+                <h2 class="page_tit"><span class="txtColor1">Grow</span> &amp; <span class="txtColor2">Joy</span></h2>
+                <ul class="board_lst">
+                    <li class="item1">
+                        <div class="board_tit">
+                            <h3>공지사항</h3>
+                            <a href="./board/listNotice.html" class="btn_more">+</a>
+                        </div>
+                        <ul class="board_con">
+                            
+                            <li><a href="./board/getNotice.html">공지사항1<span class="date">2023-11-09</span></a></li>
+                            
+                            <li><a href="./board/getNotice.html">공지사항2 <span class="date">2023-11-09</span></a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="item2">
+                        <div class="board_tit">
+                            <h3>자유게시판</h3>
+                            <a href="./board/listBoard.html" class="btn_more">+</a>
+                        </div>
+                        <ul class="board_con">
+                            
+                            <li><a href="./board/getBoard.html">자유게시글1<span class="date">2023-11-09</span></a></li>
+                            
+                            <li><a href="./board/getBoard.html">자유게시글2<span class="date">2023-11-09</span></a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="page" id="page2">
+            <div class="page_wrap">
+                <h2 class="page_tit">이벤트</h2>
+                <p class="page_com">그로우앤조이에서 진행된 이벤트를 소개합니다.</p>
+                
+                <div class="sl-btn-box">
+                    <button type="button" class="btn next">&gt;</button>
+                    <button type="button" class="btn prev">&lt;</button>
+                </div>
+                
+                <div class="slide_box">
+                    <ul class="card_lst">
+                        
+                        <li class="item1">
+                            <a href="./event/eventing_get.html">
+                                <div class="thumb_box" style="background-image:url('./event/event_img/1.jpg')"></div>
+                                <p class="thumb_tit">진행중 이벤트1</p>
+                                <span class="thumb_date">
+                                
+                                    2023-08-01 ~ 2023-08-16
+                                
+                                </span>
+                            </a>
+                        </li>
+                        
+                        <li class="item2">
+                            <a href="./event/eventing_get.html>
+                                <div class="thumb_box" style="background-image:url('./event/event_img/2.jpg')"></div>
+                                <p class="thumb_tit">진행중 이벤트2</p>
+                                <span class="thumb_date">
+                                
+                                    2023-08-01 ~ 2023-08-16
+                                
+                                </span>
+                            </a>
+                        </li>
+                        
+                        <li class="item3">
+                            <a href="./event/eventing_get.html">
+                                <div class="thumb_box" style="background-image:url('./event/event_img/3.jpg')"></div>
+                                <p class="thumb_tit">진행중 이벤트3</p>
+                                <span class="thumb_date">
+                                
+                                    2023-08-01 ~ 2023-08-16
+                                
+                                </span>
+                            </a>
+                        </li>
+                        
+                        <li class="item4">
+                            <a href="./event/eventing_get.html">
+                                <div class="thumb_box" style="background-image:url('./event/event_img/4.jpg')"></div>
+                                <p class="thumb_tit">진행중 이벤트4</p>
+                                <span class="thumb_date">
+                                
+                                    2023-08-01 ~ 2023-08-16
+                                
+                                </span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <script>
+            $(function(){
+                $(".sl-btn-box .btn.next").click(function(){
+                    var ln = parseInt($(".card_lst").css("margin-left"));
+                    if(ln>-1110) {
+                        var mv = ln - 370;
+                        $(".card_lst").not(":animated").animate({"margin-left":mv+"px"});
+                    }
+                });
+                $(".sl-btn-box .btn.prev").click(function(){
+                    var ln = parseInt($(".card_lst").css("margin-left"));
+                    if(ln<0){
+                        var mv = ln + 370;
+                        $(".card_lst").not(":animated").animate({"margin-left":mv+"px"});
+                    }
+                });
+            });
+        </script>
+    </div>
+    <footer class="ft" id="ft">
+        
+<div class="ft_wrap">
+    <nav class="ft_link">
+        <ul class="fnb">
+            <li class="ft_logo"></li>
+            <li><a href="aboutEmail.html">이메일 무단 수집 거부</a></li>
+        </ul>
+        <ul class="snb">
+            <li class="item1"><a href="javascript:return false">페이스북</a></li>
+            <li class="item2"><a href="javascript:return false">카페</a></li>
+            <li class="item3"><a href="javascript:return false">블로그</a></li>
+            <li class="item4"><a href="javascript:return false">유투브</a></li>
+            <li class="item5"><a href="javascript:return false">인스타그램</a></li>
+        </ul>
+    </nav>
+    <script>
+        function loc(){
+            var url = document.getElementById("sel").value;
+            //location.href = url;  //현재 창에
+            if(url!="") {
+                var win = window.open(url); //새창에
+            }
+        }
+    </script>
+</div>
+<div class="ft_wrap2">
+    <p class="copyright">
+        <span>그로우앤조이</span>
+        <span>서울시 금천구 가산로9길 54</span>
+        <span>대표자 최상민</span>
+        <span>사업자등록번호 XXX-XX-XXXXX</span>
+        <span>통신판매신고번호 제XX-XXX호</span>
+        <span class="end">부가통신사업신고 XXXXXX</span>
+    </p>
+    <p class="cp">COPYRIGHT 1981-2023 GROW&amp;JOY INC. ALL RIGHTS RESERVED.</p>
+</div>
+    </footer>
+</div>
+
+
+</body></html>
