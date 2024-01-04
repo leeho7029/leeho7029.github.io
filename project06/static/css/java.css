@@ -1,0 +1,611 @@
+/*--------------------------------------------------------------
+# General / Editor Section
+--------------------------------------------------------------*/
+
+body {
+    background-color: #383838;
+}
+
+strong {
+    color: #fff;
+    font-weight: bolder;
+    line-height: 35px;
+    font-family: 'GongGothicMedium';
+}
+
+#monaco {
+    min-height:85vh;
+}
+
+.file_name {
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
+}
+
+#split-container {
+    display: flex;
+    height: 95vh;  /* Adjust the height as needed */
+}
+
+#left-pane, #right-pane {
+    overflow: auto;  /* For scrollable content */
+}
+#left-pane {
+    overflow-x: auto;
+    position: relative;
+    background-color: #303030;
+}
+
+#left-pane #tree {
+    min-width: 300px;
+    user-select: none;
+    /* 내부 컨텐츠의 최소 너비 */
+}
+#tree a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+ul.gj-list li [data-role=image] {
+    width: 18px!important;
+}
+#logoImage { width: 30px!important;}
+
+img {
+    cursor:pointer;
+    width: 30px;
+    margin-left: 5px;
+}
+#tree img {
+    width: 26px;
+}
+
+.split {
+    display: flex;
+    flex-direction: row;
+}
+
+.gutter {
+    background-color: #1e1e1e;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.gutter.gutter-horizontal {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+    cursor: col-resize;
+}
+/*.monaco-editor.vs-dark .monaco-editor-background,*/
+/*.monaco-editor.vs-dark .margin,*/
+/*.monaco-editor.vs-dark .glyph-margin {*/
+/*    background-color: gray !important;*/
+/*}*/
+.editor-info {
+    height: 36px;
+    background-color: #1E1E1E;
+    border-bottom: 2px solid #afafaf;
+    margin-bottom: 6px;
+}
+.editor-info button {
+    float: right;
+}
+#selectedFileName {
+    color: #eeeeee;
+    padding: 0;
+    margin: 0 !important;
+    font-size: 20px !important;
+    padding-left: 4px;
+}
+
+.tree-topbar {
+    height: 36px;
+    border-bottom: 2px solid white;
+}
+
+#run {
+    height: 25px;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+#saveBtn {
+    width: 76px;
+    height: 25px;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+#compileImg {
+    width: 18px;
+    padding-bottom: 3px;
+    margin-left: 0px;
+}
+
+#saveImg {
+    width: 18px;
+    padding-bottom: 3px;
+    margin-left: 0px;
+}
+
+#newF {
+    margin-top: 2px;
+    margin-right: 5px;
+}
+
+#compileTime {
+    font-family: 'GongGothicMedium';
+    height: 36px;
+    border-bottom: 2px solid #afafaf;
+    padding-bottom: 6px;
+    padding-top: 4px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+/*--------------------------------------------------------------
+# Modal
+--------------------------------------------------------------*/
+
+#modalWrap {
+    position: fixed;
+    z-index: 1;
+    padding-top: 150px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+}
+
+#modalBody {
+    width: 470px;
+    height: 250px;
+    padding: 15px 30px;
+    margin: 0 auto;
+    background-color: #1e2022;
+    border-radius: 30px;
+}
+
+#closeBtn {
+    float:right;
+    font-weight: bold;
+    color: #777;
+    font-size:25px;
+    cursor: pointer;
+}
+
+#modalContent {
+    margin-top: 70px;
+}
+
+#infoModal {
+    color: #db2727;
+    font-size: 12px;
+    float: right;
+    margin-right: 32px;
+}
+
+#modalWrap2 {
+    position: fixed;
+    z-index: 1;
+    padding-top: 150px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+}
+
+#modalBody2 {
+    width: 470px;
+    height: 250px;
+    padding: 15px 30px;
+    margin: 0 auto;
+    background-color: #1e2022;
+    border-radius: 30px;
+}
+
+#closeBtn2 {
+    float:right;
+    font-weight: bold;
+    color: #777;
+    font-size:25px;
+    cursor: pointer;
+}
+
+#modalContent2 {
+    margin-top: 80px;
+}
+
+#modalWrap3 {
+    position: fixed;
+    z-index: 1;
+    padding-top: 150px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+}
+
+#modalBody3 {
+    width: 470px;
+    height: 250px;
+    padding: 15px 30px;
+    margin: 0 auto;
+    background-color: #1e2022;
+    border-radius: 30px;
+}
+
+#closeBtn3 {
+    float:right;
+    font-weight: bold;
+    color: #777;
+    font-size:25px;
+    cursor: pointer;
+}
+
+#modalContent3 {
+    margin-top: 80px;
+}
+
+#renameFileModal {
+    position: fixed;
+    z-index: 1;
+    padding-top: 150px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+}
+
+#renameFolderModal {
+    position: fixed;
+    z-index: 1;
+    padding-top: 150px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+}
+
+#fileInfoModal {
+    position: fixed;
+    z-index: 1;
+    padding-top: 150px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+}
+
+#modalBody4 {
+    width: 470px;
+    height: 250px;
+    padding: 15px 30px;
+    margin: 0 auto;
+    background-color: #1e2022;
+    border-radius: 30px;
+}
+
+#modalBody6 {
+    width: 470px;
+    height: 250px;
+    padding: 15px 30px;
+    margin: 0 auto;
+    background-color: #1e2022;
+    border-radius: 30px;
+}
+
+#modalBody5 {
+    width: 470px;
+    height: 350px;
+    padding: 15px 30px;
+    margin: 0 auto;
+    background-color: #1e2022;
+    border-radius: 30px;
+}
+#modalBody5 th {
+    height: 40px;
+    width: 50px;
+    text-align: right;
+    color: #cccccc;
+    font-weight: bold;
+}
+#modalBody5 td {
+    padding-left: 20px;
+    color: #cccccc;
+}
+
+
+
+#closeBtn4 {
+    float:right;
+    font-weight: bold;
+    color: #777;
+    font-size:25px;
+    cursor: pointer;
+}
+#closeBtn5 {
+    float:right;
+    font-weight: bold;
+    color: #777;
+    font-size:25px;
+    cursor: pointer;
+}
+
+#closeBtn6 {
+    float:right;
+    font-weight: bold;
+    color: #777;
+    font-size:25px;
+    cursor: pointer;
+}
+
+#modalContent4 {
+    margin-top: 60px;
+}
+#modalContent5 {
+    margin-top: 60px;
+}
+#modalContent6 {
+    margin-top: 60px;
+}
+
+button {
+    font-family: 'GongGothicMedium';
+}
+
+#renameFolderModal {
+    position: fixed;
+    z-index: 999;
+    padding-top: 150px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+}
+
+#modalBody7 {
+    width: 470px;
+    height: 335px;
+    padding: 15px 30px;
+    margin: 0 auto;
+    background-color: #1e2022;
+    border-radius: 30px;
+}
+
+#closeBtn7 {
+    float:right;
+    font-weight: bold;
+    color: #777;
+    font-size:25px;
+    cursor: pointer;
+}
+
+#modalContent7 {
+    margin-top: 60px;
+}
+/*--------------------------------------------------------------
+# Menu
+--------------------------------------------------------------*/
+
+#iconNav {
+    position: absolute;
+    background-color: #102770;
+    top:3px;
+    right: 45px;
+    padding-top: 5px;
+    border-radius: 50px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+}
+
+#balloon-wrap {
+    width:90px;
+    top: 50px!important;
+    right: -13px!important;
+}
+
+#balloon {
+    width: 90px;
+}
+
+#balloon li {
+    padding: 4px 2px!important;
+}
+
+#balloon:after {
+    border-top:0px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid rgb(30, 32, 34);
+    content:"";
+    position:absolute;
+    top:-10px;
+    left:52px;
+}
+
+#balloon li a {
+    font-family: 'GongGothicMedium';
+    font-size: 10px;
+}
+
+#balloon li:hover a{
+    color: #ffeba7;
+    font-family: 'GongGothicMedium';
+    font-size: 10px;
+}
+
+
+#moreNav {
+    position: relative;
+    width: 4px;
+    padding-top: 2px;
+    padding-left: 6px;
+    /*padding-right: 10px;*/
+    z-index: 9999;
+
+}
+
+#balloon-wrap2 {
+    width: 90px;
+    /*top: 38px!important;*/
+    /*right: 486px!important;*/
+    /*position: fixed;*/
+
+}
+
+#balloon2 {
+    width: 190px;
+    background: #2a2a2a;
+    padding-left: 5px;
+    border-radius: 5px;
+    border: 0.1em solid gray;
+    color:#fff;
+    display: none;
+    z-index: 999;
+    position: absolute;
+}
+
+#balloon2 li {
+    cursor: pointer;
+    list-style: none;
+    padding: 4px!important;
+    font-family: 'GongGothicMedium';
+}
+
+#balloon2 li:hover {
+    cursor: pointer;
+    color: #ffeba7;
+    font-family: 'GongGothicMedium';
+}
+
+.gj-list-md-active {
+    background-color: #474747 !important;
+    color: #c7c7c7 !important;
+}
+
+.editor-bottom {
+    background-color: #1e1e1e;
+    border-top: 1px solid #cccccc;
+    height: 24px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    z-index: 9999;
+}
+
+#autoSaveCheck {
+    background-color: #4e4e4e;
+    color: white;
+    border: black;
+    font-size: 18px;
+    height: 18px;
+    float: right;
+    position: relative;
+    vertical-align: middle;
+}
+
+#saveAT {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #868686;
+}
+
+#savetext {
+    vertical-align: middle;
+    /*padding-top: 3px;*/
+    padding-left: 8px;
+    font-size: 14px;
+    color: #cccccc;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+.modal-backdrop {
+    display: none;
+}
+
+/* 모달 내용 스타일 */
+.modal-content {
+    background-color: rgb(42, 42, 42);
+    margin: 5% auto;
+    border: 0.1em solid gray;
+    width: 100%;
+}
+
+.modal-dialog{
+    max-width:600px;
+}
+
+/* 모달 닫기 버튼 스타일 */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+#if {
+    font-size: 22px;
+    color: #fff;
+    background-color: #4a4a4b;
+    padding-bottom: 6px;
+    padding-top: 5px;
+    border-radius: 100px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+span.material-symbols-outlined {
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 30px;
+    color:#FFFFFF;
+    vertical-align: middle;
+}
+.info-content {
+    font-size: 14px;
+    color: white;
+}
+
+.javaInfo {
+    color: white;
+}
