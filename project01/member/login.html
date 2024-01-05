@@ -153,19 +153,19 @@
             <div class="page_wrap">
                 <h2 class="page_tit">로그인</h2>
                 <div class="login_area">
-                    <form action="../member/loginpro.html" id="login_frm" class="frm">
+                    <form action="../index.html" id="login_frm" class="frm">
                         <table class="tb1">
                             <tbody>
                             <tr>
-                                <td><input type="text" name="id" id="id" class="indata" placeholder="아이디 입력" autofocus="" required=""></td>
+                                <td><input type="text" name="id" id="id" class="indata" placeholder="아이디 입력" autofocus=""></td>
                             </tr>
                             <tr>
-                                <td><input type="password" name="pw" id="pw" class="indata" placeholder="패스워드 입력" required=""></td>
+                                <td><input type="password" name="pw" id="pw" class="indata" placeholder="패스워드 입력"></td>
                             </tr>
                             <tr>
                                 <td>
                                     <div class="btn_group">
-                                        <input type="submit" value="로그인" class="inBtn inBtn1">
+                                        <input type="submit" value="로그인" class="inBtn inBtn1" id="login">
                                         <input type="reset" value="취소" class="inBtn inBtn2">
                                     </div>
                                 </td>
@@ -177,6 +177,13 @@
             </div>
         </section>
     </div>
+    
+<script>
+    var login = document.getElementById("login")
+    login.addEventListener("click",function(){
+        window.location.href = "../index.html"
+    })
+</script>
     <footer class="ft" id="ft">
         
 <div class="ft_wrap">
@@ -207,7 +214,7 @@
     <p class="copyright">
         <span>그로우앤조이</span>
         <span>서울시 금천구 가산로9길 54</span>
-        <span>대표자 최상민</span>
+        <span>대표자 김이호</span>
         <span>사업자등록번호 XXX-XX-XXXXX</span>
         <span>통신판매신고번호 제XX-XXX호</span>
         <span class="end">부가통신사업신고 XXXXXX</span>
@@ -216,5 +223,6 @@
 </div>
     </footer>
 </div>
+
 
 </body></html>
