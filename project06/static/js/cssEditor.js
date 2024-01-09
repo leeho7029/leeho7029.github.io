@@ -540,7 +540,7 @@ Split(['#split', '#view'], {
 });
 
 
-<!--파일 확장자를 선택자로 추가해서 파일 만들기-->
+// //<!--파일 확장자를 선택자로 추가해서 파일 만들기-->
     const extensionSelect = document.getElementById("extension"); //select문에서 선택한 값
     const customExtensionInput = document.getElementById("customExtensionInput"); //직접입력 확장자의 div 값 입력한 값
     const customExtension = document.getElementById("customExtension"); //직접입력 확장자로 입력한 input 값
@@ -566,7 +566,7 @@ Split(['#split', '#view'], {
     console.log(customExtension.value)
 });
 
-<!--다운로드 버튼 작동하는 스크립트-->
+// //<!--다운로드 버튼 작동하는 스크립트-->
 
 document.getElementById("saveBtn").addEventListener("click", () => {
     let filename = document.getElementById("downloadName").value; // 현재 출력 중인 파일명 값
@@ -652,7 +652,7 @@ document.getElementById("saveBtn").addEventListener("click", () => {
 });
 
 
-<!--파일이름에 사용할수 없는 문자들-->
+//<!--파일이름에 사용할수 없는 문자들-->
     function isValidFilename(filename) {
     // 사용할 수 없는 문자와 규칙을 정의합니다.
     const invalidChars = /[\/:*?"<>|.]/;
@@ -666,7 +666,7 @@ document.getElementById("saveBtn").addEventListener("click", () => {
     return true;
 }
 
-<!--파일 이름 변경시 사용할수 없는 문자-->
+//<!--파일 이름 변경시 사용할수 없는 문자-->
     function isValidFilename2(newfilename) {
     // 사용할 수 없는 문자와 규칙을 정의합니다.
     const invalidChars = /[\/:*?"<>|.]/;
@@ -680,7 +680,7 @@ document.getElementById("saveBtn").addEventListener("click", () => {
     return true;
 }
 
-<!--폴더 이름 변경시 사용할수 없는 문자-->
+//<!--폴더 이름 변경시 사용할수 없는 문자-->
 function isValidFoldername(newFoldername) {
     // 사용할 수 없는 문자와 규칙을 정의합니다.
     const invalidChars = /[\/:*?"<>|.]/;
@@ -785,7 +785,7 @@ document.getElementById("resave").addEventListener("click", function () {
         });
 });
 var folderAndfile = '';
-<!--불러오기 버튼-->
+//<!--불러오기 버튼-->
 // DOMContentLoaded는 문서의 초기 html 구조가 완전히 로드되고 파싱되었을때 발생하는 이벤트-
 // 스타일시트(style태그), 하위프레임(iframe)등의 외부 리소스가 아직 로드되지 않아도 발생.
     document.addEventListener('DOMContentLoaded', function() {
@@ -793,7 +793,7 @@ var folderAndfile = '';
     loadFileList();
 });
 
-<!--저장소 모달창 작동 스크립트-->
+//<!--저장소 모달창 작동 스크립트-->
 
     // "불러오기" 버튼 클릭 시 모달 열기
     function showFileList() {
@@ -822,7 +822,7 @@ function closeModal6() {
     modal6.style.display = 'none';
 }
 
-<!--저장소에서 폴더 열림 닫힘 상태 저장하는 스크립트-->
+//<!--저장소에서 폴더 열림 닫힘 상태 저장하는 스크립트-->
 //node는 트리구조에서의 기본단위다. 각 노드는 특정한 데이터를 나타내고 이 데이터 간에 부모-자식 관계가 있따.
 //트리에서 각각의 데이터를 담고 있는 각 요소를 노드라고 부른다.
 //트리의 최상위 노드를 루트 노드(Root Node)라고 한다.
@@ -1141,7 +1141,7 @@ function treeEvent() {
     });
     }
 
-<!--저장버튼 작동하는 스크립트-->
+//<!--저장버튼 작동하는 스크립트-->
 document.getElementById("popupBtn").addEventListener("click",function () {
     if(loginCheck == 'false') {
         alert("로그인 후 사용 가능합니다:)");
@@ -1192,7 +1192,7 @@ document.getElementById("popupBtn").addEventListener("click",function () {
             })}
 });
 
-<!--선택한 파일 이름을 받음-->
+//<!--선택한 파일 이름을 받음-->
     let selectedFile = null;
 
     function handleFileSelection(filename) {
@@ -1200,7 +1200,7 @@ document.getElementById("popupBtn").addEventListener("click",function () {
     // 필요에 따라 추가적인 로직을 수행할 수 있습니다.
 }
 
-<!--우클릭으로 이름변경시 값을 추출-->
+//<!--우클릭으로 이름변경시 값을 추출-->
     let reselectedFile = null;
 
     function rehandleFileSelection(anchor2) {
@@ -1212,7 +1212,7 @@ document.getElementById("popupBtn").addEventListener("click",function () {
 }
 }
 
-<!--선택한 파일 이름을 받음-->
+//<!--선택한 파일 이름을 받음-->
 let selectedFolder = null;
 
 function handleFolderSelection(filename) {
@@ -1220,7 +1220,7 @@ function handleFolderSelection(filename) {
     // 필요에 따라 추가적인 로직을 수행할 수 있습니다.
 }
 
-<!--우클릭으로 이름변경시 값을 추출-->
+//<!--우클릭으로 이름변경시 값을 추출-->
 let reselectedFolder = null;
 
 function rehandleFolderSelection(anchor2) {
@@ -1232,7 +1232,7 @@ function rehandleFolderSelection(anchor2) {
     }
 }
 
-<!--파일 이름 바꾸는 스크립트-->
+//<!--파일 이름 바꾸는 스크립트-->
     // 모달 열기 함수
     function openRenameFileModal() {
 
@@ -1375,7 +1375,7 @@ function renameFolder() {
         });
 }
 
-<!--링크는 새창으로 띄우게함-->
+// //<!--링크는 새창으로 띄우게함-->
 
     document.addEventListener('DOMContentLoaded', function () {
     // Wait for the iframe to load
@@ -1394,7 +1394,7 @@ function renameFolder() {
 });
 
 
-<!--자동저장 기능-->
+//<!--자동저장 기능-->
 
     function autosave () {
     let extension = document.getElementById("extension").value;
@@ -1450,7 +1450,7 @@ console.log("content:"+content);
 }
 
 
-<!--로컬 스토리지에 저장하는 스크립트-->
+//<!--로컬 스토리지에 저장하는 스크립트-->
 
     function saveToLocalStorage() {
 
@@ -1545,7 +1545,7 @@ console.log("content:"+content);
 }
 });
 
-<!--파일업로드 관련 스크립트-->
+//<!--파일업로드 관련 스크립트-->
 
     document.getElementById('readFile').addEventListener('click', function () {
     // 파일 업로드 input 엘리먼트 생성
