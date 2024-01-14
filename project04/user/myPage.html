@@ -1,0 +1,402 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지</title>
+    
+
+
+
+
+<!-- 파비콘 설정 -->
+<!-- 표준 파비콘 -->
+<link rel="shortcut icon" type="image/png" href="../resources/img/favicon.png">
+<!-- 애플 계열 모바일 -->
+<link rel="apple-touch-icon-precomposed" href="../resources/img/favicon.png">
+<!-- IE 계열 브라우저 -->
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="../resources/img/favicon.png">
+<!-- 파이어폭스, 오페라, 또는 구형 크롬/사파리 -->
+<link rel="icon" href="../resources/img/favicon.png" sizes="64x64">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../resources/css/style.css">
+
+<!-- JS -->
+<script src="../resources/js/jquery/jquery-2.2.4.min.js"></script>
+<!-- CLEditor -->
+<link rel="stylesheet" href="../resources/js/CLEditor1.4.5/jquery.cleditor.css">
+<script src="../resources/js/CLEditor1.4.5/jquery.cleditor.js"></script>
+
+<!-- font awesome -->
+<script src="https://kit.fontawesome.com/153ada4eea.js" crossorigin="anonymous"></script>
+    <style>
+        .card { border: none; margin-bottom: 24px; -webkit-box-shadow: 0 0 13px 0 rgba(236,236,241,.44);box-shadow: 0 0 13px 0 rgba(236,236,241,.44);}
+        #profile {margin-top: 10px;border-radius: 30px; width: 150px;}
+    </style>
+</head>
+<body>
+<!-- header Start -->
+
+
+
+
+
+<header class="header-area">
+    <!-- Navbar Area -->
+    <div id="sticky-wrapper" class="sticky-wrapper" style="height: 85px;"><div class="oneMusic-main-menu" style="width: 1088px;">
+        <div class="classy-nav-container breakpoint-off light left">
+            <div class="container">
+                <!-- Menu -->
+                <nav class="classy-navbar justify-content-between" id="oneMusicNav">
+
+                    <!-- Nav brand -->
+                    <a href="../" class="nav-brand"><img src="../resources/img/logo2.png" alt="해법 로고 이미지" style="width: 80%"></a>
+
+                    <!-- Navbar Toggler -->
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="classy-menu">
+
+                        <!-- Close Button -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+
+                        <!-- Nav Start -->
+                        <div class="classynav">
+                            <ul>
+                                <li><a href="../lecture/list"> 강의 </a></li>
+                                <li class="cn-dropdown-item has-down"><a href="#"> 서비스 </a>
+                                    <ul class="dropdown">
+                                        <li><a href="../board/list"> 커뮤니티 </a></li>
+                                        <li>
+                                            
+                                                <a href="../attendance/check"> 출석체크 </a>
+                                            
+                                            
+                                        </li>
+                                        <li><a href="../news/list"> 교육뉴스 </a></li>
+                                        <li class="has-down"><a href="#"> 이벤트 </a>
+                                            <ul class="dropdown">
+                                                <li><a href="../event/list"> 이벤트 목록 </a></li>
+                                                <li><a href="../winner/list"> 당첨자 목록 </a></li>
+                                            </ul>
+                                        <span class="dd-trigger"></span></li>
+                                    </ul>
+                                <span class="dd-trigger"></span></li>
+                                <li class="cn-dropdown-item has-down"><a href="#"> 고객지원 </a>
+                                    <ul class="dropdown">
+                                        <li><a href="../notice/list"> 공지사항 </a></li>
+                                        <li><a href="../qna/list"> Q&amp;A </a></li>
+                                        <li><a href="../faq/list"> FAQ </a></li>
+                                        <li><a href="../dataRoom/list"> 자료실 </a></li>
+                                    </ul>
+                                <span class="dd-trigger"></span></li>
+                            </ul>
+
+                            <!-- Login/Register & Cart Button -->
+                            <div class="login-register-cart-button d-flex align-items-center">
+                                
+                                <!-- Login/Register -->
+                                
+                                
+                                
+                                    <div class="login-register-btn mr-50" style="margin-right: 10px!important;">
+                                        <a href="../user/myPage" class="btn btn-primary" style="background-color: #fff; color: #000; border: none;">MYPAGE</a>
+                                    </div>
+                                    <div class="login-register-btn mr-50">
+                                        <a href="../user/logout" class="btn btn-primary" style="background-color: #625e5e; color: #fff; border: none;">LOGOUT</a>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                        <!-- Nav End -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div></div>
+</header>
+
+<!-- header End -->
+
+<!-- banner Start -->
+<section class="breadcumb-area bg-img bg-overlay" style="background-image: url('../resources/img/breadcrumb.jpg');">
+    <div class="bradcumbContent">
+        <p>개인정보를 관리해요</p>
+        <h2>마이페이지</h2>
+    </div>
+</section>
+<!-- banner End -->
+
+<!-- mypage Start -->
+<!-- sidemenu Start -->
+<div class="container-fluid d-flex justify-content-end p-0 mt-15">
+    <div class="d-flex justify-content-between">
+        <a class="nav-link active" aria-current="page" href="../user/myPage">rla 님</a>
+        <a class="nav-link" href="../user/edit">내정보</a>
+        <a class="nav-link" href="../user/lecture">수강내역</a>
+        <a class="nav-link" href="../user/payment">주문/배송내역</a>
+    </div>
+</div>
+<!--sidemenu End -->
+<div class="container-lg" style="margin: 100px auto; width: 85%;">
+    <!-- section1(info) Start-->
+    <div class="row" style="width: 90%; margin: 150px auto;">
+        <div class="col-xl-3 col-md-6">
+            <div class="card bg-pattern">
+                <div class="card-body" style="background-color: lightgray; height: 200px;">
+                    <h4 class="mt-2" style="margin-bottom: 0;">rla님,</h4>
+                    <p class="" style="color: #000;font-weight: 500;font-size: 19px;/* line-height: 20px; */">오늘도 열공하세요!</p>
+                    <button type="button" class="btn btn-dark" id="profile"><a href="../user/edit" style="color:#fff;">프로필 수정</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card bg-pattern">
+                <div class="card-body" style="height: 200px; border: 1px solid darkgray;">
+                    <div class="float-left" style=" margin-right: 10px;  font-size: 40px; width: 100%;">
+                        <i class="fa-regular fa-calendar-days" style="color: #2c2d30;"></i>
+                    </div>
+                    <p class="font-size-30 mt-0 pt-1" style="color: #000;font-weight: 500; font-size: 20px; line-height: 20px;">출석현황</p>
+                    <h5 class="font-size-30 mt-0 pt-1" style="font-size: 25px; line-height: 60px; margin-bottom: 0;">총 0일</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card bg-pattern">
+                <div class="card-body" style="height: 200px; border: 1px solid darkgray;">
+                    <div class="float-left" style=" margin-right: 10px;  font-size: 40px; width: 100%;">
+                        <i class="fa-solid fa-user-clock" style="color: #1e1e1f;"></i>
+                    </div>
+                    <p class="font-size-30 mt-0 pt-1" style="color: #000;font-weight: 500; font-size: 20px; line-height: 20px;">포인트</p>
+                    <h5 class="font-size-30 mt-0 pt-1" style="font-size: 25px; line-height: 60px; margin-bottom: 0;">총 0 포인트</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+            <div class="card bg-pattern">
+                <div class="card-body" style="height: 200px; border: 1px solid darkgray;">
+                    <div class="float-left" style=" margin-right: 10px;  font-size: 40px; width: 100%;">
+                        <i class="fa-solid fa-pen" style="color: #2a2d32;"></i>
+                    </div>
+                    <p class="font-size-30 mt-0 pt-1" style="color: #000;font-weight: 500; font-size: 20px; line-height: 20px;">리뷰수</p>
+                    <h5 class="font-size-30 mt-0 pt-1" style="font-size: 25px; line-height: 60px; margin-bottom: 0;">총 0개</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- section1(info) End -->
+    
+    <div style="display:flex;">
+        <!-- section2(registerTable) Start -->
+        <section class="pb-5" style="width: 85%; margin: 0 auto;">
+            <h4>수강신청한 강의(<strong style="color:#545050;">0개</strong>)</h4>
+            <div class="table-responsive project-list">
+                <table class="table project-table table-centered table-nowrap text-center">
+                    <thead>
+                    <tr>
+                        <th scope="col">강좌명</th>
+                        <th scope="col">강사</th>
+                        <th scope="col">수강기간</th>
+                        <th scope="col">타입</th>
+                        <th scope="col">비고</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    
+                    
+                        <tr>
+                            <td colspan="6" class="text-center"> 수강신청한 강의가 없습니다. </td>
+                        </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+            <nav aria-label="Page navigation example" class="mb-100">
+                
+                
+
+                <ul class="pagination justify-content-center">
+                    
+                </ul>
+            </nav>
+        </section>
+        <!-- section2(registertable) End -->
+
+        <!-- section3(todolist) Start -->
+        <div class="col-lg-5 justify-content-end ml-5">
+            
+
+
+
+
+
+<style>
+    @keyframes click-wave{0%{height: 40px;width: 40px;opacity: 0.15;position: relative}100%{height: 200px;width: 200px;margin-left: -80px;margin-top: -80px;opacity: 0}}
+    .option-input{-webkit-appearance: none;-moz-appearance: none;-ms-appearance: none;-o-appearance: none;appearance: none;position: relative;top: 10.3px;right: 0;bottom: 0;left: 0;height: 30px;width: 30px;transition: all 0.15s ease-out 0s;background: #CBD1D8;border: none;color: #fff;cursor: pointer;display: inline-block;margin-right: 0.5rem;outline: none;position: relative;z-index: 999}
+    .option-input:hover{background: #9FAAB7}
+    .option-input:checked{background: #3D3D3D}
+    .option-input:checked::before{height: 30px;width: 30px;position: absolute;content: "\f111";font-family: "Font Awesome 5 Free";display: inline-block;font-size: 16.7px;text-align: center;line-height: 30px}
+    .option-input:checked::after{-webkit-animation: click-wave 0.25s;-moz-animation: click-wave 0.25s;animation: click-wave 0.25s;background: #3D3D3D;content: '';display: block;position: relative;z-index: 100}
+    .option-input.radio{border-radius: 50%}
+    .option-input.radio::after{border-radius: 50%}
+    .line-text span{background: #fff;padding: 0 10px;color: #212529}
+    .user-images img{margin-left: -5px}
+    .todo-shadow {box-shadow: 4px 4px 12px;}
+    .input {width: 94%; height: 40px; border-top: none; border-left: none; border-right: none; border-bottom: 3px solid #3D3D3D;}
+    .input:focus {outline: none;}
+</style>
+<!-- TodoList 영역 -->
+<section class="todo-area bg-gray">
+    <div class="d-flex justify-content-between row bg-white">
+        <div class="col-md-12 col-md-6 todo-shadow pt-3 pb-3">
+            <div class="bg-white notes">
+                <div class="flex-row align-items-center notes-title p-3">
+                    <h4>TodoList<i class="fa-solid fa-feather"></i></h4>
+                </div>
+                <div class="form-group d-flex p-3 mb-0">
+                    <input type="text" id="tdtitle" name="tdtitle" class="input" placeholder="내용을 입력하세요.">
+                    <button id="insert" type="button" class="btn" style="border: none; background: none;"><i class="fa-solid fa-square-plus fa-2xl"></i></button>
+                </div>
+            </div>
+            <div class="p-3 bg-white2 pb-4" id="todoInsert">
+                
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+$(document).ready(function(){
+    <!--insert ajax-->
+    $("#insert").on('click', function(){
+        var test = {"tdtitle":$("#tdtitle").val()}
+        var txt = "";
+        $.ajax({
+            type: "post",
+            url : "../todo/insert",
+            data : JSON.stringify(test),
+            dataType : "json",
+            contentType : "application/json",
+            success : function (res){
+                for (let i in res) {
+                    if (res[i].status == 0) {
+                        txt = txt + "<div class='align-items-center d-flex justify-content-between' id='complete'><input type='hidden' id='tdno"+res[i].tdno+"' name='tdno' value='"+res[i].tdno+"'><input type='hidden' id='status' name='status' value='"+res[i].status+"'><label><input type='checkbox' class='option-input radio' id='edit"+res[i].tdno+"' onclick='updateState("+res[i].tdno+")'><span class='label-text' id='label'>"+res[i].tdtitle+"</span></label><button class='deleteBtn btn' type='button' style='border: none; background: none;' value='"+res[i].tdno+"'><i class='fa-solid fa-trash-can fa-xl'></i></button></div>"
+                    } else {
+                        txt = txt + "<div class='align-items-center d-flex justify-content-between' id='complete'><input type='hidden' id='tdno"+res[i].tdno+"' name='tdno' value='"+res[i].tdno+"'><input type='hidden' id='status' name='status' value='"+res[i].status+"'><label><input type='checkbox' class='option-input radio' id='edit"+res[i].tdno+"' onclick='updateState("+res[i].tdno+")' checked><span class='label-text' style='text-decoration-line: line-through;'>"+res[i].tdtitle+"</span></label><button class='deleteBtn btn' type='button' style='border: none; background: none;' value='"+res[i].tdno+"'><i class='fa-solid fa-trash-can fa-xl'></i></button></div>"
+                    }
+                }
+                $("#todoInsert").html(txt);
+                $("#tdtitle").val("");
+            },
+            error: function(err){
+                console.log("실패", err)
+            }
+        });
+    });
+});
+</script>
+<!--delete ajax-->
+<script>
+    $(document).on('click', '.deleteBtn', function(){
+        var txt = "";
+        $.ajax({
+            type: "post",
+            url : "../todo/delete",
+            data : {"tdno": $(this).attr("value")},
+            dataType: "json",
+            success : function (res){
+                console.log("성공", res);
+                for (let i in res) {
+                    if (res[i].status == 0) {
+                        txt = txt + "<div class='align-items-center d-flex justify-content-between' id='complete'><input type='hidden' id='tdno"+res[i].tdno+"' name='tdno' value='"+res[i].tdno+"'><input type='hidden' id='status' name='status' value='"+res[i].status+"'><label><input type='checkbox' class='option-input radio' id='edit"+res[i].tdno+"' onclick='updateState("+res[i].tdno+")'><span class='label-text' id='label'>"+res[i].tdtitle+"</span></label><button class='deleteBtn btn' type='button' style='border: none; background: none;' value='"+res[i].tdno+"'><i class='fa-solid fa-trash-can fa-xl'></i></button></div>"
+                    } else {
+                        txt = txt + "<div class='align-items-center d-flex justify-content-between' id='complete'><input type='hidden' id='tdno"+res[i].tdno+"' name='tdno' value='"+res[i].tdno+"'><input type='hidden' id='status' name='status' value='"+res[i].status+"'><label><input type='checkbox' class='option-input radio' id='edit"+res[i].tdno+"' onclick='updateState("+res[i].tdno+")' checked><span class='label-text' style='text-decoration-line: line-through;'>"+res[i].tdtitle+"</span></label><button class='deleteBtn btn' type='button' style='border: none; background: none;' value='"+res[i].tdno+"'><i class='fa-solid fa-trash-can fa-xl'></i></button></div>"
+                    }
+                }
+                $("#todoInsert").html(txt);
+                $("#tdtitle").val("");
+            },
+            error: function(err){
+                console.log("실패", err)
+            }
+        });
+    });
+</script>
+<!-- update ajax -->
+<script>
+    function updateState(num) {
+        var tdno = parseInt($("#tdno" + num).val());
+        var test = { "tdno": tdno}
+        $.ajax({
+            type: "post",
+            url : "../todo/edit",
+            data : test,
+            success : function (res){
+                if (res.status == 0) {
+                    $("#edit" + num).next().css("text-decoration-line", "none");
+                } else {
+                    $("#edit" + num).next().css("text-decoration-line", "line-through");
+                }
+            },
+            error: function(err){
+                console.log("실패", err)
+            }
+        })
+    }
+</script>
+        </div>
+        <!-- section3(todolist) End -->
+    </div>
+</div>
+<!-- mypage End -->
+
+<!-- Footer Start -->
+
+
+
+
+
+<footer class="footer-area">
+    <div class="container">
+        <div class="row d-flex flex-wrap align-items-center">
+            <div class="col-12 col-md-6">
+                <a href="../"><img src="../resources/img/logo2.png" alt="해법 로고 이미지" class="w-25"></a>
+                <p class="copywrite-text">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright ©<script>document.write(new Date().getFullYear());</script>2024 KimLeeho, KimHyungyeong, KimBogyeong, ShinYeeun <br>
+                    This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="../lecture/list">강의</a></li>
+                        <li><a href="../board/list">커뮤니티</a></li>
+                        <li><a href="../news/list">교육뉴스</a></li>
+                        <li><a href="../event/list">이벤트</a></li>
+                        <li><a href="../dataRoom/list">자료실</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Popper js -->
+<script src="../resources/js/bootstrap/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="../resources/js/bootstrap/bootstrap.min.js"></script>
+<!-- All Plugins js -->
+<script src="../resources/js/plugins/plugins.js"></script>
+<!-- Active js -->
+<script src="../resources/js/active.js"></script><a id="scrollUp" href="#top" style="display: none; position: fixed; z-index: 2147483647;"><i class="fa fa-angle-up"></i></a>
+<!-- Footer End -->
+
+
+
+</body></html>
