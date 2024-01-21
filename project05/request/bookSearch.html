@@ -107,8 +107,8 @@
     <!-- Spinner End -->
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0" style="top: -100px;">
-        <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+        <a href="../loginIndex.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <h2><img src="../image/common/logo.png" width="84" height="28"></h2>
             <!--<h2 class="m-0 text-primary">WooDY</h2>-->
         </a>
@@ -120,26 +120,26 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link" data-bs-toggle="dropdown"><i class="fas fa-info-circle me-2" aria-hidden="true"></i>고객센터</a>
                     <div class="dropdown-menu fade-up m-0">
-                        <a href="/notice/list" class="dropdown-item">공지사항</a>
-                        <a href="/qna/list" class="dropdown-item">QnA</a>
-                        <a href="/faq/list" class="dropdown-item">FAQ</a>
+                        <a href="../notice/noticeList.html" class="dropdown-item">공지사항</a>
+                        <a href="../qna/qnaList.html" class="dropdown-item">QnA</a>
+                        <a href="../faq/faqList.html" class="dropdown-item">FAQ</a>
                     </div>
                 </div>
                 
                 
-                    <a href="/logout" class="nav-item nav-link"><i class="fas fa-sign-out-alt me-2" aria-hidden="true"></i>로그아웃</a>
+                    <a href="../index.html" class="nav-item nav-link"><i class="fas fa-sign-out-alt me-2" aria-hidden="true"></i>로그아웃</a>
                     
-                        <a href="/mypage" class="nav-item nav-link"><i class="far fa-user-circle me-2" aria-hidden="true"></i>마이페이지</a>
+                        <a href="../user/mypage.html" class="nav-item nav-link"><i class="far fa-user-circle me-2" aria-hidden="true"></i>마이페이지</a>
                     
                     
                 
-                <a href="/chat/myChatList" class="nav-item nav-link"><i class="far fa-comment-dots me-2" aria-hidden="true"></i>채팅</a>
+                <a href="../chat/myChatList.html" class="nav-item nav-link"><i class="far fa-comment-dots me-2" aria-hidden="true"></i>채팅</a>
             </div>
             <div class="nav-item dropdown">
-                <a href="/market/marketList" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" data-bs-toggle="dropdown"><i class="fas fa-store me-2" aria-hidden="true"></i>장터</a>
+                <a href="../market/marketList.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" data-bs-toggle="dropdown"><i class="fas fa-store me-2" aria-hidden="true"></i>장터</a>
                 <div class="dropdown-menu fade-up m-0">
-                    <a href="/market/marketList" class="dropdown-item">팝니다</a>
-                    <a href="/request/reqList" class="dropdown-item">삽니다</a>
+                    <a href="../market/marketList.html" class="dropdown-item">팝니다</a>
+                    <a href="../request/reqList.html" class="dropdown-item">삽니다</a>
                 </div>
             </div>
         </div>
@@ -167,9 +167,9 @@
 <img src="../image/002.png" style="margin-left: 500px;">
 <div class="container">
 <h3>도서찾기</h3>
-<form action="/request/list" method="post" id="searchForm">
+<form action="../request/bookList.html" method="get" id="searchForm">
 <input type="text" id="text" name="text" maxlength="50" placeholder="책 제목을 입력해주세요">
-<button class="btn btn-danger" type="submit" value="검색">검색</button>
+<a class="btn btn-danger" href="./bookList.html" value="검색">검색</a>
 </form>
 
 <div id="bookTable_wrapper" class="dataTables_wrapper no-footer"><div class="dataTables_length" id="bookTable_length"><label>Show <select name="bookTable_length" aria-controls="bookTable" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div><div id="bookTable_filter" class="dataTables_filter"><label>Search:<input type="search" class="" placeholder="" aria-controls="bookTable"></label></div><table border="1" id="bookTable" class="dataTable no-footer" aria-describedby="bookTable_info" style="width: 1298px;">
@@ -182,7 +182,7 @@
 </table><div class="dataTables_info" id="bookTable_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div><div class="dataTables_paginate paging_simple_numbers" id="bookTable_paginate"><a class="paginate_button previous disabled" aria-controls="bookTable" aria-disabled="true" role="link" data-dt-idx="previous" tabindex="-1" id="bookTable_previous">Previous</a><span></span><a class="paginate_button next disabled" aria-controls="bookTable" aria-disabled="true" role="link" data-dt-idx="next" tabindex="-1" id="bookTable_next">Next</a></div><div style="width: 65px;"></div><div style="width: 40px;"></div></div>
 
 </div>
-<form action="/request/bookInsert" method="POST" id="selectedBookForm">
+<form action="../request/bookInsert.html" method="get" id="selectedBookForm">
 <input type="hidden" id="selectedIsbn" name="isbn" value="">
 <input type="hidden" id="selectedTitle" name="title" value="">
 <input type="hidden" id="selectedAuthor" name="author" value="">

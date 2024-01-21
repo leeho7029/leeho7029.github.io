@@ -103,8 +103,8 @@
     <!-- Spinner End -->
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0" style="top: -100px;">
-        <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+   <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+        <a href="../loginIndex.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <h2><img src="../image/common/logo.png" width="84" height="28"></h2>
             <!--<h2 class="m-0 text-primary">WooDY</h2>-->
         </a>
@@ -116,26 +116,26 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link" data-bs-toggle="dropdown"><i class="fas fa-info-circle me-2" aria-hidden="true"></i>고객센터</a>
                     <div class="dropdown-menu fade-up m-0">
-                        <a href="/notice/list" class="dropdown-item">공지사항</a>
-                        <a href="/qna/list" class="dropdown-item">QnA</a>
-                        <a href="/faq/list" class="dropdown-item">FAQ</a>
+                        <a href="../notice/noticeList.html" class="dropdown-item">공지사항</a>
+                        <a href="../qna/qnaList.html" class="dropdown-item">QnA</a>
+                        <a href="../faq/faqList.html" class="dropdown-item">FAQ</a>
                     </div>
                 </div>
                 
                 
-                    <a href="/logout" class="nav-item nav-link"><i class="fas fa-sign-out-alt me-2" aria-hidden="true"></i>로그아웃</a>
+                    <a href="../index.html" class="nav-item nav-link"><i class="fas fa-sign-out-alt me-2" aria-hidden="true"></i>로그아웃</a>
                     
-                        <a href="/mypage" class="nav-item nav-link"><i class="far fa-user-circle me-2" aria-hidden="true"></i>마이페이지</a>
+                        <a href="../user/mypage.html" class="nav-item nav-link"><i class="far fa-user-circle me-2" aria-hidden="true"></i>마이페이지</a>
                     
                     
                 
-                <a href="/chat/myChatList" class="nav-item nav-link"><i class="far fa-comment-dots me-2" aria-hidden="true"></i>채팅</a>
+                <a href="../chat/myChatList.html" class="nav-item nav-link"><i class="far fa-comment-dots me-2" aria-hidden="true"></i>채팅</a>
             </div>
             <div class="nav-item dropdown">
-                <a href="/market/marketList" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" data-bs-toggle="dropdown"><i class="fas fa-store me-2" aria-hidden="true"></i>장터</a>
+                <a href="../market/marketList.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" data-bs-toggle="dropdown"><i class="fas fa-store me-2" aria-hidden="true"></i>장터</a>
                 <div class="dropdown-menu fade-up m-0">
-                    <a href="/market/marketList" class="dropdown-item">팝니다</a>
-                    <a href="/request/reqList" class="dropdown-item">삽니다</a>
+                    <a href="../market/marketList.html" class="dropdown-item">팝니다</a>
+                    <a href="../request/reqList.html" class="dropdown-item">삽니다</a>
                 </div>
             </div>
         </div>
@@ -184,7 +184,7 @@
         <div class="input-group">
           <input type="text" class="form-control" id="keyword" name="keyword" placeholder="검색어를 입력해주세요" autocomplete="off" aria-label="검색어를 입력해주세요" aria-describedby="button-addon2" value="">
           <div class="input-group-append">
-            <button class="btn btn-dark" type="submit" id="button-addon2"> 검색</button>
+            <a class="btn btn-dark" href="" id="button-addon2"> 검색</a>
           </div>
         </div>
       </div>
@@ -192,7 +192,7 @@
   </form>
   <div style="margin: 8px;">
     
-      <a class="btn btn-primary px-4" href="/request/bookSearch">요청하기</a>
+      <a class="btn btn-primary px-4" href="../request/bookSearch.html">요청하기</a>
     
   </div>
 </div>
@@ -201,107 +201,82 @@
  <div class="col-md-6 col-lg-3 border border-1 border-light wow fadeInUp" data-wow-delay="0.1s">
     <div class="service-item">
       <div class="overflow-hidden">
-        <a href="/request/reqDetail?reqNo=1"><img class="img-fluid" src="https://shopping-phinf.pstatic.net/main_3248051/32480516321.20230927071045.jpg" alt="bookImage" style="width: 407.98px; height: 244.78px;"></a>
+        <a href="../request/reqDetail.html"><img class="img-fluid" src="https://shopping-phinf.pstatic.net/main_3247842/32478422656.20230920073129.jpg" alt="bookImage" style="width: 407.98px; height: 244.78px;"></a>
       </div>
       <div class="p-4 text-center">
-        <h4 class="mb-3">책 제목 1</h4>
+        <h4 class="mb-3">삽니다 테스트</h4>
         
-        <p><span id="addr">희망 가격 : 5000 원</span></p><p>등록일: <span>2024-01-16</span></p>
-        <a class="fw-medium" href="/request/reqDetail?reqNo=1">상세보기<i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></a>
+        <p><span id="addr">희망 가격 : 10000 원</span></p><p>등록일: <span>2024-01-16</span></p>
+        <a class="fw-medium" href="../request/reqDetail.html">상세보기<i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>
  <div class="col-md-6 col-lg-3 border border-1 border-light wow fadeInUp" data-wow-delay="0.1s">
     <div class="service-item">
       <div class="overflow-hidden">
-        <a href="/request/reqDetail?reqNo=2"><img class="img-fluid" src="https://shopping-phinf.pstatic.net/main_3248051/32480516321.20230927071045.jpg" alt="bookImage" style="width: 407.98px; height: 244.78px;"></a>
+        <a href=""><img class="img-fluid" src="https://shopping-phinf.pstatic.net/main_3248051/32480516321.20230927071045.jpg" alt="bookImage" style="width: 407.98px; height: 244.78px;"></a>
       </div>
       <div class="p-4 text-center">
         <h4 class="mb-3">책 제목 2</h4>
         
         <p><span id="addr">희망 가격 : 7000 원</span></p><p>등록일: <span>2024-01-16</span></p>
-        <a class="fw-medium" href="/request/reqDetail?reqNo=2">상세보기<i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></a>
+        <a class="fw-medium" href="">상세보기<i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>
  <div class="col-md-6 col-lg-3 border border-1 border-light wow fadeInUp" data-wow-delay="0.1s">
     <div class="service-item">
       <div class="overflow-hidden">
-        <a href="/request/reqDetail?reqNo=3"><img class="img-fluid" src="https://shopping-phinf.pstatic.net/main_3248051/32480516321.20230927071045.jpg" alt="bookImage" style="width: 407.98px; height: 244.78px;"></a>
+        <a href=""><img class="img-fluid" src="https://shopping-phinf.pstatic.net/main_3248051/32480516321.20230927071045.jpg" alt="bookImage" style="width: 407.98px; height: 244.78px;"></a>
       </div>
       <div class="p-4 text-center">
         <h4 class="mb-3">책 제목 3</h4>
         
         <p><span id="addr">희망 가격 : 8000 원</span></p><p>등록일: <span>2024-01-16</span></p>
-        <a class="fw-medium" href="/request/reqDetail?reqNo=3">상세보기<i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></a>
+        <a class="fw-medium" href="">상세보기<i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>
  <div class="col-md-6 col-lg-3 border border-1 border-light wow fadeInUp" data-wow-delay="0.1s">
     <div class="service-item">
       <div class="overflow-hidden">
-        <a href="/request/reqDetail?reqNo=4"><img class="img-fluid" src="https://shopping-phinf.pstatic.net/main_3248051/32480516321.20230927071045.jpg" alt="bookImage" style="width: 407.98px; height: 244.78px;"></a>
+        <a href=""><img class="img-fluid" src="https://shopping-phinf.pstatic.net/main_3248051/32480516321.20230927071045.jpg" alt="bookImage" style="width: 407.98px; height: 244.78px;"></a>
       </div>
       <div class="p-4 text-center">
         <h4 class="mb-3">책 제목 3</h4>
         
         <p><span id="addr">희망 가격 : 8000 원</span></p><p>등록일: <span>2024-01-16</span></p>
-        <a class="fw-medium" href="/request/reqDetail?reqNo=4">상세보기<i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></a>
+        <a class="fw-medium" href="">상세보기<i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>
  <div class="col-md-6 col-lg-3 border border-1 border-light wow fadeInUp" data-wow-delay="0.1s">
     <div class="service-item">
       <div class="overflow-hidden">
-        <a href="/request/reqDetail?reqNo=5"><img class="img-fluid" src="https://shopping-phinf.pstatic.net/main_3248051/32480516321.20230927071045.jpg" alt="bookImage" style="width: 407.98px; height: 244.78px;"></a>
+        <a href=""><img class="img-fluid" src="https://shopping-phinf.pstatic.net/main_3248051/32480516321.20230927071045.jpg" alt="bookImage" style="width: 407.98px; height: 244.78px;"></a>
       </div>
       <div class="p-4 text-center">
         <h4 class="mb-3">책 제목 3</h4>
         
         <p><span id="addr">희망 가격 : 8000 원</span></p><p>등록일: <span>2024-01-16</span></p>
-        <a class="fw-medium" href="/request/reqDetail?reqNo=5">상세보기<i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></a>
+        <a class="fw-medium" href="">상세보기<i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>
  <div class="col-md-6 col-lg-3 border border-1 border-light wow fadeInUp" data-wow-delay="0.1s">
     <div class="service-item">
       <div class="overflow-hidden">
-        <a href="/request/reqDetail?reqNo=6"><img class="img-fluid" src="https://shopping-phinf.pstatic.net/main_3248051/32480516321.20230927071045.jpg" alt="bookImage" style="width: 407.98px; height: 244.78px;"></a>
+        <a href=""><img class="img-fluid" src="https://shopping-phinf.pstatic.net/main_3248051/32480516321.20230927071045.jpg" alt="bookImage" style="width: 407.98px; height: 244.78px;"></a>
       </div>
       <div class="p-4 text-center">
         <h4 class="mb-3">책 제목 3</h4>
         
         <p><span id="addr">희망 가격 : 8000 원</span></p><p>등록일: <span>2024-01-16</span></p>
-        <a class="fw-medium" href="/request/reqDetail?reqNo=6">상세보기<i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></a>
+        <a class="fw-medium" href="">상세보기<i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>
- <div class="col-md-6 col-lg-3 border border-1 border-light wow fadeInUp" data-wow-delay="0.1s">
-    <div class="service-item">
-      <div class="overflow-hidden">
-        <a href="/request/reqDetail?reqNo=7"><img class="img-fluid" src="https://shopping-phinf.pstatic.net/main_3248051/32480516321.20230927071045.jpg" alt="bookImage" style="width: 407.98px; height: 244.78px;"></a>
-      </div>
-      <div class="p-4 text-center">
-        <h4 class="mb-3">책 제목 3</h4>
-        
-        <p><span id="addr">희망 가격 : 8000 원</span></p><p>등록일: <span>2024-01-16</span></p>
-        <a class="fw-medium" href="/request/reqDetail?reqNo=7">상세보기<i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></a>
-      </div>
-    </div>
-  </div>
- <div class="col-md-6 col-lg-3 border border-1 border-light wow fadeInUp" data-wow-delay="0.1s">
-    <div class="service-item">
-      <div class="overflow-hidden">
-        <a href="/request/reqDetail?reqNo=8"><img class="img-fluid" src="https://shopping-phinf.pstatic.net/main_3248051/32480516321.20230927071045.jpg" alt="bookImage" style="width: 407.98px; height: 244.78px;"></a>
-      </div>
-      <div class="p-4 text-center">
-        <h4 class="mb-3">책 제목 3</h4>
-        
-        <p><span id="addr">희망 가격 : 8000 원</span></p><p>등록일: <span>2024-01-16</span></p>
-        <a class="fw-medium" href="/request/reqDetail?reqNo=8">상세보기<i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></a>
-      </div>
-    </div>
-  </div>
+
 </div>
 
 <div style="margin-top: 30px;">
@@ -309,15 +284,15 @@
     
     
       <li class="page-item active">
-        <a href="/request/reqList?page=1" class="page-link" aria-label="Page ${i}" aria-current="${i == curPage}">1</a>
+        <a href="" class="page-link" aria-label="Page ${i}" aria-current="${i == curPage}">1</a>
       </li>
     
       <li class="page-item">
-        <a href="/request/reqList?page=2" class="page-link" aria-label="Page ${i}" aria-current="${i == curPage}">2</a>
+        <a href="" class="page-link" aria-label="Page ${i}" aria-current="${i == curPage}">2</a>
       </li>
     
     <li class="page-item">
-      <a href="/request/reqList?page=2" class="page-link">
+      <a href="" class="page-link">
         <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
       </a>
     </li>

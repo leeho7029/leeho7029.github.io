@@ -140,8 +140,8 @@
     <!-- Spinner End -->
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0" style="top: -100px;">
-        <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+        <a href="../loginIndex.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <h2><img src="../image/common/logo.png" width="84" height="28"></h2>
             <!--<h2 class="m-0 text-primary">WooDY</h2>-->
         </a>
@@ -153,26 +153,26 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link" data-bs-toggle="dropdown"><i class="fas fa-info-circle me-2" aria-hidden="true"></i>고객센터</a>
                     <div class="dropdown-menu fade-up m-0">
-                        <a href="/notice/list" class="dropdown-item">공지사항</a>
-                        <a href="/qna/list" class="dropdown-item">QnA</a>
-                        <a href="/faq/list" class="dropdown-item">FAQ</a>
+                        <a href="../notice/noticeList.html" class="dropdown-item">공지사항</a>
+                        <a href="../qna/qnaList.html" class="dropdown-item">QnA</a>
+                        <a href="../faq/faqList.html" class="dropdown-item">FAQ</a>
                     </div>
                 </div>
                 
                 
-                    <a href="/logout" class="nav-item nav-link"><i class="fas fa-sign-out-alt me-2" aria-hidden="true"></i>로그아웃</a>
+                    <a href="../index.html" class="nav-item nav-link"><i class="fas fa-sign-out-alt me-2" aria-hidden="true"></i>로그아웃</a>
                     
-                        <a href="/mypage" class="nav-item nav-link"><i class="far fa-user-circle me-2" aria-hidden="true"></i>마이페이지</a>
+                        <a href="../user/mypage.html" class="nav-item nav-link"><i class="far fa-user-circle me-2" aria-hidden="true"></i>마이페이지</a>
                     
                     
                 
-                <a href="/chat/myChatList" class="nav-item nav-link"><i class="far fa-comment-dots me-2" aria-hidden="true"></i>채팅</a>
+                <a href="../chat/myChatList" class="nav-item nav-link"><i class="far fa-comment-dots me-2" aria-hidden="true"></i>채팅</a>
             </div>
             <div class="nav-item dropdown">
-                <a href="/market/marketList" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" data-bs-toggle="dropdown"><i class="fas fa-store me-2" aria-hidden="true"></i>장터</a>
+                <a href="../market/marketList.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" data-bs-toggle="dropdown"><i class="fas fa-store me-2" aria-hidden="true"></i>장터</a>
                 <div class="dropdown-menu fade-up m-0">
-                    <a href="/market/marketList" class="dropdown-item">팝니다</a>
-                    <a href="/request/reqList" class="dropdown-item">삽니다</a>
+                    <a href="../market/marketList.html" class="dropdown-item">팝니다</a>
+                    <a href="../request/reqList.html" class="dropdown-item">삽니다</a>
                 </div>
             </div>
         </div>
@@ -253,12 +253,12 @@
                     </button>
                 </div>
                 <div class="col me-2">
-                    <button class="btn btn-outline-primary w-100 py-2" type="button">신고하기
+                    <a class="btn btn-outline-primary w-100 py-2" href="javascript:void(0);" onclick="repCheck()">신고하기
                         <img src="../image/siren5050.png" id="ck_btn" onclick="repCheck()" style="width: 20px; height: 20px;">
-                    </button>
+                    </a>
                 </div>
                 <div class="col me-2">
-                    <button class="btn btn-primary w-100 py-2" type="button" onclick="location.href='/chat/chat?productNo=1&amp;productTable=market'">대화하기</button>
+                    <button class="btn btn-primary w-100 py-2" type="button" onclick="location.href='./chat.html'">대화하기</button>
                 </div>
             </div>
         </div>
@@ -330,43 +330,45 @@
 <div class="row mt-5">
     
         <div class="col">
-            <a class="btn btn-primary w-100 py-2" href="/market/edit?marketNo=1" type="button">수정하기</a>
+            <a class="btn btn-primary w-100 py-2" href="" type="button">수정하기</a>
         </div>
         <div class="col">
-            <a class="btn btn-primary w-100 py-2" href="/market/delete?marketNo=1" type="button">삭제하기</a>
+            <a class="btn btn-primary w-100 py-2" href="" type="button">삭제하기</a>
         </div>
     
-    <div class="col ms-2"><a class="btn btn-primary w-100 py-2" href="/market/marketList" type="button">목록</a></div>
+    <div class="col ms-2"><a class="btn btn-primary w-100 py-2" href="../market/marketList.html" type="button">목록</a></div>
 </div>
 </div>
 <script>
 
 function repCheck(){
-    let marketNo=parseInt($("#marketNo").val());
-    let params = {"marketNo" : marketNo };
-    var child;
-    console.log(marketNo);
-    console.log();
+    var newWindow = window.open("", "_blank", "width=900, height=800");
+        newWindow.location.href = "/project05/report/report.html";
+    // let marketNo=parseInt($("#marketNo").val());
+    // let params = {"marketNo" : marketNo };
+    // var child;
+    // console.log(marketNo);
+    // console.log();
 
-    $.ajax({
-        url: "/report/repCheckMar",
-        type: "post",
-        dataType: "json",
-        data: params,
-        success:function(result) {
-            if(result == false) {
-                console.log(result);
-                alert("이미 신고한 회원입니다.");
-            } else{
-                child = window.open("/report/getReportMar?marketNo=" + marketNo, "child", "width=900, height=800");
-            }
-        },
-        error:function(res) {
-            alert("로그인 후 다시 시도해주세요.");
-            console.log(res)
-            // window.location="/login";
-        }
-    });
+    // $.ajax({
+    //     url: "/report/repCheckMar",
+    //     type: "post",
+    //     dataType: "json",
+    //     data: params,
+    //     success:function(result) {
+    //         if(result == false) {
+    //             console.log(result);
+    //             alert("이미 신고한 회원입니다.");
+    //         } else{
+    //             child = window.open("/report/getReportMar?marketNo=" + marketNo, "child", "width=900, height=800");
+    //         }
+    //     },
+    //     error:function(res) {
+    //         alert("로그인 후 다시 시도해주세요.");
+    //         console.log(res)
+    //         // window.location="/login";
+    //     }
+    // });
 }
 function toggleLike() {
     let marketNo=parseInt($("#marketNo").val());

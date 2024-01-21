@@ -100,8 +100,8 @@
     <!-- Spinner End -->
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0" style="top: -100px;">
-        <a href="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+   <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+        <a href="../loginIndex.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <h2><img src="../image/common/logo.png" width="84" height="28"></h2>
             <!--<h2 class="m-0 text-primary">WooDY</h2>-->
         </a>
@@ -113,26 +113,26 @@
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link" data-bs-toggle="dropdown"><i class="fas fa-info-circle me-2" aria-hidden="true"></i>고객센터</a>
                     <div class="dropdown-menu fade-up m-0">
-                        <a href="/notice/list" class="dropdown-item">공지사항</a>
-                        <a href="/qna/list" class="dropdown-item">QnA</a>
-                        <a href="/faq/list" class="dropdown-item">FAQ</a>
+                        <a href="../notice/noticeList.html" class="dropdown-item">공지사항</a>
+                        <a href="../qna/qnaList.html" class="dropdown-item">QnA</a>
+                        <a href="../faq/faqList.html" class="dropdown-item">FAQ</a>
                     </div>
                 </div>
                 
                 
-                    <a href="/logout" class="nav-item nav-link"><i class="fas fa-sign-out-alt me-2" aria-hidden="true"></i>로그아웃</a>
+                    <a href="../index.html" class="nav-item nav-link"><i class="fas fa-sign-out-alt me-2" aria-hidden="true"></i>로그아웃</a>
                     
-                        <a href="/mypage" class="nav-item nav-link"><i class="far fa-user-circle me-2" aria-hidden="true"></i>마이페이지</a>
+                        <a href="../user/mypage.html" class="nav-item nav-link"><i class="far fa-user-circle me-2" aria-hidden="true"></i>마이페이지</a>
                     
                     
                 
-                <a href="/chat/myChatList" class="nav-item nav-link"><i class="far fa-comment-dots me-2" aria-hidden="true"></i>채팅</a>
+                <a href="../chat/myChatList.html" class="nav-item nav-link"><i class="far fa-comment-dots me-2" aria-hidden="true"></i>채팅</a>
             </div>
             <div class="nav-item dropdown">
-                <a href="/market/marketList" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" data-bs-toggle="dropdown"><i class="fas fa-store me-2" aria-hidden="true"></i>장터</a>
+                <a href="../market/marketList.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" data-bs-toggle="dropdown"><i class="fas fa-store me-2" aria-hidden="true"></i>장터</a>
                 <div class="dropdown-menu fade-up m-0">
-                    <a href="/market/marketList" class="dropdown-item">팝니다</a>
-                    <a href="/request/reqList" class="dropdown-item">삽니다</a>
+                    <a href="../market/marketList.html" class="dropdown-item">팝니다</a>
+                    <a href="../request/reqList.html" class="dropdown-item">삽니다</a>
                 </div>
             </div>
         </div>
@@ -160,7 +160,7 @@
 <div class="container mt-5">
 <img src="../image/001.png" style="margin-left: 200px;">
 <h2 class="mb-4">삽니다 게시글 작성</h2>
-<form action="/request/requestInsert" method="post" enctype="multipart/form-data">
+<form action="../request/reqList.html" method="get" enctype="multipart/form-data">
 <!-- 제목 입력 -->
 <div class="mb-3">
   <label for="title" class="form-label">제목</label>
@@ -225,7 +225,7 @@
 <!-- 카테고리 입력 -->
 
 
-<button type="submit" class="btn btn-primary">게시글 작성</button>
+<a class="btn btn-primary" href="./reqList.html">게시글 작성</a>
 </form>
 </div>
 

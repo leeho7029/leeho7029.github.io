@@ -1,5 +1,5 @@
 <html><head>
-    <title>QnA</title>
+    <title>질문글 작성하기 </title>
     
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,7 +43,7 @@
 
 <!--        <link rel="preconnect" href="https://fonts.googleapis.com">-->
 <!--        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
-<!--        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">-->
+<!--        <link href="https://fonts.googleapis.com../css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">-->
 
         <style>
             @font-face {
@@ -87,9 +87,6 @@
         <script src="../js/CLEditor1.4.5/jquery.cleditor.js"></script>
     
     <link rel="stylesheet" href="../css/main.css">
-    <style>
-        .qnaTitle {color:#000000; display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; width:700px; }
-    </style>
 </head>
 <body>
 
@@ -103,7 +100,7 @@
         <!-- Spinner End -->
 
         <!-- Navbar Start -->
-        <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+       <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
         <a href="../loginIndex.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <h2><img src="../image/common/logo.png" width="84" height="28"></h2>
             <!--<h2 class="m-0 text-primary">WooDY</h2>-->
@@ -147,153 +144,52 @@
 <!-- Page Header Start -->
 <div class="container-fluid page-header py-5 mb-5">
     <div class="container py-5">
-        <h1 class="display-3 text-white mb-3 animated slideInDown">QnA</h1>
+        <h1 class="display-3 text-white mb-3 animated slideInDown">질문글 작성하기</h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a class="text-white" href="../">Home</a></li>
                 <li class="breadcrumb-item"><a class="text-white" href="#">QnA</a></li>
-                <li class="breadcrumb-item text-white active" aria-current="page">목록</li>
+                <li class="breadcrumb-item text-white active" aria-current="page">작성하기</li>
             </ol>
         </nav>
     </div>
 </div>
 <!-- Page Header End -->
 
-<!-- QnA start -->
 <div class="container-xxl py-5">
     <div class="container">
-        <div>
-            
-            
-            <div class="button-group" style="float:right; margin-bottom: 20px;">
-                <a class="btn btn-primary px-4" href="../qna/qnaInsert.html" style="width: 90px; font-size: 13px; font-weight: bold; background-color: #ab7442; border:none;">글쓰기</a>
+        <form action="" method="get">
+            <div class="col-12">
+                <div class="card w-100">
+                    <div class="card-body">
+                        <div class="table-responsive project-list">
+                            <table class="table project-table table-centered table-nowrap">
+                                <tbody>
+                                <tr>
+                                    <th class="text-center" style="vertical-align: middle; width: 15%;">제목</th>
+                                    <td><input type="text" id="title" name="title" placeholder="제목을 입력하세요" class="form-control" required="" autofocus=""></td>
+                                </tr>
+                                <tr>
+                                    <th class="text-center " style="vertical-align: middle; width: 15%;">내용</th>
+                                    <td colspan="6" style="font-size: 15px;">
+                                        <div class="cleditorMain" style="width: auto; height: 250px;"><div class="cleditorToolbar" style="height: 26.9896px;"><div class="cleditorGroup" style="width: 145px;"><div class="cleditorButton cleditorDisabled" title="Bold" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Italic" style="background-position: -24px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Underline" style="background-position: -48px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Strikethrough" style="background-position: -72px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Subscript" style="background-position: -96px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Superscript" style="background-position: -120px center;" disabled="disabled"></div><div class="cleditorDivider"></div></div><div class="cleditorGroup" style="width: 73px;"><div class="cleditorButton cleditorDisabled" title="Font" disabled="disabled" style="background-position: -144px center;"></div><div class="cleditorButton cleditorDisabled" title="Font Size" style="background-position: -168px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Style" style="background-position: -192px center;" disabled="disabled"></div><div class="cleditorDivider"></div></div><div class="cleditorGroup" style="width: 73px;"><div class="cleditorButton cleditorDisabled" title="Font Color" disabled="disabled" style="background-position: -216px center;"></div><div class="cleditorButton cleditorDisabled" title="Text Highlight Color" style="background-position: -240px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Remove Formatting" style="background-position: -264px center;" disabled="disabled"></div><div class="cleditorDivider"></div></div><div class="cleditorGroup" style="width: 49px;"><div class="cleditorButton cleditorDisabled" title="Bullets" disabled="disabled" style="background-position: -288px center;"></div><div class="cleditorButton cleditorDisabled" title="Numbering" style="background-position: -312px center;" disabled="disabled"></div><div class="cleditorDivider"></div></div><div class="cleditorGroup" style="width: 49px;"><div class="cleditorButton cleditorDisabled" title="Outdent" disabled="disabled" style="background-position: -336px center;"></div><div class="cleditorButton cleditorDisabled" title="Indent" style="background-position: -360px center;" disabled="disabled"></div><div class="cleditorDivider"></div></div><div class="cleditorGroup" style="width: 97px;"><div class="cleditorButton cleditorDisabled" title="Align Text Left" disabled="disabled" style="background-position: -384px center;"></div><div class="cleditorButton cleditorDisabled" title="Center" style="background-position: -408px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Align Text Right" style="background-position: -432px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Justify" style="background-position: -456px center;" disabled="disabled"></div><div class="cleditorDivider"></div></div><div class="cleditorGroup" style="width: 49px;"><div class="cleditorButton cleditorDisabled" title="Undo" disabled="disabled" style="background-position: -480px center;"></div><div class="cleditorButton cleditorDisabled" title="Redo" style="background-position: -504px center;" disabled="disabled"></div><div class="cleditorDivider"></div></div><div class="cleditorGroup" style="width: 97px;"><div class="cleditorButton cleditorDisabled" title="Insert Horizontal Rule" disabled="disabled" style="background-position: -528px center;"></div><div class="cleditorButton cleditorDisabled" title="Insert Image" style="background-position: -552px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Insert Hyperlink" style="background-position: -576px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Remove Hyperlink" style="background-position: -600px center;" disabled="disabled"></div><div class="cleditorDivider"></div></div><div class="cleditorGroup" style="width: 97px;"><div class="cleditorButton cleditorDisabled" title="Cut" disabled="disabled" style="background-position: -624px center;"></div><div class="cleditorButton cleditorDisabled" title="Copy" style="background-position: -648px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Paste" style="background-position: -672px center;" disabled="disabled"></div><div class="cleditorButton cleditorDisabled" title="Paste as Text" style="background-position: -696px center;" disabled="disabled"></div><div class="cleditorDivider"></div></div><div class="cleditorGroup" style="width: 49px;"><div class="cleditorButton" title="Print" style="background-position: -720px center;"></div><div class="cleditorButton" title="Show Source" style="background-position: -744px center;"></div></div></div><textarea name="content" id="content" cols="100" rows="8" maxlength="800" class="single-textarea form-control" style="height: 223.01px; border: none; margin: 0px; padding: 0px; display: none; width: 1031.98px;" placeholder="질문 내용을 입력하세요"></textarea><iframe frameborder="0" src="javascript:true;" style="width: 1031.98px; height: 223.01px;"></iframe></div>
+                                        <script>
+                                            $(document).ready(function () { $("#content").cleditor(); });
+                                        </script>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="btn-group mr-3" style="float: right;">
+                                <a href="./qnaList.html" class="btn btn-dark" style="height: 100%" >등록</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            
-        </div>
-        <table class="table">
-            <thead>
-            <tr>
-                <th width="80">번호</th>
-                <th>제목</th>
-                <th scope="col" width="100">작성자</th>
-                <th scope="col" width="150">작성일</th>
-            </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="has-text-centered">10</td>
-                    
-                        <td><a class="qnatTtle" href="./qnaDetail.html" style="color: #000000;">동영상 강의를 효과적으로 검색하고 필요한 내용을 찾는 방법이 뭐가 있을까요?</a></td>
-                    
-                    
-                    <td class="has-text-centered">test71</td>
-                    <td class="has-text-centered">2024-01-16</td>
-                </tr>
-                <tr>
-                    <td class="has-text-centered">20</td>
-                    
-                    
-                        <td><a class="qnatTtle" href="" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;⌞동영상 강의를 효과적으로 검색하고 필요한 내용을 찾는 방법이 뭐가 있나요?</a></td>
-                    
-                    <td class="has-text-centered">admin</td>
-                    <td class="has-text-centered">2024-01-16</td>
-                </tr>
-                <tr>
-                    <td class="has-text-centered">9</td>
-                    
-                        <td><a class="qnatTtle" href="" style="color: #000000;">동영상 강의를 보면서 메모를 어떻게 작성하고 정리할 수 있을까요?</a></td>
-                    
-                    
-                    <td class="has-text-centered">test91</td>
-                    <td class="has-text-centered">2024-01-16</td>
-                </tr>
-                <tr>
-                    <td class="has-text-centered">19</td>
-                    
-                    
-                        <td><a class="qnatTtle" href="" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;⌞동영상 강의를 보면서 메모를 어떻게 작성하고 정리할 수 있을까요?</a></td>
-                    
-                    <td class="has-text-centered">admin</td>
-                    <td class="has-text-centered">2024-01-16</td>
-                </tr>
-                <tr>
-                    <td class="has-text-centered">8</td>
-                    
-                        <td><a class="qnatTtle" href="" style="color: #000000;">강의 동영상을 더 깊이 이해하기 위한 질문 및 논의 점을 어떻게 찾을 수 있을까요?</a></td>
-                    
-                    
-                    <td class="has-text-centered">test81</td>
-                    <td class="has-text-centered">2024-01-16</td>
-                </tr>
-                <tr>
-                    <td class="has-text-centered">18</td>
-                    
-                    
-                        <td><a class="qnatTtle" href="" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;⌞강의 동영상을 더 깊이 이해하기 위한 질문 및 논의 점을 어떻게 찾을 수 있을까요?</a></td>
-                    
-                    <td class="has-text-centered">admin</td>
-                    <td class="has-text-centered">2024-01-16</td>
-                </tr>
-                <tr>
-                    <td class="has-text-centered">7</td>
-                    
-                        <td><a class="qnatTtle" href="" style="color: #000000;">동영상 강의를 활용하여 스스로 학습 스케줄을 계획하는 방법이 뭐가 있나요?</a></td>
-                    
-                    
-                    <td class="has-text-centered">test61</td>
-                    <td class="has-text-centered">2024-01-16</td>
-                </tr>
-                <tr>
-                    <td class="has-text-centered">17</td>
-                    
-                    
-                        <td><a class="qnatTtle" href="" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;⌞동영상 강의를 활용하여 스스로 학습 스케줄을 계획하는 방법이 뭐가 있나요?</a></td>
-                    
-                    <td class="has-text-centered">admin</td>
-                    <td class="has-text-centered">2024-01-16</td>
-                </tr>
-                <tr>
-                    <td class="has-text-centered">6</td>
-                    
-                        <td><a class="qnatTtle" href="" style="color: #000000;">강의 동영상을 저장하고 오프라인에서 어떻게 시청할 수 있을까요?</a></td>
-                    
-                    
-                    <td class="has-text-centered">test92</td>
-                    <td class="has-text-centered">2024-01-16</td>
-                </tr>
-                <tr>
-                    <td class="has-text-centered">16</td>
-                    
-                    
-                        <td><a class="qnatTtle" href="" style="color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;⌞강의 동영상을 저장하고 오프라인에서 어떻게 시청할 수 있을까요?</a></td>
-                    
-                    <td class="has-text-centered">admin</td>
-                    <td class="has-text-centered">2024-01-16</td>
-                </tr>
-                
-            </tbody>
-        </table>
-    </div>
-
-    <div style="margin-top: 30px;">
-        <ul class="pagination justify-content-center mb-0">
-            
-            
-                <li class="page-item active">
-                    <a href="" class="page-link" aria-label="Page ${i}" aria-current="${i == curPage}">1</a>
-                </li>
-            
-                <li class="page-item">
-                    <a href="" class="page-link" aria-label="Page ${i}" aria-current="${i == curPage}">2</a>
-                </li>
-            
-            
-        </ul>
+        </form>
     </div>
 </div>
-<!-- qnaList end -->
-
 
 
         <!-- Footer Start -->
@@ -331,4 +227,4 @@
     
 <script src="../js/main.js"></script>
 
-</body></html>
+<div class="cleditorPopup cleditorList" style="display: none;"><div style="font-family: Arial;">Arial</div><div style="font-family: &quot;Arial Black&quot;;">Arial Black</div><div style="font-family: &quot;Comic Sans MS&quot;;">Comic Sans MS</div><div style="font-family: &quot;Courier New&quot;;">Courier New</div><div style="font-family: Narrow;">Narrow</div><div style="font-family: Garamond;">Garamond</div><div style="font-family: Georgia;">Georgia</div><div style="font-family: Impact;">Impact</div><div style="font-family: &quot;Sans Serif&quot;;">Sans Serif</div><div style="font-family: serif;">Serif</div><div style="font-family: Tahoma;">Tahoma</div><div style="font-family: &quot;Trebuchet MS&quot;;">Trebuchet MS</div><div style="font-family: Verdana;">Verdana</div></div><div class="cleditorPopup cleditorList" style="display: none;"><div><font size="1">1</font></div><div><font size="2">2</font></div><div><font size="3">3</font></div><div><font size="4">4</font></div><div><font size="5">5</font></div><div><font size="6">6</font></div><div><font size="7">7</font></div></div><div class="cleditorPopup cleditorList" style="display: none;"><div><p>Paragraph</p></div><div><h1>Header 1</h1></div><div><h2>Header 2</h2></div><div><h3>Header 3</h3></div><div><h4>Header 4</h4></div><div><h5>Header 5</h5></div><div><h6>Header 6</h6></div></div><div class="cleditorPopup cleditorColor" style="display: none;"><div style="background-color: rgb(255, 255, 255);"></div><div style="background-color: rgb(255, 204, 204);"></div><div style="background-color: rgb(255, 204, 153);"></div><div style="background-color: rgb(255, 255, 153);"></div><div style="background-color: rgb(255, 255, 204);"></div><div style="background-color: rgb(153, 255, 153);"></div><div style="background-color: rgb(153, 255, 255);"></div><div style="background-color: rgb(204, 255, 255);"></div><div style="background-color: rgb(204, 204, 255);"></div><div style="background-color: rgb(255, 204, 255);"></div><div style="background-color: rgb(204, 204, 204);"></div><div style="background-color: rgb(255, 102, 102);"></div><div style="background-color: rgb(255, 153, 102);"></div><div style="background-color: rgb(255, 255, 102);"></div><div style="background-color: rgb(255, 255, 51);"></div><div style="background-color: rgb(102, 255, 153);"></div><div style="background-color: rgb(51, 255, 255);"></div><div style="background-color: rgb(102, 255, 255);"></div><div style="background-color: rgb(153, 153, 255);"></div><div style="background-color: rgb(255, 153, 255);"></div><div style="background-color: rgb(187, 187, 187);"></div><div style="background-color: rgb(255, 0, 0);"></div><div style="background-color: rgb(255, 153, 0);"></div><div style="background-color: rgb(255, 204, 102);"></div><div style="background-color: rgb(255, 255, 0);"></div><div style="background-color: rgb(51, 255, 51);"></div><div style="background-color: rgb(102, 204, 204);"></div><div style="background-color: rgb(51, 204, 255);"></div><div style="background-color: rgb(102, 102, 204);"></div><div style="background-color: rgb(204, 102, 204);"></div><div style="background-color: rgb(153, 153, 153);"></div><div style="background-color: rgb(204, 0, 0);"></div><div style="background-color: rgb(255, 102, 0);"></div><div style="background-color: rgb(255, 204, 51);"></div><div style="background-color: rgb(255, 204, 0);"></div><div style="background-color: rgb(51, 204, 0);"></div><div style="background-color: rgb(0, 204, 204);"></div><div style="background-color: rgb(51, 102, 255);"></div><div style="background-color: rgb(102, 51, 255);"></div><div style="background-color: rgb(204, 51, 204);"></div><div style="background-color: rgb(102, 102, 102);"></div><div style="background-color: rgb(153, 0, 0);"></div><div style="background-color: rgb(204, 102, 0);"></div><div style="background-color: rgb(204, 153, 51);"></div><div style="background-color: rgb(153, 153, 0);"></div><div style="background-color: rgb(0, 153, 0);"></div><div style="background-color: rgb(51, 153, 153);"></div><div style="background-color: rgb(51, 51, 255);"></div><div style="background-color: rgb(102, 0, 204);"></div><div style="background-color: rgb(153, 51, 153);"></div><div style="background-color: rgb(51, 51, 51);"></div><div style="background-color: rgb(102, 0, 0);"></div><div style="background-color: rgb(153, 51, 0);"></div><div style="background-color: rgb(153, 102, 51);"></div><div style="background-color: rgb(102, 102, 0);"></div><div style="background-color: rgb(0, 102, 0);"></div><div style="background-color: rgb(51, 102, 102);"></div><div style="background-color: rgb(0, 0, 153);"></div><div style="background-color: rgb(51, 51, 153);"></div><div style="background-color: rgb(102, 51, 102);"></div><div style="background-color: rgb(0, 0, 0);"></div><div style="background-color: rgb(51, 0, 0);"></div><div style="background-color: rgb(102, 51, 0);"></div><div style="background-color: rgb(102, 51, 51);"></div><div style="background-color: rgb(51, 51, 0);"></div><div style="background-color: rgb(0, 51, 0);"></div><div style="background-color: rgb(0, 51, 51);"></div><div style="background-color: rgb(0, 0, 102);"></div><div style="background-color: rgb(51, 0, 153);"></div><div style="background-color: rgb(51, 0, 51);"></div></div><div class="cleditorPopup cleditorPrompt" style="display: none;"><label>Enter URL:<br><input type="text" value="http://" style="width:200px"></label><br><input type="button" value="Submit"></div><div class="cleditorPopup cleditorPrompt" style="display: none;"><label>Paste your content here:<br><textarea rows="3" style="width:200px"></textarea></label><br><input type="button" value="Submit"></div></body></html>

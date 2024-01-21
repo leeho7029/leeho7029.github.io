@@ -1,5 +1,5 @@
 <html><head>
-    
+      
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=dege"> <!-- 인터넷익스프로러로 접근시 엣지로 연결되게 함 -->
@@ -11,7 +11,7 @@
 
     <!-- 검색엔진 최적화(SEO:Search Engeen) -->
     <meta name="Subject" content="T셀파">
-    <meta name="Keyword" content="T셀파, 커뮤니티">>
+    <meta name="Keyword" content="T셀파, 커뮤니티">
     <meta name="Description" content="T셀파의 커뮤니티">
     <meta name="Robots" content="index, follow">
 
@@ -85,224 +85,37 @@
     <link rel="stylesheet" href="../js/CLEditor1.4.5/jquery.cleditor.css">
     <script src="../js/CLEditor1.4.5/jquery.cleditor.js"></script>
 
-<link rel="stylesheet" href="../css/main.css">
-<title>T셀파</title>
+  <link rel="stylesheet" href="../css/sub.css">
+  <title>T셀파::로그인</title>
 </head>
 <body>
 
+  <!-- content 영역 시작 -->
+  <section class="vh-100 bg-primary">
+      <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                  <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                      <div class="card-body p-5 text-center">
+                          <div class="form-outline mb-4 text-center">
+                              <a href="../index.html"><img src="../image/common/logo.png" style="width:30%"></a>
+                          </div>
+                          <div class="form-outline mb-4" style="margin-top: 50px;">
+                              <p>고객님의 정보와 일치하는 아이디는</p>
+                              <strong style="color: #3e74bf;">ekg*****</strong> 입니다.
+                          </div>
+                          <!-- Submit button -->
+                          <a class="btn btn-primary btn-block mb-4" href="./login">로그인</a>
+                          <a class="btn btn-primary btn-block mb-4" href="./findPw">비밀번호찾기</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- content 영역 종료 -->
 
-    <!-- Spinner Start -->
-    <div id="spinner" class="bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
-
-    <!-- Navbar Start -->
-   <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
-        <a href="../loginIndex.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2><img src="../image/common/logo.png" width="84" height="28"></h2>
-            <!--<h2 class="m-0 text-primary">WooDY</h2>-->
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link" data-bs-toggle="dropdown"><i class="fas fa-info-circle me-2" aria-hidden="true"></i>고객센터</a>
-                    <div class="dropdown-menu fade-up m-0">
-                        <a href="../notice/noticeList.html" class="dropdown-item">공지사항</a>
-                        <a href="../qna/qnaList.html" class="dropdown-item">QnA</a>
-                        <a href="../faq/faqList.html" class="dropdown-item">FAQ</a>
-                    </div>
-                </div>
-                
-                
-                    <a href="../index.html" class="nav-item nav-link"><i class="fas fa-sign-out-alt me-2" aria-hidden="true"></i>로그아웃</a>
-                    
-                        <a href="../user/mypage.html" class="nav-item nav-link"><i class="far fa-user-circle me-2" aria-hidden="true"></i>마이페이지</a>
-                    
-                    
-                
-                <a href="../chat/myChatList.html" class="nav-item nav-link"><i class="far fa-comment-dots me-2" aria-hidden="true"></i>채팅</a>
-            </div>
-            <div class="nav-item dropdown">
-                <a href="../market/marketList.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" data-bs-toggle="dropdown"><i class="fas fa-store me-2" aria-hidden="true"></i>장터</a>
-                <div class="dropdown-menu fade-up m-0">
-                    <a href="../market/marketList.html" class="dropdown-item">팝니다</a>
-                    <a href="../request/reqList.html" class="dropdown-item">삽니다</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <!-- Navbar End -->
-
-
-
-<!-- Spinner End -->
-
-
-<!-- Page Header Start -->
-<div class="container-fluid page-header py-5 mb-5">
-<div class="container py-5">
-    <h1 class="display-3 text-white mb-3 animated slideInDown">팝니다</h1>
-    <nav aria-label="breadcrumb animated slideInDown">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-            <li class="breadcrumb-item"><a class="text-white" href="#">장터</a></li>
-            <li class="breadcrumb-item text-white active" aria-current="page">팝니다</li>
-        </ol>
-    </nav>
-</div>
-</div>
-
-<div class="row">
-<!-- Page Header End -->
-
-</div>
-<!-- Service Start -->
-<div class="container-xxl py-5">
-<div class="container">
-    <div class="section-title text-center">
-        <h1 class="display-5 mb-5">당신의 추억을 소중히 하겠습니다.</h1>
-    </div>
-    <div class="d-flex justify-content-end">
-        <form action="../market/marketList.html" method="get" class="w-50 mb-5">
-            <div class="row">
-                <div class="col mt-2">
-                    <select class="form-select" id="type" name="type">
-                        <option value="T"> 제목 </option>
-                        <option value="C"> 내용 </option>
-                        <option value="Y"> 아이디 </option>
-                    </select>
-                </div>
-                <div class="col-xl-8 col-lg-12 col-md-12 mt-2">
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="keyword" name="keyword" placeholder="검색어를 입력해주세요" autocomplete="off" aria-label="검색어를 입력해주세요" aria-describedby="button-addon2" value="">
-                        <div class="input-group-append">
-                            <button class="btn btn-dark" type="submit" id="button-addon2"> 검색</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-        <div style="margin: 8px;">
-            
-            
-                
-                    <a class="btn btn-primary px-4" href="../market/marketInsert.html">글쓰기</a>
-                
-            
-        </div>
-    </div>
-    <div class="row g-4 mb-5">
-        <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="service-item border border-1 border-light">
-                <div class="overflow-hidden">
-                    <a href="../market/detail.html">
-                        <img class="img-fluid" src="../image/맥북1.jpg" alt="bookImage" style="width: 407.98px; height: 244.78px;">
-                    </a>
-                </div>
-
-                <div class="p-4 text-center">
-                    <h4 class="mb-3">맥북 팝니다</h4>
-                    
-                        <!--<p>거래장소: <span th:text="${#strings.length(market.selectedAddress) &lt;= 15} ? ${market.selectedAddress} : ${#strings.substring(market.selectedAddress, 0, 9) + '...'}"></span></p><p>등록일:  <span th:if="${market.regdate != null}" th:text="${#strings.substring(market.regdate.toString(), 0, 10)}"></span></p>-->
-                    <p>가격 : <span>9999999 원</span></p>
-                    <a class="fw-medium" href="./detail.html">상세보기<i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div style="margin-top: 30px;">
-        <ul class="pagination justify-content-center mb-0">
-            
-            
-                <li class="page-item active">
-                    <a href="/market/marketList?page=1" class="page-link" aria-label="Page ${i}" aria-current="${i == curPage}">1</a>
-                </li>
-            
-            
-        </ul>
-    </div>
-<!--        <div id="loadMore" class="text-center mt-4">-->
-<!--            <a href="#" class="btn btn-primary">더 보기</a>-->
-<!--        </div>-->
-</div>
-</div>
-
-
-
-<!-- Service End -->
-
-
-
-<!-- Back to Top -->
-<a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top" style="display: none;"><i class="bi bi-arrow-up"></i></a>
-
-
-<!-- JavaScript Libraries -->
-
-
-<!-- Template Javascript -->
-
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        © <a class="border-bottom" onclick="return false;">T셀파</a>, All Right Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top" style="display: none;"><i class="fas fa-arrow-up" aria-hidden="true"></i></a>
-
-    <!-- JavaScript Libraries -->
-    <script src="../js/bootstrap.bundle.min.js"></script>
-    <!--<script th:src="@{../lib/wow/wow.min.js}"></script>-->
-    <script src="../lib/easing/easing.min.js"></script>
-    <script src="../lib/waypoints/waypoints.min.js"></script>
-    <script src="../lib/counterup/counterup.min.js"></script>
-    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="../lib/isotope/isotope.pkgd.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="../js/common.js"></script>
-
-
-<script src="../js/main.js"></script>
-
-
-<!--<script>-->
-<!--    $(document).ready(function () {-->
-<!--        // 첫 6개 이외의 모든 서비스 항목을 숨김-->
-<!--        $('.service-item:gt(5)').hide();-->
-
-<!--        // "더 보기" 클릭 시 추가 항목을 표시-->
-<!--        $('#loadMore').on('click', function (e) {-->
-<!--            e.preventDefault();-->
-<!--            $('.service-item:hidden:lt(6)').fadeIn();-->
-<!--            // 모든 항목이 표시되었을 경우 "더 보기" 숨김-->
-<!--            if ($('.service-item:hidden').length === 0) {-->
-<!--                $('#loadMore').fadeOut('slow');-->
-<!--            }-->
-<!--        });-->
-<!--    });-->
-<!--</script>-->
-
-
+  <script src="../js/sub.js"></script>
+  <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
 </body></html>
