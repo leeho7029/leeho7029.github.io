@@ -58,14 +58,14 @@
 
 <header class="header-area">
     <!-- Navbar Area -->
-    <div id="sticky-wrapper" class="sticky-wrapper" style="height: 85px;"><div class="oneMusic-main-menu">
+    <div id="sticky-wrapper" class="sticky-wrapper is-sticky" style="height: 85px;"><div class="oneMusic-main-menu" style="width: 1553px; position: fixed; top: 0px; z-index: inherit;">
         <div class="classy-nav-container breakpoint-off light left">
             <div class="container">
                 <!-- Menu -->
                 <nav class="classy-navbar justify-content-between" id="oneMusicNav">
 
                     <!-- Nav brand -->
-                    <a href="../" class="nav-brand"><img src="../resources/img/logo2.png" alt="해법 로고 이미지" style="width: 80%"></a>
+                    <a href="../adminIndex.html" class="nav-brand"><img src="../resources/img/logo2.png" alt="해법 로고 이미지" style="width: 80%"></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -83,31 +83,30 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
-                                <li><a href="../lecture/list"> 강의 </a></li>
+                                <li><a href="../lecture/list.html"> 강의 </a></li>
                                 <li class="cn-dropdown-item has-down"><a href="#"> 서비스 </a>
                                     <ul class="dropdown">
-                                        <li><a href="../board/list"> 커뮤니티 </a></li>
+                                        <li><a href="../board/list.html"> 커뮤니티 </a></li>
                                         <li>
                                             
                                             
-                                                <a href="../user/login" onclick="return alert('로그인 후 접근 가능한 페이지입니다 :)')"> 출석체크 </a>
-                                            
+                                             <a href="../attendance/check.html"> 출석체크 </a>
                                         </li>
-                                        <li><a href="../news/list"> 교육뉴스 </a></li>
+                                        <li><a href="../news/list.html"> 교육뉴스 </a></li>
                                         <li class="has-down"><a href="#"> 이벤트 </a>
                                             <ul class="dropdown">
-                                                <li><a href="../event/list"> 이벤트 목록 </a></li>
-                                                <li><a href="../winner/list"> 당첨자 목록 </a></li>
+                                                <li><a href="../event/list.html"> 이벤트 목록 </a></li>
+                                                <li><a href="../winner/list.html"> 당첨자 목록 </a></li>
                                             </ul>
                                         <span class="dd-trigger"></span></li>
                                     </ul>
                                 <span class="dd-trigger"></span></li>
                                 <li class="cn-dropdown-item has-down"><a href="#"> 고객지원 </a>
                                     <ul class="dropdown">
-                                        <li><a href="../notice/list"> 공지사항 </a></li>
-                                        <li><a href="../qna/list"> Q&amp;A </a></li>
-                                        <li><a href="../faq/list"> FAQ </a></li>
-                                        <li><a href="../dataRoom/list"> 자료실 </a></li>
+                                        <li><a href="../notice/list.html"> 공지사항 </a></li>
+                                        <li><a href="../qna/list.html"> Q&amp;A </a></li>
+                                        <li><a href="../faq/list.html"> FAQ </a></li>
+                                        <li><a href="../dataRoom/list.html"> 자료실 </a></li>
                                     </ul>
                                 <span class="dd-trigger"></span></li>
                             </ul>
@@ -117,15 +116,12 @@
                                 
                                 <!-- Login/Register -->
                                 
-                                <div class="login-register-btn mr-50" style="margin-right: 10px!important;">
-                                    <a href="../user/term" class="btn btn-primary" style="background-color: #fff; color: #000; border: none;">JOIN</a>
-                                </div>
-                                <div class="login-register-btn mr-50">
-                                    <a href="../user/login" class="btn btn-primary" style="background-color: #625e5e; color: #fff; border: none;">LOGIN</a>
-                                </div>
-                                
-                                
-                                
+                                    <div class="login-register-btn mr-50" style="margin-right: 10px!important;">
+                                        <a href="../admin/dashboard.html" class="btn btn-primary" style="background-color: #fff; color: #000; border: none;">ADMIN</a>
+                                    </div>
+                                    <div class="login-register-btn mr-50">
+                                        <a href="../index.html" class="btn btn-primary" style="background-color: #625e5e; color: #fff; border: none;">LOGOUT</a>
+                                    </div>
                             </div>
                         </div>
                         <!-- Nav End -->
@@ -190,14 +186,14 @@
                                     <th>
                                         <!-- 로그인 하지 않았을 때 -->
                                         
+                                        <!-- 로그인 했을 때 -->
+                                        
                                             <!-- 질문 글 -->
                                             
-                                                동영상 강의를 효과적으로 검색하고 필요한 내용을 찾는 방법이 뭐가 있을까요?
+                                                <a href="../qna/detail.html">동영상 강의를 효과적으로 검색하고 필요한 내용을 찾는 방법이 뭐가 있을까요?</a>
                                             
                                             <!-- 답변 글 -->
                                             
-                                        
-                                        <!-- 로그인 했을 때 -->
                                         
                                     </th>
                                     <th class="text-center">강이름</th>
@@ -212,14 +208,14 @@
                                     <th>
                                         <!-- 로그인 하지 않았을 때 -->
                                         
+                                        <!-- 로그인 했을 때 -->
+                                        
                                             <!-- 질문 글 -->
                                             
                                             <!-- 답변 글 -->
                                             
-                                                ⌞[답변]동영상 강의를 효과적으로 검색하고 필요한 내용을 찾는 방법이 뭐가 있나요?
+                                                <a href="../qna/detail.html">&nbsp;&nbsp;&nbsp;&nbsp;⌞동영상 강의를 효과적으로 검색하고 필요한 내용을 찾는 방법이 뭐가 있나요?</a>
                                             
-                                        
-                                        <!-- 로그인 했을 때 -->
                                         
                                     </th>
                                     <th class="text-center">관리자</th>
@@ -234,14 +230,14 @@
                                     <th>
                                         <!-- 로그인 하지 않았을 때 -->
                                         
+                                        <!-- 로그인 했을 때 -->
+                                        
                                             <!-- 질문 글 -->
                                             
-                                                동영상 강의를 보면서 메모를 어떻게 작성하고 정리할 수 있을까요?
+                                                <a href="../qna/detail.html">동영상 강의를 보면서 메모를 어떻게 작성하고 정리할 수 있을까요?</a>
                                             
                                             <!-- 답변 글 -->
                                             
-                                        
-                                        <!-- 로그인 했을 때 -->
                                         
                                     </th>
                                     <th class="text-center">조이름</th>
@@ -256,14 +252,14 @@
                                     <th>
                                         <!-- 로그인 하지 않았을 때 -->
                                         
+                                        <!-- 로그인 했을 때 -->
+                                        
                                             <!-- 질문 글 -->
                                             
                                             <!-- 답변 글 -->
                                             
-                                                ⌞[답변]동영상 강의를 보면서 메모를 어떻게 작성하고 정리할 수 있을까요?
+                                              <a href="../qna/detail.html">&nbsp;&nbsp;&nbsp;&nbsp;⌞동영상 강의를 보면서 메모를 어떻게 작성하고 정리할 수 있을까요?</a>
                                             
-                                        
-                                        <!-- 로그인 했을 때 -->
                                         
                                     </th>
                                     <th class="text-center">관리자</th>
@@ -278,14 +274,14 @@
                                     <th>
                                         <!-- 로그인 하지 않았을 때 -->
                                         
+                                        <!-- 로그인 했을 때 -->
+                                        
                                             <!-- 질문 글 -->
                                             
-                                                강의 동영상을 더 깊이 이해하기 위한 질문 및 논의 점을 어떻게 찾을 수 있을까요?
+                                              <a href="../qna/detail.html">강의 동영상을 더 깊이 이해하기 위한 질문 및 논의 점을 어떻게 찾을 수 있을까요?</a>
                                             
                                             <!-- 답변 글 -->
                                             
-                                        
-                                        <!-- 로그인 했을 때 -->
                                         
                                     </th>
                                     <th class="text-center">배이름</th>
@@ -300,14 +296,14 @@
                                     <th>
                                         <!-- 로그인 하지 않았을 때 -->
                                         
+                                        <!-- 로그인 했을 때 -->
+                                        
                                             <!-- 질문 글 -->
                                             
                                             <!-- 답변 글 -->
                                             
-                                                ⌞[답변]강의 동영상을 더 깊이 이해하기 위한 질문 및 논의 점을 어떻게 찾을 수 있을까요?
+                                               <a href="../qna/detail.html">&nbsp;&nbsp;&nbsp;&nbsp;⌞강의 동영상을 더 깊이 이해하기 위한 질문 및 논의 점을 어떻게 찾을 수 있을까요?</a>
                                             
-                                        
-                                        <!-- 로그인 했을 때 -->
                                         
                                     </th>
                                     <th class="text-center">관리자</th>
@@ -322,14 +318,14 @@
                                     <th>
                                         <!-- 로그인 하지 않았을 때 -->
                                         
+                                        <!-- 로그인 했을 때 -->
+                                        
                                             <!-- 질문 글 -->
                                             
-                                                동영상 강의를 활용하여 스스로 학습 스케줄을 계획하는 방법이 뭐가 있나요?
+                                              <a href="../qna/detail.html">동영상 강의를 활용하여 스스로 학습 스케줄을 계획하는 방법이 뭐가 있나요?</a>
                                             
                                             <!-- 답변 글 -->
                                             
-                                        
-                                        <!-- 로그인 했을 때 -->
                                         
                                     </th>
                                     <th class="text-center">민이름</th>
@@ -344,14 +340,14 @@
                                     <th>
                                         <!-- 로그인 하지 않았을 때 -->
                                         
+                                        <!-- 로그인 했을 때 -->
+                                        
                                             <!-- 질문 글 -->
                                             
                                             <!-- 답변 글 -->
                                             
-                                                ⌞[답변]동영상 강의를 활용하여 스스로 학습 스케줄을 계획하는 방법이 뭐가 있나요?
+                                                <a href="../qna/detail.html">&nbsp;&nbsp;&nbsp;&nbsp;⌞동영상 강의를 활용하여 스스로 학습 스케줄을 계획하는 방법이 뭐가 있나요?</a>
                                             
-                                        
-                                        <!-- 로그인 했을 때 -->
                                         
                                     </th>
                                     <th class="text-center">관리자</th>
@@ -366,14 +362,14 @@
                                     <th>
                                         <!-- 로그인 하지 않았을 때 -->
                                         
+                                        <!-- 로그인 했을 때 -->
+                                        
                                             <!-- 질문 글 -->
                                             
-                                                강의 동영상을 저장하고 오프라인에서 어떻게 시청할 수 있을까요?
+                                              <a href="../qna/detail.html">강의 동영상을 저장하고 오프라인에서 어떻게 시청할 수 있을까요?</a>
                                             
                                             <!-- 답변 글 -->
                                             
-                                        
-                                        <!-- 로그인 했을 때 -->
                                         
                                     </th>
                                     <th class="text-center">나이름</th>
@@ -388,14 +384,14 @@
                                     <th>
                                         <!-- 로그인 하지 않았을 때 -->
                                         
+                                        <!-- 로그인 했을 때 -->
+                                        
                                             <!-- 질문 글 -->
                                             
                                             <!-- 답변 글 -->
                                             
-                                                ⌞[답변]강의 동영상을 저장하고 오프라인에서 어떻게 시청할 수 있을까요?
+                                          <a href="../qna/detail.html">&nbsp;&nbsp;&nbsp;&nbsp;⌞강의 동영상을 저장하고 오프라인에서 어떻게 시청할 수 있을까요?</a>
                                             
-                                        
-                                        <!-- 로그인 했을 때 -->
                                         
                                     </th>
                                     <th class="text-center">관리자</th>
@@ -416,7 +412,7 @@
                                     
                                         
                                             <li class="page-item active">
-                                                <a href="../qna/list?page=1" class="page-link" aria-label="Page 1" aria-current="page">1</a>
+                                                <a href="" class="page-link" aria-label="Page 1" aria-current="page">1</a>
                                             </li>
                                         
                                         
@@ -426,7 +422,7 @@
                                         
                                         
                                             <li class="page-item">
-                                                <a href="../qna/list?page=2" class="page-link" aria-label="Page 2" aria-current="page">2</a>
+                                                <a href="" class="page-link" aria-label="Page 2" aria-current="page">2</a>
                                             </li>
                                         
                                     
@@ -453,7 +449,7 @@
     <div class="container">
         <div class="row d-flex flex-wrap align-items-center">
             <div class="col-12 col-md-6">
-                <a href="../"><img src="../resources/img/logo2.png" alt="해법 로고 이미지" class="w-25"></a>
+                <a href="../index.html"><img src="../resources/img/logo2.png" alt="해법 로고 이미지" class="w-25"></a>
                 <p class="copywrite-text">
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     Copyright ©<script>document.write(new Date().getFullYear());</script>2024 KimLeeho, KimHyungyeong, KimBogyeong, ShinYeeun <br>
@@ -464,11 +460,11 @@
             <div class="col-12 col-md-6">
                 <div class="footer-nav">
                     <ul>
-                        <li><a href="../lecture/list">강의</a></li>
-                        <li><a href="../board/list">커뮤니티</a></li>
-                        <li><a href="../news/list">교육뉴스</a></li>
-                        <li><a href="../event/list">이벤트</a></li>
-                        <li><a href="../dataRoom/list">자료실</a></li>
+                        <li><a href="../lecture/list.html">강의</a></li>
+                        <li><a href="../board/list.html">커뮤니티</a></li>
+                        <li><a href="../news/list.html">교육뉴스</a></li>
+                        <li><a href="../event/list.html">이벤트</a></li>
+                        <li><a href="../dataRoom/list.html">자료실</a></li>
                     </ul>
                 </div>
             </div>
@@ -483,7 +479,7 @@
 <!-- All Plugins js -->
 <script src="../resources/js/plugins/plugins.js"></script>
 <!-- Active js -->
-<script src="../resources/js/active.js"></script><a id="scrollUp" href="#top" style="display: none; position: fixed; z-index: 2147483647;"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+<script src="../resources/js/active.js"></script><a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647;"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
 <!-- 푸터 끝 -->
 
 

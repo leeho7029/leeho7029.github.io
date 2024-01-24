@@ -58,14 +58,14 @@
 
 <header class="header-area">
     <!-- Navbar Area -->
-    <div id="sticky-wrapper" class="sticky-wrapper" style="height: 85px;"><div class="oneMusic-main-menu">
+    <div id="sticky-wrapper" class="sticky-wrapper is-sticky" style="height: 85px;"><div class="oneMusic-main-menu" style="width: 1553px; position: fixed; top: 0px; z-index: inherit;">
         <div class="classy-nav-container breakpoint-off light left">
             <div class="container">
                 <!-- Menu -->
-                <nav class="classy-navbar justify-content-between" id="oneMusicNav">
+                 <nav class="classy-navbar justify-content-between" id="oneMusicNav">
 
                     <!-- Nav brand -->
-                    <a href="../" class="nav-brand"><img src="../resources/img/logo2.png" alt="해법 로고 이미지" style="width: 80%"></a>
+                    <a href="../index.html" class="nav-brand"><img src="../resources/img/logo2.png" alt="해법 로고 이미지" style="width: 80%"></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -83,31 +83,30 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul>
-                                <li><a href="../lecture/list"> 강의 </a></li>
+                                <li><a href="../lecture/list.html"> 강의 </a></li>
                                 <li class="cn-dropdown-item has-down"><a href="#"> 서비스 </a>
                                     <ul class="dropdown">
-                                        <li><a href="../board/list"> 커뮤니티 </a></li>
+                                        <li><a href="../board/list.html"> 커뮤니티 </a></li>
                                         <li>
                                             
                                             
-                                                <a href="../user/login" onclick="return alert('로그인 후 접근 가능한 페이지입니다 :)')"> 출석체크 </a>
-                                            
+                                                <a href="../attendance/check.html"> 출석체크 </a>
                                         </li>
-                                        <li><a href="../news/list"> 교육뉴스 </a></li>
+                                        <li><a href="../news/list.html"> 교육뉴스 </a></li>
                                         <li class="has-down"><a href="#"> 이벤트 </a>
                                             <ul class="dropdown">
-                                                <li><a href="../event/list"> 이벤트 목록 </a></li>
-                                                <li><a href="../winner/list"> 당첨자 목록 </a></li>
+                                                <li><a href="../event/list.html"> 이벤트 목록 </a></li>
+                                                <li><a href="../winner/list.html"> 당첨자 목록 </a></li>
                                             </ul>
                                         <span class="dd-trigger"></span></li>
                                     </ul>
                                 <span class="dd-trigger"></span></li>
                                 <li class="cn-dropdown-item has-down"><a href="#"> 고객지원 </a>
                                     <ul class="dropdown">
-                                        <li><a href="../notice/list"> 공지사항 </a></li>
-                                        <li><a href="../qna/list"> Q&amp;A </a></li>
-                                        <li><a href="../faq/list"> FAQ </a></li>
-                                        <li><a href="../dataRoom/list"> 자료실 </a></li>
+                                        <li><a href="../notice/list.html"> 공지사항 </a></li>
+                                        <li><a href="../qna/list.html"> Q&amp;A </a></li>
+                                        <li><a href="../faq/list.html"> FAQ </a></li>
+                                        <li><a href="../dataRoom/list.html"> 자료실 </a></li>
                                     </ul>
                                 <span class="dd-trigger"></span></li>
                             </ul>
@@ -117,15 +116,12 @@
                                 
                                 <!-- Login/Register -->
                                 
-                                <div class="login-register-btn mr-50" style="margin-right: 10px!important;">
-                                    <a href="../user/term" class="btn btn-primary" style="background-color: #fff; color: #000; border: none;">JOIN</a>
-                                </div>
-                                <div class="login-register-btn mr-50">
-                                    <a href="../user/login" class="btn btn-primary" style="background-color: #625e5e; color: #fff; border: none;">LOGIN</a>
-                                </div>
-                                
-                                
-                                
+                                    <div class="login-register-btn mr-50" style="margin-right: 10px!important;">
+                                        <a href="../user/myPage.html" class="btn btn-primary" style="background-color: #fff; color: #000; border: none;">MYPAGE</a>
+                                    </div>
+                                    <div class="login-register-btn mr-50">
+                                        <a href="../index.html" class="btn btn-primary" style="background-color: #625e5e; color: #fff; border: none;">LOGOUT</a>
+                                    </div>
                             </div>
                         </div>
                         <!-- Nav End -->
@@ -188,9 +184,9 @@
                                     <th>
                                         <!-- 로그인 하지 않았을 때 -->
                                         
-                                            커뮤니티 내에서의 정보 무단 유출에 대한 주의 안내
-                                        
                                         <!-- 로그인 했을 때 -->
+                                        
+                                            <a href="../notice/detail?seq=11&amp;page=1">커뮤니티 내에서의 정보 무단 유출에 대한 주의 안내</a>
                                         
                                     </th>
                                     <th class="text-center">
@@ -205,9 +201,9 @@
                                     <th>
                                         <!-- 로그인 하지 않았을 때 -->
                                         
-                                            커뮤니티에서의 소중한 순간들을 기록하는 방법 안내
-                                        
                                         <!-- 로그인 했을 때 -->
+                                        
+                                            <a href="../notice/detail?seq=10&amp;page=1">커뮤니티에서의 소중한 순간들을 기록하는 방법 안내</a>
                                         
                                     </th>
                                     <th class="text-center">
@@ -222,9 +218,9 @@
                                     <th>
                                         <!-- 로그인 하지 않았을 때 -->
                                         
-                                            커뮤니티에서의 긍정적인 기여에 대한 감사
-                                        
                                         <!-- 로그인 했을 때 -->
+                                        
+                                            <a href="../notice/detail?seq=9&amp;page=1">커뮤니티에서의 긍정적인 기여에 대한 감사</a>
                                         
                                     </th>
                                     <th class="text-center">
@@ -239,9 +235,9 @@
                                     <th>
                                         <!-- 로그인 하지 않았을 때 -->
                                         
-                                            커뮤니티에서의 예의와 배려 안내
-                                        
                                         <!-- 로그인 했을 때 -->
+                                        
+                                            <a href="../notice/detail?seq=8&amp;page=1">커뮤니티에서의 예의와 배려 안내</a>
                                         
                                     </th>
                                     <th class="text-center">
@@ -256,9 +252,9 @@
                                     <th>
                                         <!-- 로그인 하지 않았을 때 -->
                                         
-                                            커뮤니티 참여와 활동 방법 안내
-                                        
                                         <!-- 로그인 했을 때 -->
+                                        
+                                            <a href="../notice/detail?seq=7&amp;page=1">커뮤니티 참여와 활동 방법 안내</a>
                                         
                                     </th>
                                     <th class="text-center">
@@ -273,9 +269,9 @@
                                     <th>
                                         <!-- 로그인 하지 않았을 때 -->
                                         
-                                            사용자 경험 개선을 위한 소중한 의견 수렴 안내
-                                        
                                         <!-- 로그인 했을 때 -->
+                                        
+                                            <a href="../notice/detail?seq=6&amp;page=1">사용자 경험 개선을 위한 소중한 의견 수렴 안내</a>
                                         
                                     </th>
                                     <th class="text-center">
@@ -290,9 +286,9 @@
                                     <th>
                                         <!-- 로그인 하지 않았을 때 -->
                                         
-                                            안전한 커뮤니티 이용을 위한 안내
-                                        
                                         <!-- 로그인 했을 때 -->
+                                        
+                                            <a href="../notice/detail?seq=5&amp;page=1">안전한 커뮤니티 이용을 위한 안내</a>
                                         
                                     </th>
                                     <th class="text-center">
@@ -307,9 +303,9 @@
                                     <th>
                                         <!-- 로그인 하지 않았을 때 -->
                                         
-                                            자주 묻는 질문 (FAQ) 업데이트 안내
-                                        
                                         <!-- 로그인 했을 때 -->
+                                        
+                                            <a href="../notice/detail?seq=4&amp;page=1">자주 묻는 질문 (FAQ) 업데이트 안내</a>
                                         
                                     </th>
                                     <th class="text-center">
@@ -324,9 +320,9 @@
                                     <th>
                                         <!-- 로그인 하지 않았을 때 -->
                                         
-                                            커뮤니티 업데이트 안내
-                                        
                                         <!-- 로그인 했을 때 -->
+                                        
+                                            <a href="../notice/detail?seq=3&amp;page=1">커뮤니티 업데이트 안내</a>
                                         
                                     </th>
                                     <th class="text-center">
@@ -341,9 +337,9 @@
                                     <th>
                                         <!-- 로그인 하지 않았을 때 -->
                                         
-                                            커뮤니티 이용 규칙 안내
-                                        
                                         <!-- 로그인 했을 때 -->
+                                        
+                                            <a href="../notice/detail?seq=2&amp;page=1">커뮤니티 이용 규칙 안내</a>
                                         
                                     </th>
                                     <th class="text-center">
@@ -357,7 +353,7 @@
                             </tbody>
                         </table>
                         <!-- 페이지 시작 -->
-                        <div class="oneMusic-pagination-area wow" style="visibility: hidden; animation-name: none;">
+                        <div class="oneMusic-pagination-area wow animated" style="visibility: visible;">
                             <ul class="pagination justify-content-center mb-0">
                                 
                                 
@@ -384,6 +380,10 @@
                         </div>
                         <!-- 페이지 끝 -->
                         
+                            <div class="btn float-right mt-10">
+                                <a href="../notice/insert.html" class="btn btn-outline-dark">글쓰기</a>
+                            </div>
+                        
                     </div>
                 </div>
             </div>
@@ -401,7 +401,7 @@
     <div class="container">
         <div class="row d-flex flex-wrap align-items-center">
             <div class="col-12 col-md-6">
-                <a href="../"><img src="../resources/img/logo2.png" alt="해법 로고 이미지" class="w-25"></a>
+                <a href="../index.html"><img src="../resources/img/logo2.png" alt="해법 로고 이미지" class="w-25"></a>
                 <p class="copywrite-text">
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     Copyright ©<script>document.write(new Date().getFullYear());</script>2024 KimLeeho, KimHyungyeong, KimBogyeong, ShinYeeun <br>
@@ -412,11 +412,11 @@
             <div class="col-12 col-md-6">
                 <div class="footer-nav">
                     <ul>
-                        <li><a href="../lecture/list">강의</a></li>
-                        <li><a href="../board/list">커뮤니티</a></li>
-                        <li><a href="../news/list">교육뉴스</a></li>
-                        <li><a href="../event/list">이벤트</a></li>
-                        <li><a href="../dataRoom/list">자료실</a></li>
+                        <li><a href="../lecture/list.html">강의</a></li>
+                        <li><a href="../board/list.html">커뮤니티</a></li>
+                        <li><a href="../news/list.html">교육뉴스</a></li>
+                        <li><a href="../event/list.html">이벤트</a></li>
+                        <li><a href="../dataRoom/list.html">자료실</a></li>
                     </ul>
                 </div>
             </div>
@@ -431,7 +431,7 @@
 <!-- All Plugins js -->
 <script src="../resources/js/plugins/plugins.js"></script>
 <!-- Active js -->
-<script src="../resources/js/active.js"></script><a id="scrollUp" href="#top" style="display: none; position: fixed; z-index: 2147483647;"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+<script src="../resources/js/active.js"></script><a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647;"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
 <!-- 푸터 끝 -->
 
 
