@@ -189,7 +189,7 @@
                     </h3>
                     <ul class="space-y-2 text-xs text-on-surface-variant leading-relaxed list-disc pl-4">
                         <li>별도 회원가입의 피로감 ➔ <strong>네이버 OAuth2 간편 가입 및 JWT 자동 발급</strong>으로 허들 감소.</li>
-                        <li>예약 중복 및 휴무일 예약 오작동 ➔ <strong>서버 단 6단계 다중 시간 검증 엔진</strong> 적용.</li>
+                        <li>예약 중복 및 휴무일 예약 오작동 ➔ <strong>서버 단 시간 검증 로직</strong> 적용.</li>
                         <li>상담문의 즉각 처리 지연 ➔ <strong>Kafka 비동기 이벤트 발행 ➔ FCM 앱 즉시 푸시</strong> 파이프라인 개설.</li>
                         <li>비밀글 및 업로드 보안 취약성 ➔ <strong>BCrypt 기반 Q&A 비밀번호 해시 처리 및 Apache Tika 실시간 MIME 탐지</strong> 적용.</li>
                     </ul>
@@ -210,7 +210,7 @@
                 <div class="p-6 bg-surface-container border border-white/5 rounded-xl group hover:border-primary/30 transition-colors">
                     <span class="material-symbols-outlined text-3xl text-primary mb-3">calendar_month</span>
                     <h4 class="font-bold text-sm mb-1.5">지능형 예약 검증</h4>
-                    <p class="text-xs text-on-surface-variant leading-relaxed">휴무일 체크, 지난 시간 배제, 동일 시간 중복 불가, 하루 1회 신청 검증 엔진 탑재.</p>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">휴무일 체크, 지난 시간 배제, 동일 시간 중복 불가, 하루 1회 신청 검증 로직 적용.</p>
                 </div>
                 
                 <div class="p-6 bg-surface-container border border-white/5 rounded-xl group hover:border-primary/30 transition-colors">
@@ -491,7 +491,7 @@ public Message&lt;?&gt; preSend(Message&lt;?&gt; message, MessageChannel channel
             <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">Retrospective</h2>
             <div class="p-8 bg-surface-container-low border border-white/5 rounded-2xl space-y-4 text-sm text-on-surface-variant leading-relaxed">
                 <p>
-                    본 프로젝트는 사전 설계 문서와 구현 규칙을 Markdown으로 정의한 뒤, <strong>AI 페어 프로그래밍(Vibe Coding)</strong>을 활용해 구현 효율을 높인 사례입니다. 반복적인 보일러플레이트 작성은 Codex와 빠르게 처리하고, 핵심 설계와 검증 기준은 직접 정의하며 개발 리소스를 아꼈습니다.
+                    본 프로젝트는 사전 설계 문서와 구현 규칙을 Markdown으로 정의한 뒤, 반복적인 보일러플레이트 작성과 코드 검토 보조에 AI 도구를 활용했습니다. 핵심 요구사항, 데이터 흐름, 검증 기준은 직접 정의하며 구현 효율을 높였습니다.
                 </p>
                 <p>
                     그 결과, 확보한 시간을 <strong>전체 시스템 구성요소(React, Gateway, API Server, Notification Service) 간의 통신 흐름, MariaDB Primary/Replica 읽기·쓰기 분리 DB 구성 설계, 그리고 캐시 무효화 및 트랜잭션 수명주기 설계</strong>와 같은 아키텍처 및 데이터 흐름을 학습하고 검증하는 데 집중할 수 있었습니다. 이를 통해 전체 데이터 인프라의 흐름을 더 넓은 관점에서 이해하는 경험을 얻었습니다.
@@ -504,7 +504,7 @@ public Message&lt;?&gt; preSend(Message&lt;?&gt; message, MessageChannel channel
     <footer class="w-full bg-surface-container-lowest border-t border-white/5 py-8">
         <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center px-gutter gap-4 text-center md:text-left">
             <div class="font-display text-lg font-bold text-on-surface">김이호.dev</div>
-            <p class="font-mono text-[11px] text-on-surface-variant">© 2026 Full-Stack Developer Kim Lee-ho. All rights reserved.</p>
+            <p class="font-mono text-[11px] text-on-surface-variant">© 2026 Web Developer Kim Lee-ho. All rights reserved.</p>
             <div class="flex gap-6">
                 <a class="text-on-surface-variant text-xs hover:text-primary transition-colors font-mono" href="home.html">Home</a>
                 <a class="text-on-surface-variant text-xs hover:text-primary transition-colors font-mono" href="https://github.com/leeho7029" target="_blank">GitHub</a>

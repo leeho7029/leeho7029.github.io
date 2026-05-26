@@ -482,10 +482,10 @@ export async function saveEvent(client: PoolClient, payload: SephiriaEventPayloa
             <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">Retrospective</h2>
             <div class="p-8 bg-surface-container-low border border-white/5 rounded-2xl space-y-4 text-sm text-on-surface-variant leading-relaxed">
                 <p>
-                    인게임 수집 모드 및 API 연동 등 반복적인 Express 라우터 생성과 Next.js 서버 컴포넌트 마크업은, 사전 설계/규칙 문서를 기반으로 한 <strong>Vibe Coding(Codex 페어 프로그래밍)</strong>으로 빠르게 구현했습니다.
+                    인게임 수집 모드 및 API 연동 등 반복적인 Express 라우터 생성과 Next.js 서버 컴포넌트 마크업은, 사전 설계/규칙 문서를 기준으로 AI 도구를 보조적으로 활용해 구현했습니다.
                 </p>
                 <p>
-                    그 과정에서 확보한 시간을 <strong>다수의 게임 클라이언트가 동시간에 로그를 전송하는 분산 데이터 레이스 컨디션을 DB 수준에서 완화하는 설계(정규화 스키마, 멱등성 Upsert 트랜잭션, Merge Key 기반 병합 로직)</strong>에 집중했습니다. 이를 통해 비동기 데이터 수집 흐름과 DB 구조를 함께 설계해보는 경험을 얻었습니다.
+                    그 과정에서 확보한 시간을 <strong>여러 게임 클라이언트가 비슷한 시점에 전송하는 중복 로그를 하나의 게임 기록으로 묶는 데이터 처리 방식(정규화 스키마, UPSERT 처리, Merge Key 기반 병합 로직)</strong>에 집중했습니다. 이를 통해 비동기 데이터 수집 흐름과 DB 구조를 함께 설계해보는 경험을 얻었습니다.
                 </p>
             </div>
         </section>
@@ -495,7 +495,7 @@ export async function saveEvent(client: PoolClient, payload: SephiriaEventPayloa
     <footer class="w-full bg-surface-container-lowest border-t border-white/5 py-8">
         <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center px-gutter gap-4 text-center md:text-left">
             <div class="font-display text-lg font-bold text-on-surface">김이호.dev</div>
-            <p class="font-mono text-[11px] text-on-surface-variant">© 2026 Full-Stack Developer Kim Lee-ho. All rights reserved.</p>
+            <p class="font-mono text-[11px] text-on-surface-variant">© 2026 Web Developer Kim Lee-ho. All rights reserved.</p>
             <div class="flex gap-6">
                 <a class="text-on-surface-variant text-xs hover:text-primary transition-colors font-mono" href="home.html">Home</a>
                 <a class="text-on-surface-variant text-xs hover:text-primary transition-colors font-mono" href="https://github.com/leeho7029" target="_blank">GitHub</a>
