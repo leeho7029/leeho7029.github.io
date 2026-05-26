@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html class="dark" lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>로펌 관리자 푸시 알림 앱 | 김이호 포트폴리오</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <style>
+        html {
+            font-size: 18px;
+        }
+        body {
+            background-color: #0b0b0c;
+            color: #e2e8f0;
+            -webkit-font-smoothing: antialiased;
+            font-family: 'Inter', sans-serif;
+        }
+        .font-display {
+            font-family: 'Outfit', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0b0b0c;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #3f3f46;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .section-spacing {
+            margin-bottom: 80px;
+        }
+        @media (min-width: 768px) {
+            .section-spacing {
+                margin-bottom: 120px;
+            }
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-container": "#27272a",
+                        "background": "#0b0b0c",
+                        "primary": "#a7c8ff",
+                        "tertiary": "#ffb690",
+                        "on-surface": "#e2e8f0",
+                        "surface-container-highest": "#1f1f23",
+                        "surface-container": "#141416",
+                        "surface-container-low": "#0f0f11",
+                        "surface-container-lowest": "#050506",
+                        "on-surface-variant": "#94a3b8",
+                        "outline": "#4b5563",
+                        "outline-variant": "#374151"
+                    },
+                    spacing: {
+                        "container-max-width": "1000px",
+                        "gutter": "24px"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface custom-scrollbar">
+
+    <!-- TopNavBar -->
+    <nav class="w-full top-0 sticky z-50 bg-background/80 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-[1200px] mx-auto flex justify-between items-center px-gutter py-4">
+            <div class="font-display text-xl font-extrabold tracking-tight text-on-surface flex items-center gap-2">
+                <span class="w-7 h-7 rounded bg-gradient-to-br from-primary to-tertiary flex items-center justify-center text-background font-black text-sm">LH</span>
+                김이호.dev
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="home.html">홈</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="home.html#experience">업무 경험</a>
+                <a class="text-primary font-bold border-b-2 border-primary pb-1" href="home.html#projects">프로젝트</a>
+            </div>
+            <a class="bg-primary text-background px-4 py-1.5 font-bold rounded hover:opacity-90 active:scale-95 transition-all text-xs" href="mailto:ekghdidi@naver.com">Contact</a>
+        </div>
+    </nav>
+
+    <main class="max-w-[1000px] mx-auto px-gutter py-12 md:py-20">
+        <!-- 1. Case Study Header -->
+        <header class="mb-12 text-center space-y-4">
+            <span class="font-mono text-xs text-primary uppercase tracking-widest block">Case Study 02</span>
+            <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-on-surface leading-tight">
+                로펌 상담예약/Q&amp;A 관리자 알림 앱
+            </h1>
+            <p class="font-display text-lg sm:text-xl text-tertiary italic max-w-2xl mx-auto leading-relaxed">
+                "사용자의 온라인 접수 이벤트를 수신하여 모바일 관리자 앱으로 실시간 푸시를 전송하고 원터치 딥링크 라우팅을 지원하는 Android 푸시 서비스"
+            </p>
+        </header>
+
+        <!-- Result Screens -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-4 border-l-4 border-primary pl-4">Result Screens</h2>
+            <p class="text-xs text-on-surface-variant mb-6 flex items-center gap-1.5 pl-4">
+                <span class="material-symbols-outlined text-[16px] text-primary">zoom_in</span>
+                이미지를 클릭하면 원본 크기로 크게 볼 수 있습니다.
+            </p>
+            <div class="relative group">
+                <div class="overflow-hidden relative h-[300px] md:h-[500px] border border-white/10 rounded-2xl bg-surface-container" id="slider">
+                    <div class="flex transition-transform duration-750 ease-in-out h-full" id="slider-inner">
+                        <div class="min-w-full h-full relative">
+                            <img class="w-full h-full object-cover cursor-zoom-in hover:opacity-90 transition-opacity" src="projectb_img/홈화면.jpg" onclick="openImageModal(this.src)" title="클릭하여 원본 보기"/>
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 p-6 sm:p-8">
+                                <h4 class="font-bold text-base sm:text-lg">관리자 모바일 로그인 뷰</h4>
+                                <p class="text-xs text-on-surface-variant mt-1.5">보안 JWT 발급 이메일 인증 및 기기 UUID 고유 바인딩 시퀀스 (클릭 시 원본 크기 보기)</p>
+                            </div>
+                        </div>
+                        <div class="min-w-full h-full relative">
+                            <img class="w-full h-full object-cover cursor-zoom-in hover:opacity-90 transition-opacity" src="projectb_img/알림내역.jpg" onclick="openImageModal(this.src)" title="클릭하여 원본 보기"/>
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 p-6 sm:p-8">
+                                <h4 class="font-bold text-base sm:text-lg">수신 알림 목록 및 미확인 필터링 뷰</h4>
+                                <p class="text-xs text-on-surface-variant mt-1.5">안 읽은 알림 미확인 뱃지 정렬 및 낙관적 UI 업데이트(Optimistic Update) 읽음 처리 목록 (클릭 시 원본 크기 보기)</p>
+                            </div>
+                        </div>
+                        <div class="min-w-full h-full relative">
+                            <img class="w-full h-full object-cover cursor-zoom-in hover:opacity-90 transition-opacity" src="projectb_img/푸시알림.jpg" onclick="openImageModal(this.src)" title="클릭하여 원본 보기"/>
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 p-6 sm:p-8">
+                                <h4 class="font-bold text-base sm:text-lg">FCM Data-only 팝업 수신 및 딥링크 라우팅</h4>
+                                <p class="text-xs text-on-surface-variant mt-1.5">FCM 백그라운드 수신 즉각 팝업 노출 및 터치 시 해당 문의글 상세 링크 자동 연동 웹 브라우저 인텐트 라우팅 (클릭 시 원본 크기 보기)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="absolute left-4 top-1/2 -translate-y-1/2 bg-background/80 p-2.5 rounded-full border border-white/10 hover:bg-primary hover:text-background transition-all opacity-0 group-hover:opacity-100" onclick="moveSlider(-1)">
+                    <span class="material-symbols-outlined text-sm">chevron_left</span>
+                </button>
+                <button class="absolute right-4 top-1/2 -translate-y-1/2 bg-background/80 p-2.5 rounded-full border border-white/10 hover:bg-primary hover:text-background transition-all opacity-0 group-hover:opacity-100" onclick="moveSlider(1)">
+                    <span class="material-symbols-outlined text-sm">chevron_right</span>
+                </button>
+                
+                <div class="flex justify-center gap-2 mt-4">
+                    <div class="dot w-8 h-1 bg-primary cursor-pointer transition-all rounded-full"></div>
+                    <div class="dot w-8 h-1 bg-surface-container-highest cursor-pointer transition-all hover:bg-outline rounded-full"></div>
+                    <div class="dot w-8 h-1 bg-surface-container-highest cursor-pointer transition-all hover:bg-outline rounded-full"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Project Overview -->
+        <section class="section-spacing">
+            <div class="max-w-3xl mx-auto text-center space-y-6">
+                <h2 class="font-display text-2xl font-bold text-on-surface">프로젝트 개요</h2>
+                <p class="text-on-surface-variant text-base leading-relaxed">
+                    본 프로젝트는 웹 기반 법률 서비스에서 사용자가 남긴 예약 및 Q&amp;A 문의 글을 관리자가 실시간 모바일 팝업 알림으로 신속하게 파악할 수 있도록 구현한 <strong>관리자 전용 Android 푸시 앱</strong>입니다. 
+                </p>
+                <p class="text-on-surface-variant text-base leading-relaxed">
+                    웹사이트에서 신규 상담이나 1:1 대화 이벤트가 발생하면 Spring Boot 백엔드가 Kafka 토픽으로 도메인 이벤트를 스트리밍하고, 별도의 <code>notification-service</code> 워커가 Firebase Cloud Messaging(FCM)을 통해 해당 기기에 푸시 알림을 전송합니다. 모바일 앱은 Kotlin과 Jetpack Compose(Material 3) 기반으로 작성되었으며, MVVM 구조 하에 FCM 토큰 등록, 백그라운드 푸시 표시, 읽음 처리 피드백, 그리고 알림 터치 시 관련 어드민 상세 웹 링크로 라우팅하는 딥링크 흐름을 구현했습니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. Development Background / Problem Situation -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">Development Background</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-8 bg-surface-container-low border border-white/5 rounded-2xl space-y-3">
+                    <h3 class="font-display text-lg font-bold text-primary flex items-center gap-2">
+                        <span class="material-symbols-outlined">lightbulb</span> 배경
+                    </h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">
+                        실제 법률사무소 운영 시 접수된 문의에 대한 답변 속도는 영업 대응에서 중요한 요소입니다. 이전의 순수 웹 어드민은 관리자가 주기적으로 새로고침(Polling)을 해야 해 응답 지연이 발생했고, 상담 1:1 대화 유입이나 중요 신규 비밀 Q&amp;A를 직관적으로 확인하기 어려운 문제가 있었습니다.
+                    </p>
+                </div>
+                
+                <div class="p-8 bg-surface-container-low border border-white/5 rounded-2xl space-y-3">
+                    <h3 class="font-display text-lg font-bold text-tertiary flex items-center gap-2">
+                        <span class="material-symbols-outlined">report_problem</span> 주요 과제 및 해결 방식
+                    </h3>
+                    <ul class="space-y-2 text-xs text-on-surface-variant leading-relaxed list-disc pl-4">
+                        <li>FCM 토큰 맵 연동 ➔ <strong>로그인 이후 기기 UUID와 토큰을 매핑 등록</strong>하여 소유권 분별.</li>
+                        <li>백그라운드 알림 소실 ➔ <strong>Data-only Payload FCM</strong>을 채택하여 포그라운드/백그라운드 일관 핸들링.</li>
+                        <li>FCM 토큰 유실 ➔ <strong>SharedPreferences 연동 토큰 무효화 재등록</strong> 루틴 방어 설계.</li>
+                        <li>알림 터치 후 별도 진입 불편 ➔ <strong>targetUrl 인텐트 파싱</strong>을 통해 원클릭 딥링크 라우팅.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Key Features -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">Key Features</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="p-6 bg-surface-container border border-white/5 rounded-xl group hover:border-primary/30 transition-colors">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">lock_open</span>
+                    <h4 class="font-bold text-sm mb-1.5">관리자 로그인 연동</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">JWT 기반 일반 로그인 및 외부 네이버 OAuth 콜백 웹뷰 연계 로그인 세션 연계.</p>
+                </div>
+                
+                <div class="p-6 bg-surface-container border border-white/5 rounded-xl group hover:border-primary/30 transition-colors">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">account_balance_wallet</span>
+                    <h4 class="font-bold text-sm mb-1.5">FCM 토큰 세션 갱신</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">FCM 토큰 변경 시 로컬 토큰 만료 처리 및 서버 API 비활성화/재등록 흐름 연동.</p>
+                </div>
+                
+                <div class="p-6 bg-surface-container border border-white/5 rounded-xl group hover:border-primary/30 transition-colors">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">circle_notifications</span>
+                    <h4 class="font-bold text-sm mb-1.5">Data-only 푸시 수신</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">FCM 표준 알림 대신 데이터 전용 페이로드를 직접 파싱하여 팝업 헤더 알림 표시 채널 제어.</p>
+                </div>
+
+                <div class="p-6 bg-surface-container border border-white/5 rounded-xl group hover:border-primary/30 transition-colors">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">bolt</span>
+                    <h4 class="font-bold text-sm mb-1.5">Optimistic 읽음 반영</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">목록 탭 시 화면에서 먼저 읽음(미확인 뱃지 제거) 처리하고 비동기로 읽음 API 호출.</p>
+                </div>
+
+                <div class="p-6 bg-surface-container border border-white/5 rounded-xl group hover:border-primary/30 transition-colors">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">open_in_new</span>
+                    <h4 class="font-bold text-sm mb-1.5">딥링크 원터치 라우팅</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">FCM payload에 <code>targetUrl</code> 값을 실어 보내 알림 터치 시 관련 상세 예약/Q&A 페이지 다이렉트 이동.</p>
+                </div>
+
+                <div class="p-6 bg-surface-container border border-white/5 rounded-xl group hover:border-primary/30 transition-colors">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">verified_user</span>
+                    <h4 class="font-bold text-sm mb-1.5">안드로이드 13 권한 대응</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">런타임 알림 표시 권한 <code>POST_NOTIFICATIONS</code> 확인 및 거부 시 안내 런타임 다이얼로그 탑재.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Tech Stack -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">Tech Stack</h2>
+            <div class="bg-surface-container-low border border-white/5 p-6 rounded-2xl space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Android App Mobile</div>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Kotlin</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Jetpack Compose</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Material 3</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">ViewModel &amp; StateFlow</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Firebase FCM SDK</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Retrofit &amp; Gson</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">SharedPreferences</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-tertiary text-xs font-bold uppercase tracking-wider mb-2">Backend Integration</div>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Spring Boot</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Kafka</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Firebase Admin SDK</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">MariaDB / JPA</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">JWT Bearer auth</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. System Architecture (Visual CSS block) -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">System Architecture</h2>
+            
+            <div class="p-6 sm:p-8 bg-surface-container rounded-2xl border border-white/5 space-y-8 relative overflow-hidden">
+                <div class="absolute inset-0 bg-[radial-gradient(#27272a_1px,transparent_1px)] [background-size:24px_24px] opacity-20"></div>
+                
+                <!-- Diagram flow in CSS grid -->
+                <div class="relative z-10 flex flex-col items-center gap-6">
+                    <!-- Edge 1: Sources -->
+                    <div class="px-6 py-2.5 bg-surface-container-highest border border-white/10 rounded-lg text-xs font-bold font-mono text-center shadow-md">
+                        사용자 상담 신청 / Q&amp;A 비밀글 / 채팅 이벤트 생성
+                    </div>
+                    
+                    <span class="material-symbols-outlined text-on-surface-variant">arrow_downward</span>
+                    
+                    <!-- Edge 2: Spring Boot API Server -->
+                    <div class="w-full max-w-md bg-background border border-white/10 rounded-xl p-4 text-center space-y-3">
+                        <div class="font-bold text-xs text-primary font-mono">Spring Boot API Server</div>
+                        <p class="text-[10px] text-on-surface-variant">트랜잭션 커밋 완료 후 도메인 알림 이벤트 생성 ➔ Kafka Topic 발행</p>
+                    </div>
+                    
+                    <span class="material-symbols-outlined text-on-surface-variant">arrow_downward</span>
+
+                    <!-- Edge 3: Kafka & Worker -->
+                    <div class="w-full max-w-lg p-4 bg-surface-container-low border border-white/5 rounded-xl text-center space-y-2">
+                        <div class="font-bold text-xs text-tertiary font-mono">Kafka (notification.events)</div>
+                        <span class="material-symbols-outlined text-xs text-on-surface-variant">arrow_downward</span>
+                        <div class="px-4 py-2 bg-tertiary/10 border border-tertiary/20 rounded-lg text-xs font-mono font-bold">
+                            Spring Boot notification-service (FCM Push Worker)
+                        </div>
+                    </div>
+                    
+                    <span class="material-symbols-outlined text-on-surface-variant">arrow_downward</span>
+                    
+                    <!-- Edge 4: Google FCM -->
+                    <div class="w-full max-w-xs p-3 bg-surface-container-highest border border-white/5 rounded-lg text-center space-y-1 shadow-md">
+                        <div class="text-xs text-primary font-bold">Firebase Cloud Messaging</div>
+                        <p class="text-[10px] text-on-surface-variant">Data-only Payload Push 전송</p>
+                    </div>
+
+                    <span class="material-symbols-outlined text-on-surface-variant">arrow_downward</span>
+
+                    <!-- Edge 5: Android App -->
+                    <div class="px-6 py-3 bg-gradient-to-r from-primary to-tertiary border border-white/10 rounded-xl text-xs font-bold font-mono text-background text-center shadow-lg">
+                        관리자 안드로이드 앱 (FCM 수신 ➔ 로컬 팝업 알림 ➔ 딥링크 이동)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Main Implementation Details -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">Implementation Details</h2>
+            <div class="space-y-8">
+                <div class="space-y-4">
+                    <h3 class="font-display text-lg font-bold text-on-surface">1) Rationale behind Data-only FCM Message</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">
+                        FCM 표준 메시지(<code>notification</code> 필드가 포함된 페이로드)를 수신하면, 안드로이드 OS는 앱이 백그라운드 상태일 때 <code>onMessageReceived</code> 콜백을 실행하지 않고 시스템 알림 트레이에 단순 팝업을 직접 띄웁니다. 이렇게 되면 앱 내부에서 알림 미확인 카운팅을 하거나 탭 시 <code>targetUrl</code> 값을 커스텀하게 라우팅할 수가 없습니다. 
+                    </p>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">
+                        이를 해결하고자 <code>notification</code> 필드 대신 <strong>Data-only Payload</strong> 중심으로 메시지를 구성했습니다. 안드로이드 앱의 <code>FirebaseMessagingService</code>에서 수신 데이터를 처리하고, <code>NotificationCompat.Builder</code>로 직접 팝업 알림을 빌드하여 foreground/background 상태에서 일관된 라우팅 흐름을 구현했습니다.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="font-display text-lg font-bold text-on-surface">2) JWT 인증 연계 FCM 토큰 서버 등록 Kotlin ViewModel</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">
+                        앱은 비로그인 상태에서 토큰을 무작위로 보내지 않고, JWT 로그인 성공 세션이 활성화된 순간에만 기기 UUID와 토큰을 매핑하여 백엔드 API에 등록하도록 설계했습니다. 아래는 MVVM 아키텍처 하에 StateFlow와 Retrofit을 연동해 토큰을 전달하는 코어 ViewModel 구현입니다.
+                    </p>
+                    
+                    <div class="rounded-lg overflow-hidden border border-white/10 bg-[#0d0d0d]">
+                        <div class="px-4 py-2 bg-surface-container-highest flex justify-between items-center border-b border-white/10">
+                            <span class="font-mono text-xs text-on-surface-variant">AdminNotifierViewModel.kt</span>
+                            <span class="material-symbols-outlined text-sm opacity-50 cursor-pointer hover:opacity-100" onclick="alert('복사되었습니다.')">content_copy</span>
+                        </div>
+                        <pre class="p-6 font-mono text-xs overflow-x-auto text-[#d4d4d4] leading-relaxed"><code>class AdminNotifierViewModel(
+    private val repository: NotificationRepository,
+    private val sessionManager: SessionManager
+) : ViewModel() {
+
+    private val _uiState = MutableStateFlow&lt;UiState&gt;(UiState.Idle)
+    val uiState: StateFlow&lt;UiState&gt; = _uiState
+
+    fun registerFcmToken(fcmToken: String) {
+        val jwtToken = sessionManager.getAccessToken() ?: return
+        val deviceId = sessionManager.getDeviceId()
+        
+        viewModelScope.launch {
+            _uiState.value = UiState.Loading
+            val response = repository.registerToken(
+                bearerToken = "Bearer $jwtToken",
+                deviceId = deviceId,
+                tokenValue = fcmToken
+            )
+            if (response.isSuccessful) {
+                sessionManager.saveRegisteredToken(fcmToken)
+                _uiState.value = UiState.Success
+            } else {
+                _uiState.value = UiState.Error("Token registration failed.")
+            }
+        }
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Troubleshooting / Problem Solving -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">Troubleshooting</h2>
+            <div class="space-y-6">
+                <!-- Troubleshooting Case 1 -->
+                <div class="p-8 bg-surface-container-low border border-white/5 rounded-2xl space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/20 text-primary font-bold text-sm">01</span>
+                        <h3 class="font-display text-lg font-bold text-on-surface">앱 패키지 이름 불일치로 인한 Firebase google-services 빌드 오류</h3>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-tertiary-container/5 border border-tertiary/20 rounded-lg">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-tertiary text-background">Problem</span>
+                            <p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+                                Firebase 콘솔에 등록된 안드로이드 패키지 명칭과 프로젝트 빌드 그래들(`build.gradle.kts`)의 <code>applicationId</code>가 불일치하여 `google-services.json` 컴파일 로드 도중 앱 실행 즉시 크래시 발생.
+                            </p>
+                        </div>
+                        <div class="p-4 bg-primary-container/5 border border-primary/20 rounded-lg">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-primary text-background">Solution</span>
+                            <p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+                                Firebase 콘솔에 동일 패키지명 앱을 재생성 및 재등록하고 그래들 내의 빌드 아이덴티티와 동기화. 빌드 오류 추적 가이드를 만들어 인스펙션 프로세스 문서화 완료.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Troubleshooting Case 2 -->
+                <div class="p-8 bg-surface-container-low border border-white/5 rounded-2xl space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/20 text-primary font-bold text-sm">02</span>
+                        <h3 class="font-display text-lg font-bold text-on-surface">기기 상태 변화에 따른 FCM 토큰 실시간 갱신 누락</h3>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-tertiary-container/5 border border-tertiary/20 rounded-lg">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-tertiary text-background">Problem</span>
+                            <p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+                                모바일 기기 네트워크 변화, 앱 강제 캐시 제거, FCM 내부 주기에 따라 토큰이 새로 발급(갱신)되었으나 서버의 이전 기기 토큰이 유지되어 푸시 전송 시 지속 누락(Bad Token)되는 문제 발생.
+                            </p>
+                        </div>
+                        <div class="p-4 bg-primary-container/5 border border-primary/20 rounded-lg">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-primary text-background">Solution</span>
+                            <p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+                                <code>onNewToken</code> 콜백 실행 시 SharedPreferences에 저장된 기존 토큰과 대조하여 즉각 초기화하고, 로그인 상태가 충족되어 있을 시 서버 API를 즉시 동기화 호출하도록 옵저버 리스너 설계.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Performance & Security -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">Performance &amp; Security</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center p-8 bg-surface-container border border-white/5 rounded-xl">
+                    <div class="text-4xl font-extrabold text-primary font-display mb-1.5">Async Queue</div>
+                    <div class="text-xs text-on-surface font-semibold uppercase tracking-wider">Queue Processing</div>
+                    <p class="text-[11px] text-on-surface-variant mt-3 leading-relaxed">Kafka 비동기 큐 처리 방식으로 사용자 웹 API 처리 흐름과 알림 전송 부하를 분리.</p>
+                </div>
+                <div class="text-center p-8 bg-surface-container border border-white/5 rounded-xl">
+                    <div class="text-4xl font-extrabold text-primary font-display mb-1.5">Compact Payload</div>
+                    <div class="text-xs text-on-surface font-semibold uppercase tracking-wider">FCM Message Shape</div>
+                    <p class="text-[11px] text-on-surface-variant mt-3 leading-relaxed">알림 라우팅에 필요한 핵심 JSON 메타데이터만 포함하여 오버헤드와 수신 지연을 줄임.</p>
+                </div>
+                <div class="text-center p-8 bg-surface-container border border-white/5 rounded-xl">
+                    <div class="text-4xl font-extrabold text-primary font-display mb-1.5">Device Unregister</div>
+                    <div class="text-xs text-on-surface font-semibold uppercase tracking-wider">Session Security</div>
+                    <p class="text-[11px] text-on-surface-variant mt-3 leading-relaxed">로그아웃 시 서버에 저장된 해당 관리자의 기기 토큰 상태를 폐기하여 오배송 가능성을 낮춤.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. Links -->
+        <section class="section-spacing text-center">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4 text-left">Links</h2>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a class="flex items-center justify-center gap-2 bg-primary text-background px-8 py-3.5 font-bold rounded-xl hover:opacity-90 active:scale-95 transition-all w-full sm:w-auto text-sm shadow-md" href="https://kimlawoffice.duckdns.org" target="_blank">
+                    <span class="material-symbols-outlined text-[16px]">link</span>
+                    <span>Live Admin Web Service</span>
+                </a>
+                <a class="flex items-center justify-center gap-2 border border-white/10 px-8 py-3.5 font-semibold rounded-xl text-on-surface-variant hover:text-on-surface hover:border-white/25 transition-colors w-full sm:w-auto text-sm" href="https://github.com/leeho7029/lawoffice-admin-app-public" target="_blank">
+                    <span class="material-symbols-outlined text-[16px]">code</span>
+                    <span>GitHub Repository</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 12. Retrospective -->
+        <section class="mb-20">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">Retrospective</h2>
+            <div class="p-8 bg-surface-container-low border border-white/5 rounded-2xl space-y-4 text-sm text-on-surface-variant leading-relaxed">
+                <p>
+                    모바일 앱 개발에서는 사전에 정의한 화면/상태 관리 규칙과 API 연동 기준을 바탕으로, <strong>Vibe Coding(Codex 페어 프로그래밍)</strong>을 활용해 반복 UI 구현과 연결 코드를 빠르게 정리했습니다.
+                </p>
+                <p>
+                    이를 통해 백엔드(Spring, Kafka)와 모바일 기기(Kotlin) 간의 실시간 이벤트 및 데이터 동기화 흐름을 파악하고, FCM 단말 토큰의 생명주기 및 targetUrl을 활용한 앱 내부 인텐트 라우팅 흐름을 정리할 수 있었습니다. MVVM 아키텍처에서 뷰 모델과 UI 상태 흐름이 클라이언트와 백엔드 서버 사이에서 어떻게 연계되는지 학습한 경험이었습니다.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Implementation -->
+    <footer class="w-full bg-surface-container-lowest border-t border-white/5 py-8">
+        <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center px-gutter gap-4 text-center md:text-left">
+            <div class="font-display text-lg font-bold text-on-surface">김이호.dev</div>
+            <p class="font-mono text-[11px] text-on-surface-variant">© 2026 Full-Stack Developer Kim Lee-ho. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a class="text-on-surface-variant text-xs hover:text-primary transition-colors font-mono" href="home.html">Home</a>
+                <a class="text-on-surface-variant text-xs hover:text-primary transition-colors font-mono" href="https://github.com/leeho7029" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const sliderInner = document.getElementById('slider-inner');
+        const dots = document.querySelectorAll('.dot');
+        
+        function moveSlider(direction) {
+            const slides = sliderInner.children.length;
+            currentSlide = (currentSlide + direction + slides) % slides;
+            updateSlider();
+        }
+
+        function updateSlider() {
+            sliderInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, idx) => {
+                if (idx === currentSlide) {
+                    dot.classList.replace('bg-surface-container-highest', 'bg-primary');
+                } else {
+                    dot.classList.replace('bg-primary', 'bg-surface-container-highest');
+                }
+            });
+        }
+
+        // Auto slide
+        let slideInterval = setInterval(() => moveSlider(1), 5000);
+
+        // Click on dots
+        dots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                currentSlide = idx;
+                updateSlider();
+                slideInterval = setInterval(() => moveSlider(1), 5000);
+            });
+        });
+
+        // Image Modal Functions
+        let modalImages = [];
+        let currentModalIdx = 0;
+
+        function openImageModal(src) {
+            const slideImgs = Array.from(document.querySelectorAll('#slider-inner img'));
+            modalImages = slideImgs.map(img => img.src);
+            currentModalIdx = modalImages.indexOf(src);
+            if (currentModalIdx === -1) currentModalIdx = 0;
+
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-img');
+            modalImg.src = modalImages[currentModalIdx];
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+                modalImg.classList.remove('scale-95', 'opacity-0');
+                modalImg.classList.add('scale-100', 'opacity-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+            window.addEventListener('keydown', handleModalKeydown);
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-img');
+            modalImg.classList.remove('scale-100', 'opacity-100');
+            modalImg.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+            }, 150);
+            document.body.style.overflow = '';
+            window.removeEventListener('keydown', handleModalKeydown);
+        }
+
+        function moveModalImage(direction, event) {
+            if (event) event.stopPropagation();
+            if (modalImages.length === 0) return;
+
+            const modalImg = document.getElementById('modal-img');
+            modalImg.classList.remove('scale-100', 'opacity-100');
+            modalImg.classList.add('scale-95', 'opacity-0');
+
+            setTimeout(() => {
+                currentModalIdx = (currentModalIdx + direction + modalImages.length) % modalImages.length;
+                modalImg.src = modalImages[currentModalIdx];
+                setTimeout(() => {
+                    modalImg.classList.remove('scale-95', 'opacity-0');
+                    modalImg.classList.add('scale-100', 'opacity-100');
+                }, 30);
+            }, 150);
+        }
+
+        function handleModalKeydown(event) {
+            if (event.key === 'ArrowLeft') {
+                moveModalImage(-1);
+            } else if (event.key === 'ArrowRight') {
+                moveModalImage(1);
+            } else if (event.key === 'Escape') {
+                closeImageModal();
+            }
+        }
+    </script>
+
+    <!-- Image Modal Backdrop -->
+    <div id="image-modal" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-md items-center justify-center p-4 cursor-zoom-out transition-all duration-300" onclick="closeImageModal()">
+        <!-- Close Button -->
+        <button class="absolute top-6 right-6 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-all z-10" onclick="closeImageModal()">
+            <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+
+        <!-- Left Nav Button -->
+        <button class="absolute left-6 top-1/2 -translate-y-1/2 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all z-10" onclick="moveModalImage(-1, event)">
+            <span class="material-symbols-outlined text-3xl">chevron_left</span>
+        </button>
+
+        <!-- Right Nav Button -->
+        <button class="absolute right-6 top-1/2 -translate-y-1/2 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all z-10" onclick="moveModalImage(1, event)">
+            <span class="material-symbols-outlined text-3xl">chevron_right</span>
+        </button>
+
+        <img id="modal-img" class="max-w-[85%] max-h-[85vh] object-contain rounded-xl shadow-2xl transition-all duration-250 scale-95 opacity-0 cursor-default" src="" alt="Full Screen Preview" onclick="event.stopPropagation()"/>
+    </div>
+</body>
+</html>

@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html class="dark" lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Sephiria Record Platform | 김이호 포트폴리오</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <style>
+        html {
+            font-size: 18px;
+        }
+        body {
+            background-color: #0b0b0c;
+            color: #e2e8f0;
+            -webkit-font-smoothing: antialiased;
+            font-family: 'Inter', sans-serif;
+        }
+        .font-display {
+            font-family: 'Outfit', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0b0b0c;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #3f3f46;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .section-spacing {
+            margin-bottom: 80px;
+        }
+        @media (min-width: 768px) {
+            .section-spacing {
+                margin-bottom: 120px;
+            }
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-container": "#27272a",
+                        "background": "#0b0b0c",
+                        "primary": "#a7c8ff",
+                        "tertiary": "#ffb690",
+                        "on-surface": "#e2e8f0",
+                        "surface-container-highest": "#1f1f23",
+                        "surface-container": "#141416",
+                        "surface-container-low": "#0f0f11",
+                        "surface-container-lowest": "#050506",
+                        "on-surface-variant": "#94a3b8",
+                        "outline": "#4b5563",
+                        "outline-variant": "#374151"
+                    },
+                    spacing: {
+                        "container-max-width": "1000px",
+                        "gutter": "24px"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface custom-scrollbar">
+
+    <!-- TopNavBar -->
+    <nav class="w-full top-0 sticky z-50 bg-background/80 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-[1200px] mx-auto flex justify-between items-center px-gutter py-4">
+            <div class="font-display text-xl font-extrabold tracking-tight text-on-surface flex items-center gap-2">
+                <span class="w-7 h-7 rounded bg-gradient-to-br from-primary to-tertiary flex items-center justify-center text-background font-black text-sm">LH</span>
+                김이호.dev
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="home.html">홈</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="home.html#experience">업무 경험</a>
+                <a class="text-primary font-bold border-b-2 border-primary pb-1" href="home.html#projects">프로젝트</a>
+            </div>
+            <a class="bg-primary text-background px-4 py-1.5 font-bold rounded hover:opacity-90 active:scale-95 transition-all text-xs" href="mailto:ekghdidi@naver.com">Contact</a>
+        </div>
+    </nav>
+
+    <main class="max-w-[1000px] mx-auto px-gutter py-12 md:py-20">
+        <!-- 1. Case Study Header -->
+        <header class="mb-12 text-center space-y-4">
+            <span class="font-mono text-xs text-primary uppercase tracking-widest block">Case Study 03</span>
+            <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-on-surface leading-tight">
+                Sephiria Record Platform
+            </h1>
+            <p class="font-display text-lg sm:text-xl text-tertiary italic max-w-2xl mx-auto leading-relaxed">
+                "플레이 로그를 수집 및 파싱하고, 멀티플레이 시 발생하는 비동기 로그 중복을 Merge Key와 UPSERT로 병합한 게임 전적 분석 플랫폼"
+            </p>
+        </header>
+
+        <!-- Result Screens -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-4 border-l-4 border-primary pl-4">Result Screens</h2>
+            <p class="text-xs text-on-surface-variant mb-6 flex items-center gap-1.5 pl-4">
+                <span class="material-symbols-outlined text-[16px] text-primary">zoom_in</span>
+                이미지를 클릭하면 원본 크기로 크게 볼 수 있습니다.
+            </p>
+            <div class="relative group">
+                <div class="overflow-hidden relative h-[300px] md:h-[500px] border border-white/10 rounded-2xl bg-surface-container" id="slider">
+                    <div class="flex transition-transform duration-750 ease-in-out h-full" id="slider-inner">
+                        <div class="min-w-full h-full relative">
+                            <img class="w-full h-full object-cover cursor-zoom-in hover:opacity-90 transition-opacity" src="projectc_img/랭킹 페이지.png" onclick="openImageModal(this.src)" title="클릭하여 원본 보기"/>
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 p-6 sm:p-8">
+                                <h4 class="font-bold text-base sm:text-lg">랭킹 대시보드 메인 화면</h4>
+                                <p class="text-xs text-on-surface-variant mt-1.5">보스, 난이도 조건(하드 포인트), 파티 인원(1~4인) 기준으로 세션 필터링 랭킹 표시 뷰 (클릭 시 원본 크기 보기)</p>
+                            </div>
+                        </div>
+                        <div class="min-w-full h-full relative">
+                            <img class="w-full h-full object-cover cursor-zoom-in hover:opacity-90 transition-opacity" src="projectc_img/게임기록페이지.png" onclick="openImageModal(this.src)" title="클릭하여 원본 보기"/>
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 p-6 sm:p-8">
+                                <h4 class="font-bold text-base sm:text-lg">게임 플레이 상세 기록</h4>
+                                <p class="text-xs text-on-surface-variant mt-1.5">파티원별 캐릭터, 피해량, 시너지 장비 구성 데이터를 심도 있게 요약하는 분석 화면 (클릭 시 원본 크기 보기)</p>
+                            </div>
+                        </div>
+                        <div class="min-w-full h-full relative">
+                            <img class="w-full h-full object-cover cursor-zoom-in hover:opacity-90 transition-opacity" src="projectc_img/무기빌드페이지.png" onclick="openImageModal(this.src)" title="클릭하여 원본 보기"/>
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 p-6 sm:p-8">
+                                <h4 class="font-bold text-base sm:text-lg">무기 및 빌드 통계</h4>
+                                <p class="text-xs text-on-surface-variant mt-1.5">상위 랭커들의 선호 무기 분포도 및 빌드 시너지 세부 통계 화면 (클릭 시 원본 크기 보기)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="absolute left-4 top-1/2 -translate-y-1/2 bg-background/80 p-2.5 rounded-full border border-white/10 hover:bg-primary hover:text-background transition-all opacity-0 group-hover:opacity-100" onclick="moveSlider(-1)">
+                    <span class="material-symbols-outlined text-sm">chevron_left</span>
+                </button>
+                <button class="absolute right-4 top-1/2 -translate-y-1/2 bg-background/80 p-2.5 rounded-full border border-white/10 hover:bg-primary hover:text-background transition-all opacity-0 group-hover:opacity-100" onclick="moveSlider(1)">
+                    <span class="material-symbols-outlined text-sm">chevron_right</span>
+                </button>
+                
+                <div class="flex justify-center gap-2 mt-4">
+                    <div class="dot w-8 h-1 bg-primary cursor-pointer transition-all rounded-full"></div>
+                    <div class="dot w-8 h-1 bg-surface-container-highest cursor-pointer transition-all hover:bg-outline rounded-full"></div>
+                    <div class="dot w-8 h-1 bg-surface-container-highest cursor-pointer transition-all hover:bg-outline rounded-full"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Project Overview -->
+        <section class="section-spacing">
+            <div class="max-w-3xl mx-auto text-center space-y-6">
+                <h2 class="font-display text-2xl font-bold text-on-surface">프로젝트 개요</h2>
+                <p class="text-on-surface-variant text-base leading-relaxed">
+                    본 프로젝트는 멀티플레이 로그 라이프사이클을 추적하여 실시간 전적 분석을 제공하는 <strong>인디 게임 Sephiria 전용 전적 분석 플랫폼</strong>입니다. 인게임 모드에서 발생하는 세션 완료(클리어, 전멸) 이벤트를 수집 서버로 비동기 전송하고, 정규화된 데이터를 PostgreSQL에 저장하여 랭킹 및 대시보드를 연동합니다.
+                </p>
+                <p class="text-on-surface-variant text-base leading-relaxed">
+                    특히, 멀티플레이 환경에서 각각의 파티원 클라이언트가 전송하는 비동기 중복 로그를 하나의 게임 세션(Run)으로 정제·병합하기 위해 <strong>런 시드, 난이도, 층 GUID, 보스 식별자 기반 Merge Key 병합 로직</strong>을 직접 고안하여 탑재했습니다. Next.js를 기반으로 웹 화면을 구현하였고 Node.js(Express) 및 Zod 페이로드 검증 파이프라인을 구축해 정해진 형식의 전적 데이터를 저장합니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. Development Background / Problem Situation -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">Development Background</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-8 bg-surface-container-low border border-white/5 rounded-2xl space-y-3">
+                    <h3 class="font-display text-lg font-bold text-primary flex items-center gap-2">
+                        <span class="material-symbols-outlined">lightbulb</span> 개발 배경
+                    </h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">
+                        친구들과 Sephiria 게임을 플레이하면서 매 판 어떤 장비, 캐릭터, 공격력 빌드를 선택했는지 또 멀티플레이 보스 클리어 시 각자 얼마나 기여(Dps/피해량)했는지 비교 분석할 필요가 있었습니다. 당시 게임이 얼리액세스 단계로 공식적인 전적 히스토리를 제공하지 않아, 이를 보완하고자 플레이 수집 플러그인과 웹 전적 사이트를 제작했습니다.
+                    </p>
+                </div>
+                
+                <div class="p-8 bg-surface-container-low border border-white/5 rounded-2xl space-y-3">
+                    <h3 class="font-display text-lg font-bold text-tertiary flex items-center gap-2">
+                        <span class="material-symbols-outlined">report_problem</span> 핵심 기술 해결 도전
+                    </h3>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">
+                        가장 큰 난제는 멀티플레이 시 4명의 유저가 동일한 모드를 켜두었기 때문에, 보스를 깨는 순간 <strong>동일한 판의 로그 4개가 서버로 동시 전송</strong>된다는 점이었습니다. 
+                    </p>
+                    <p class="text-xs text-on-surface-variant leading-relaxed mt-2">
+                        인터넷 레이턴시로 인해 수신 시점이 모두 다르고, 호스트 여부에 따라 담긴 플레이어 정보 배열 순서와 전송 값의 미세 오차가 존재해 단순 Steam ID나 타임스탬프만으로는 같은 판(동일 런)인지 판별하여 병합하기 어려웠습니다. 이를 안정적으로 하나의 기록으로 병합하는 식별 기준이 필요했습니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Key Features -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">Key Features</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="p-6 bg-surface-container border border-white/5 rounded-xl group hover:border-primary/30 transition-colors">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">cloud_sync</span>
+                    <h4 class="font-bold text-sm mb-1.5">인게임 모드 자동 전송</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">게임 종료 및 보스 처치 순간 게임 클라이언트가 백그라운드로 전적 API 호출 발송.</p>
+                </div>
+                
+                <div class="p-6 bg-surface-container border border-white/5 rounded-xl group hover:border-primary/30 transition-colors">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">merge_type</span>
+                    <h4 class="font-bold text-sm mb-1.5">Merge Key 기반 병합</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">이벤트 타입, 플레이어 수, 런 시드, 난이도, 층 GUID, 보스 식별자를 조합해 중복 수집 로그를 병합 처리.</p>
+                </div>
+                
+                <div class="p-6 bg-surface-container border border-white/5 rounded-xl group hover:border-primary/30 transition-colors">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">leaderboard</span>
+                    <h4 class="font-bold text-sm mb-1.5">실시간 랭킹 대시보드</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">보스 몬스터별 클리어 시간, 전체 런타임, 솔로/멀티 파티원 수 조건별 랭킹 실시간 필터링.</p>
+                </div>
+
+                <div class="p-6 bg-surface-container border border-white/5 rounded-xl group hover:border-primary/30 transition-colors">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">bar_chart</span>
+                    <h4 class="font-bold text-sm mb-1.5">데이터 세부 시각화</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">상세 뷰에서 선택 캐릭터, 핵심 착용 무기, 세부 피해량, 장비 세트 효과 비율 차트 매핑.</p>
+                </div>
+
+                <div class="p-6 bg-surface-container border border-white/5 rounded-xl group hover:border-primary/30 transition-colors">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">login</span>
+                    <h4 class="font-bold text-sm mb-1.5">Steam OpenID 연동</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">Steam OpenID 로그인과 고유 식별값 해시 처리로 별도 민감 가입 절차를 줄인 인증 흐름.</p>
+                </div>
+
+                <div class="p-6 bg-surface-container border border-white/5 rounded-xl group hover:border-primary/30 transition-colors">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">key</span>
+                    <h4 class="font-bold text-sm mb-1.5">개인 API 업로드 토큰</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">데이터 위변조 및 임의 기록 전송 가능성을 줄이기 위해 마이페이지 내 고유 전송 토큰 발급.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Tech Stack -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">Tech Stack</h2>
+            <div class="bg-surface-container-low border border-white/5 p-6 rounded-2xl space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div>
+                        <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Frontend Web</div>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Next.js 14</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">React 18</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">TypeScript</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Tailwind CSS</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Recharts</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-tertiary text-xs font-bold uppercase tracking-wider mb-2">API Server &amp; Validation</div>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Node.js</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Express</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">TypeScript</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Zod Schema</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Steam OpenID</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-on-surface text-xs font-bold uppercase tracking-wider mb-2">DB &amp; DevOps</div>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">PostgreSQL</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Docker</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Docker Compose</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Jenkins Pipeline</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Blue-Green Deployment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. System Architecture -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">System Architecture</h2>
+            
+            <div class="p-6 sm:p-8 bg-surface-container rounded-2xl border border-white/5 space-y-8 relative overflow-hidden">
+                <div class="absolute inset-0 bg-[radial-gradient(#27272a_1px,transparent_1px)] [background-size:24px_24px] opacity-20"></div>
+                
+                <div class="relative z-10 flex flex-col items-center gap-6">
+                    <!-- Step 1: Game Mod -->
+                    <div class="w-full max-w-md bg-background border border-white/10 rounded-xl p-4 text-center space-y-2">
+                        <div class="font-bold text-xs text-primary font-display">Sephiria Game Client (In-Game Mod)</div>
+                        <p class="text-[10px] text-on-surface-variant">보스 클리어 및 결과 이벤트 트리거 ➔ 전적 JSON 덤프 생성 ➔ API POST 발송</p>
+                    </div>
+                    
+                    <span class="material-symbols-outlined text-on-surface-variant">arrow_downward</span>
+                    
+                    <!-- Step 2: Express Server & Zod -->
+                    <div class="w-full max-w-lg bg-surface-container-low border border-white/5 rounded-xl p-4 text-center space-y-3">
+                        <div class="font-bold text-xs text-tertiary font-mono">Express API Server (Node.js)</div>
+                        <div class="flex justify-center gap-2 mt-2">
+                            <span class="px-3 py-1 bg-tertiary/10 border border-tertiary/20 rounded-md text-[10px] font-mono">1. Zod Payload Validation</span>
+                            <span class="px-3 py-1 bg-tertiary/10 border border-tertiary/20 rounded-md text-[10px] font-mono">2. Merge Key Calculation</span>
+                            <span class="px-3 py-1 bg-tertiary/10 border border-tertiary/20 rounded-md text-[10px] font-mono">3. Upsert Logic</span>
+                        </div>
+                    </div>
+                    
+                    <span class="material-symbols-outlined text-on-surface-variant">arrow_downward</span>
+                    
+                    <!-- Step 3: PostgreSQL Database -->
+                    <div class="w-full max-w-xs p-3 bg-surface-container-highest border border-white/5 rounded-lg text-center space-y-1 shadow-md">
+                        <div class="text-xs text-primary font-bold">PostgreSQL DB</div>
+                        <p class="text-[10px] text-on-surface-variant">정규화된 플레이어, 장비, 피해량 테이블 저장</p>
+                    </div>
+
+                    <span class="material-symbols-outlined text-on-surface-variant">arrow_downward</span>
+
+                    <!-- Step 4: Next.js Frontend -->
+                    <div class="px-6 py-2.5 bg-gradient-to-r from-primary to-tertiary border border-white/10 rounded-xl text-xs font-bold font-mono text-background text-center shadow-lg">
+                        Next.js Web Client (조회 REST API 연동 ➔ 실시간 랭킹, 개인 업로드 키 관리 대시보드 시각화)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Main Implementation Details -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">Implementation Details</h2>
+            <div class="space-y-8">
+                <div class="space-y-4">
+                    <h3 class="font-display text-lg font-bold text-on-surface">1) 멀티플레이 로그 중복 제거를 위한 Merge Key 알고리즘 고안</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">
+                        동일한 파티 세션에서 4명의 유저가 게임을 완료했을 때, 4개의 중복 로그가 무작위 시간차로 서버에 도달합니다. 이를 단일 판(Single Run)으로 온전히 병합하기 위해, 각 클라이언트가 개별적으로 조작할 수 없는 불변의 매치 팩터들을 조합했습니다.
+                    </p>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">
+                        실제 구현에서는 이벤트 타입, 멀티플레이 버전, 플레이어 수, 런 시드, 난이도 포인트, 층 GUID, 정규화된 보스 식별자를 조합해 <code>merge_key</code>를 빌드했습니다. 서버는 최초 도달한 로그로 Run 데이터를 만들고, 이후 같은 Merge Key로 도착하는 로그는 PostgreSQL <code>ON CONFLICT</code> 기반 UPSERT로 플레이어별 기여량과 원본 payload를 병합하도록 설계했습니다.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="font-display text-lg font-bold text-on-surface">2) Express + Zod 스키마 검증 및 UPSERT 트랜잭션 구현</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">
+                        인게임 클라이언트로부터 정해진 규격 이외의 잘못된 JSON 데이터가 흘러들어와 DB 정합성 문제가 발생하는 것을 줄이기 위해 <code>Zod</code>를 연동해 수신 데이터를 검증했으며, 데이터 중복 삽입 가능성을 낮추는 PostgreSQL Upsert 트랜잭션 코드를 구현했습니다.
+                    </p>
+                    
+                    <div class="rounded-lg overflow-hidden border border-white/10 bg-[#0d0d0d]">
+                        <div class="px-4 py-2 bg-surface-container-highest flex justify-between items-center border-b border-white/10">
+                            <span class="font-mono text-xs text-on-surface-variant">merge.ts / repository.ts</span>
+                            <span class="material-symbols-outlined text-sm opacity-50 cursor-pointer hover:opacity-100" onclick="alert('복사되었습니다.')">content_copy</span>
+                        </div>
+                        <pre class="p-6 font-mono text-xs overflow-x-auto text-[#d4d4d4] leading-relaxed"><code>function buildMultiplayerMergeKey(payload: SephiriaEventPayload): string {
+    return [
+        payload.eventType,
+        "multiplayer:v2",
+        `players:${multiplayerPlayerCount(payload)}`,
+        `seed:${clean(payload.run.currentSeed)}`,
+        `hard:${clean(payload.stage.difficulty.hardModePoints)}`,
+        `floor:${clean(payload.stage.floorGuid)}`,
+        `boss:${canonicalBossIdentity(payload)}`
+    ].join("|");
+}
+
+function pepper(): string {
+    return config.privacyPepper || config.apiToken || "development-sephiria-privacy-pepper";
+}
+
+export function hashSteamId(value: unknown): string | null {
+    if (typeof value !== "string" && typeof value !== "number" && typeof value !== "bigint") {
+        return null;
+    }
+
+    const steamId = String(value ?? "").trim();
+    if (!steamId) {
+        return null;
+    }
+
+    return crypto.createHmac("sha256", pepper()).update(steamId).digest("hex");
+}
+
+export async function saveEvent(client: PoolClient, payload: SephiriaEventPayload) {
+    const sentAt = parseSentAt(payload.sentAtUtc);
+    const mergeKey = buildMergeKey(payload, sentAt);
+    const sanitizedPayload = sanitizeSteamIds(payload);
+
+    const run = await client.query(`
+        insert into sephiria_runs (merge_key, raw_run, raw_outcome, updated_at)
+        values ($1, $2::jsonb, $3::jsonb, now())
+        on conflict (merge_key) do update set updated_at = now()
+        returning id
+    `, [mergeKey, json(payload.run), json(payload.outcome)]);
+
+    await client.query(`
+        insert into sephiria_events (run_id, event_type, sent_at_utc, merge_key, raw_payload)
+        values ($1, $2, $3, $4, $5::jsonb)
+    `, [run.rows[0].id, payload.eventType, sentAt, mergeKey, json(sanitizedPayload)]);
+
+    for (const player of payload.players) {
+        await client.query(`
+            insert into sephiria_run_players (run_id, player_key, steam_id, raw_player, updated_at)
+            values ($1, $2, $3, $4::jsonb, now())
+            on conflict (run_id, player_key) do update set updated_at = now()
+        `, [
+            run.rows[0].id,
+            buildPlayerKey(player),
+            hashSteamId(player.identity.steamId),
+            json(sanitizeSteamIds(player))
+        ]);
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Troubleshooting -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">Troubleshooting</h2>
+            <div class="space-y-6">
+                <!-- Troubleshooting Case 1 -->
+                <div class="p-8 bg-surface-container-low border border-white/5 rounded-2xl space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/20 text-primary font-bold text-sm">01</span>
+                        <h3 class="font-display text-lg font-bold text-on-surface">멀티플레이 세션 분리 및 랭킹 데이터 오염 문제</h3>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-tertiary-container/5 border border-tertiary/20 rounded-lg">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-tertiary text-background">Problem</span>
+                            <p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+                                초기 수집 구조에서 Merge Key 설계가 없던 당시, 파티원 4명의 동일 판 클리어 데이터가 각각 개별 게임 세션으로 독자 기록되어 보스 랭킹 대시보드 상위권이 같은 판의 4개 기록으로 도배되는 랭킹 신뢰성 오염 현상 발생.
+                            </p>
+                        </div>
+                        <div class="p-4 bg-primary-container/5 border border-primary/20 rounded-lg">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-primary text-background">Solution</span>
+                            <p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+                                런 시드, 난이도 포인트, 층 GUID, 정규화된 보스 식별자, 플레이어 수를 조합한 Merge Key를 도입. 서버 단 데이터 입수 단계에서 동일 판 여부를 판정한 뒤 <code>ON CONFLICT</code> 기반 UPSERT 처리로 중복 로그가 랭킹에 중복 반영되지 않도록 개선.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Performance & Security -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">Performance &amp; Security</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center p-8 bg-surface-container border border-white/5 rounded-xl">
+                    <div class="text-4xl font-extrabold text-primary font-display mb-1.5">Merge Upsert</div>
+                    <div class="text-xs text-on-surface font-semibold uppercase tracking-wider">Duplicate Run Handling</div>
+                    <p class="text-[11px] text-on-surface-variant mt-3 leading-relaxed">merge_key unique constraint와 PostgreSQL ON CONFLICT로 중복 전송된 런을 병합 저장.</p>
+                </div>
+                <div class="text-center p-8 bg-surface-container border border-white/5 rounded-xl">
+                    <div class="text-4xl font-extrabold text-primary font-display mb-1.5">Scene-End Upload</div>
+                    <div class="text-xs text-on-surface font-semibold uppercase tracking-wider">Game Optimization</div>
+                    <p class="text-[11px] text-on-surface-variant mt-3 leading-relaxed">게임 도중 전송을 피하고 씬 종료(Scene Transition) 순간에 비동기로 업로드해 플레이 중 부하를 줄임.</p>
+                </div>
+                <div class="text-center p-8 bg-surface-container border border-white/5 rounded-xl">
+                    <div class="text-4xl font-extrabold text-primary font-display mb-1.5">HMAC-SHA256</div>
+                    <div class="text-xs text-on-surface font-semibold uppercase tracking-wider">SteamID Pseudonymization</div>
+                    <p class="text-[11px] text-on-surface-variant mt-3 leading-relaxed">SteamID 원문 저장을 피하고 서버 비밀키 기반 HMAC 해시값으로 식별자를 가명 처리.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. Links -->
+        <section class="section-spacing text-center">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4 text-left">Links</h2>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a class="flex items-center justify-center gap-2 bg-primary text-background px-8 py-3.5 font-bold rounded-xl hover:opacity-90 active:scale-95 transition-all w-full sm:w-auto text-sm shadow-md" href="https://sephidata.cloud/" target="_blank">
+                    <span class="material-symbols-outlined text-[16px]">link</span>
+                    <span>Live Service URL</span>
+                </a>
+                <a class="flex items-center justify-center gap-2 border border-white/10 px-8 py-3.5 font-semibold rounded-xl text-on-surface-variant hover:text-on-surface hover:border-white/25 transition-colors w-full sm:w-auto text-sm" href="https://github.com/leeho7029/sephiria-platform-public" target="_blank">
+                    <span class="material-symbols-outlined text-[16px]">code</span>
+                    <span>GitHub Repository</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 12. Retrospective -->
+        <section class="mb-20">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">Retrospective</h2>
+            <div class="p-8 bg-surface-container-low border border-white/5 rounded-2xl space-y-4 text-sm text-on-surface-variant leading-relaxed">
+                <p>
+                    인게임 수집 모드 및 API 연동 등 반복적인 Express 라우터 생성과 Next.js 서버 컴포넌트 마크업은, 사전 설계/규칙 문서를 기반으로 한 <strong>Vibe Coding(Codex 페어 프로그래밍)</strong>으로 빠르게 구현했습니다.
+                </p>
+                <p>
+                    그 과정에서 확보한 시간을 <strong>다수의 게임 클라이언트가 동시간에 로그를 전송하는 분산 데이터 레이스 컨디션을 DB 수준에서 완화하는 설계(정규화 스키마, 멱등성 Upsert 트랜잭션, Merge Key 기반 병합 로직)</strong>에 집중했습니다. 이를 통해 비동기 데이터 수집 흐름과 DB 구조를 함께 설계해보는 경험을 얻었습니다.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Implementation -->
+    <footer class="w-full bg-surface-container-lowest border-t border-white/5 py-8">
+        <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center px-gutter gap-4 text-center md:text-left">
+            <div class="font-display text-lg font-bold text-on-surface">김이호.dev</div>
+            <p class="font-mono text-[11px] text-on-surface-variant">© 2026 Full-Stack Developer Kim Lee-ho. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a class="text-on-surface-variant text-xs hover:text-primary transition-colors font-mono" href="home.html">Home</a>
+                <a class="text-on-surface-variant text-xs hover:text-primary transition-colors font-mono" href="https://github.com/leeho7029" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const sliderInner = document.getElementById('slider-inner');
+        const dots = document.querySelectorAll('.dot');
+        
+        function moveSlider(direction) {
+            const slides = sliderInner.children.length;
+            currentSlide = (currentSlide + direction + slides) % slides;
+            updateSlider();
+        }
+
+        function updateSlider() {
+            sliderInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, idx) => {
+                if (idx === currentSlide) {
+                    dot.classList.replace('bg-surface-container-highest', 'bg-primary');
+                } else {
+                    dot.classList.replace('bg-primary', 'bg-surface-container-highest');
+                }
+            });
+        }
+
+        // Auto slide
+        let slideInterval = setInterval(() => moveSlider(1), 5000);
+
+        // Click on dots
+        dots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                currentSlide = idx;
+                updateSlider();
+                slideInterval = setInterval(() => moveSlider(1), 5000);
+            });
+        });
+
+        // Image Modal Functions
+        let modalImages = [];
+        let currentModalIdx = 0;
+
+        function openImageModal(src) {
+            const slideImgs = Array.from(document.querySelectorAll('#slider-inner img'));
+            modalImages = slideImgs.map(img => img.src);
+            currentModalIdx = modalImages.indexOf(src);
+            if (currentModalIdx === -1) currentModalIdx = 0;
+
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-img');
+            modalImg.src = modalImages[currentModalIdx];
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+                modalImg.classList.remove('scale-95', 'opacity-0');
+                modalImg.classList.add('scale-100', 'opacity-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+            window.addEventListener('keydown', handleModalKeydown);
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-img');
+            modalImg.classList.remove('scale-100', 'opacity-100');
+            modalImg.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+            }, 150);
+            document.body.style.overflow = '';
+            window.removeEventListener('keydown', handleModalKeydown);
+        }
+
+        function moveModalImage(direction, event) {
+            if (event) event.stopPropagation();
+            if (modalImages.length === 0) return;
+
+            const modalImg = document.getElementById('modal-img');
+            modalImg.classList.remove('scale-100', 'opacity-100');
+            modalImg.classList.add('scale-95', 'opacity-0');
+
+            setTimeout(() => {
+                currentModalIdx = (currentModalIdx + direction + modalImages.length) % modalImages.length;
+                modalImg.src = modalImages[currentModalIdx];
+                setTimeout(() => {
+                    modalImg.classList.remove('scale-95', 'opacity-0');
+                    modalImg.classList.add('scale-100', 'opacity-100');
+                }, 30);
+            }, 150);
+        }
+
+        function handleModalKeydown(event) {
+            if (event.key === 'ArrowLeft') {
+                moveModalImage(-1);
+            } else if (event.key === 'ArrowRight') {
+                moveModalImage(1);
+            } else if (event.key === 'Escape') {
+                closeImageModal();
+            }
+        }
+    </script>
+
+    <!-- Image Modal Backdrop -->
+    <div id="image-modal" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-md items-center justify-center p-4 cursor-zoom-out transition-all duration-300" onclick="closeImageModal()">
+        <!-- Close Button -->
+        <button class="absolute top-6 right-6 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-all z-10" onclick="closeImageModal()">
+            <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+
+        <!-- Left Nav Button -->
+        <button class="absolute left-6 top-1/2 -translate-y-1/2 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all z-10" onclick="moveModalImage(-1, event)">
+            <span class="material-symbols-outlined text-3xl">chevron_left</span>
+        </button>
+
+        <!-- Right Nav Button -->
+        <button class="absolute right-6 top-1/2 -translate-y-1/2 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all z-10" onclick="moveModalImage(1, event)">
+            <span class="material-symbols-outlined text-3xl">chevron_right</span>
+        </button>
+
+        <img id="modal-img" class="max-w-[85%] max-h-[85vh] object-contain rounded-xl shadow-2xl transition-all duration-250 scale-95 opacity-0 cursor-default" src="" alt="Full Screen Preview" onclick="event.stopPropagation()"/>
+    </div>
+</body>
+</html>

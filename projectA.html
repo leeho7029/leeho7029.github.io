@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html class="dark" lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>법률사무소 통합 웹 시스템 | 김이호 포트폴리오</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <style>
+        html {
+            font-size: 18px;
+        }
+        body {
+            background-color: #0b0b0c;
+            color: #e2e8f0;
+            -webkit-font-smoothing: antialiased;
+            font-family: 'Inter', sans-serif;
+        }
+        .font-display {
+            font-family: 'Outfit', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0b0b0c;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #3f3f46;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .section-spacing {
+            margin-bottom: 80px;
+        }
+        @media (min-width: 768px) {
+            .section-spacing {
+                margin-bottom: 120px;
+            }
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-container": "#27272a",
+                        "background": "#0b0b0c",
+                        "primary": "#a7c8ff",
+                        "tertiary": "#ffb690",
+                        "on-surface": "#e2e8f0",
+                        "surface-container-highest": "#1f1f23",
+                        "surface-container": "#141416",
+                        "surface-container-low": "#0f0f11",
+                        "surface-container-lowest": "#050506",
+                        "on-surface-variant": "#94a3b8",
+                        "outline": "#4b5563",
+                        "outline-variant": "#374151"
+                    },
+                    spacing: {
+                        "container-max-width": "1000px",
+                        "gutter": "24px"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface custom-scrollbar">
+
+    <!-- TopNavBar -->
+    <nav class="w-full top-0 sticky z-50 bg-background/80 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-[1200px] mx-auto flex justify-between items-center px-gutter py-4">
+            <div class="font-display text-xl font-extrabold tracking-tight text-on-surface flex items-center gap-2">
+                <span class="w-7 h-7 rounded bg-gradient-to-br from-primary to-tertiary flex items-center justify-center text-background font-black text-sm">LH</span>
+                김이호.dev
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="home.html">홈</a>
+                <a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="home.html#experience">업무 경험</a>
+                <a class="text-primary font-bold border-b-2 border-primary pb-1" href="home.html#projects">프로젝트</a>
+            </div>
+            <a class="bg-primary text-background px-4 py-1.5 font-bold rounded hover:opacity-90 active:scale-95 transition-all text-xs" href="mailto:ekghdidi@naver.com">Contact</a>
+        </div>
+    </nav>
+
+    <main class="max-w-[1000px] mx-auto px-gutter py-12 md:py-20">
+        <!-- 1. Case Study Header -->
+        <header class="mb-12 text-center space-y-4">
+            <span class="font-mono text-xs text-primary uppercase tracking-widest block">Case Study 01</span>
+            <h1 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-on-surface leading-tight">
+                법률사무소 통합 웹 및 관리자 시스템
+            </h1>
+            <p class="font-display text-lg sm:text-xl text-tertiary italic max-w-2xl mx-auto leading-relaxed">
+                "온라인 상담예약, Q&A 비밀글, 실시간 STOMP 채팅, Gateway Rate Limiting, Redis 캐싱 및 DB 읽기 분리를 적용한 풀스택 웹 플랫폼"
+            </p>
+        </header>
+
+        <!-- Result Screens -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-4 border-l-4 border-primary pl-4">Result Screens</h2>
+            <p class="text-xs text-on-surface-variant mb-6 flex items-center gap-1.5 pl-4">
+                <span class="material-symbols-outlined text-[16px] text-primary">zoom_in</span>
+                이미지를 클릭하면 원본 크기로 크게 볼 수 있습니다.
+            </p>
+            <div class="relative group">
+                <div class="overflow-hidden relative h-[300px] md:h-[500px] border border-white/10 rounded-2xl bg-surface-container" id="slider">
+                    <div class="flex transition-transform duration-750 ease-in-out h-full" id="slider-inner">
+                        <div class="min-w-full h-full relative">
+                            <img class="w-full h-full object-cover cursor-zoom-in hover:opacity-90 transition-opacity" src="projecta_img/홈화면.png" onclick="openImageModal(this.src)" title="클릭하여 원본 보기"/>
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 p-6 sm:p-8">
+                                <h4 class="font-bold text-base sm:text-lg">메인 및 서비스 소개 화면</h4>
+                                <p class="text-xs text-on-surface-variant mt-1.5">공지사항 및 실시간 Q&A, 예약 신청 접근을 조화롭게 배치한 메인 대시보드 (클릭 시 원본 크기 보기)</p>
+                            </div>
+                        </div>
+                        <div class="min-w-full h-full relative">
+                            <img class="w-full h-full object-cover cursor-zoom-in hover:opacity-90 transition-opacity" src="projecta_img/상담예약 페이지.png" onclick="openImageModal(this.src)" title="클릭하여 원본 보기"/>
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 p-6 sm:p-8">
+                                <h4 class="font-bold text-base sm:text-lg">상담 예약 신청 및 다차원 검증 뷰</h4>
+                                <p class="text-xs text-on-surface-variant mt-1.5">선택 일자의 휴일, 중복 여부 및 당일 시간 제한을 비동기로 정합성 검증하는 폼 (클릭 시 원본 크기 보기)</p>
+                            </div>
+                        </div>
+                        <div class="min-w-full h-full relative">
+                            <img class="w-full h-full object-cover cursor-zoom-in hover:opacity-90 transition-opacity" src="projecta_img/상담내역페이지.png" onclick="openImageModal(this.src)" title="클릭하여 원본 보기"/>
+                            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 p-6 sm:p-8">
+                                <h4 class="font-bold text-base sm:text-lg">관리자 전용 대시보드 & 1:1 STOMP 채팅 모니터링</h4>
+                                <p class="text-xs text-on-surface-variant mt-1.5">미확인 상담 건수 알림 및 개별 고객 실시간 STOMP 채팅방 대응 관리자 전경 (클릭 시 원본 크기 보기)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="absolute left-4 top-1/2 -translate-y-1/2 bg-background/80 p-2.5 rounded-full border border-white/10 hover:bg-primary hover:text-background transition-all opacity-0 group-hover:opacity-100" onclick="moveSlider(-1)">
+                    <span class="material-symbols-outlined text-sm">chevron_left</span>
+                </button>
+                <button class="absolute right-4 top-1/2 -translate-y-1/2 bg-background/80 p-2.5 rounded-full border border-white/10 hover:bg-primary hover:text-background transition-all opacity-0 group-hover:opacity-100" onclick="moveSlider(1)">
+                    <span class="material-symbols-outlined text-sm">chevron_right</span>
+                </button>
+                
+                <div class="flex justify-center gap-2 mt-4">
+                    <div class="dot w-8 h-1 bg-primary cursor-pointer transition-all rounded-full"></div>
+                    <div class="dot w-8 h-1 bg-surface-container-highest cursor-pointer transition-all hover:bg-outline rounded-full"></div>
+                    <div class="dot w-8 h-1 bg-surface-container-highest cursor-pointer transition-all hover:bg-outline rounded-full"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Project Overview -->
+        <section class="section-spacing">
+            <div class="max-w-3xl mx-auto text-center space-y-6">
+                <h2 class="font-display text-2xl font-bold text-on-surface">프로젝트 개요</h2>
+                <p class="text-on-surface-variant text-base leading-relaxed">
+                    본 프로젝트는 법률사무소를 이용하는 일반 사용자의 온라인 진입 장벽을 낮추고, 사무소 관리자의 반복적인 수동 업무를 줄이기 위해 구축된 통합 웹 시스템입니다. 네이버 로그인을 통한 간편 인증, 중복 차단 상담 예약, 실시간 1:1 STOMP 채팅 등 주요 업무 흐름을 단일 플랫폼으로 정리했습니다.
+                </p>
+                <p class="text-on-surface-variant text-base leading-relaxed">
+                    백엔드는 모듈 분리와 확장 가능성을 고려해 API 라우팅 게이트웨이(`gateway`), 핵심 비즈니스 로직 API(`apiserver`), 비동기 푸시 처리를 위한 이벤트 워커(`notification-service`)로 구성된 <strong>Spring Boot 멀티 모듈 아키텍처</strong>를 채택했습니다. 프론트엔드는 React 19와 TypeScript로 개발했으며 Redis 캐싱 및 MariaDB Primary/Replica 읽기·쓰기 분리를 적용해 조회 성능과 운영 안정성을 개선했습니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. Development Background / Problem Situation -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">Development Background</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-8 bg-surface-container-low border border-white/5 rounded-2xl space-y-3">
+                    <h3 class="font-display text-lg font-bold text-primary flex items-center gap-2">
+                        <span class="material-symbols-outlined">lightbulb</span> 배경
+                    </h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">
+                        법률 상담 특성상 신규 문의 대응 속도와 개인 상담 정보 보호가 신뢰성에 중요한 영향을 줍니다. 따라서 단순 소개에 그치는 웹사이트 대신, 예약 현황을 검증하고 즉각 대화할 수 있는 업무 포털 시스템의 구축이 주요 요건이었습니다.
+                    </p>
+                </div>
+                
+                <div class="p-8 bg-surface-container-low border border-white/5 rounded-2xl space-y-3">
+                    <h3 class="font-display text-lg font-bold text-tertiary flex items-center gap-2">
+                        <span class="material-symbols-outlined">report_problem</span> 기존의 한계점 & 해결 방식
+                    </h3>
+                    <ul class="space-y-2 text-xs text-on-surface-variant leading-relaxed list-disc pl-4">
+                        <li>별도 회원가입의 피로감 ➔ <strong>네이버 OAuth2 간편 가입 및 JWT 자동 발급</strong>으로 허들 감소.</li>
+                        <li>예약 중복 및 휴무일 예약 오작동 ➔ <strong>서버 단 6단계 다중 시간 검증 엔진</strong> 적용.</li>
+                        <li>상담문의 즉각 처리 지연 ➔ <strong>Kafka 비동기 이벤트 발행 ➔ FCM 앱 즉시 푸시</strong> 파이프라인 개설.</li>
+                        <li>비밀글 및 업로드 보안 취약성 ➔ <strong>BCrypt 기반 Q&A 비밀번호 해시 처리 및 Apache Tika 실시간 MIME 탐지</strong> 적용.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Key Features -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">Key Features</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="p-6 bg-surface-container border border-white/5 rounded-xl group hover:border-primary/30 transition-colors">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">vpn_key</span>
+                    <h4 class="font-bold text-sm mb-1.5">네이버 OAuth2 + JWT</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">세션 만료 5분 전 자동 연장 알림 모달 제공 및 Zustand 기반 토큰 로컬 지속화.</p>
+                </div>
+                
+                <div class="p-6 bg-surface-container border border-white/5 rounded-xl group hover:border-primary/30 transition-colors">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">calendar_month</span>
+                    <h4 class="font-bold text-sm mb-1.5">지능형 예약 검증</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">휴무일 체크, 지난 시간 배제, 동일 시간 중복 불가, 하루 1회 신청 검증 엔진 탑재.</p>
+                </div>
+                
+                <div class="p-6 bg-surface-container border border-white/5 rounded-xl group hover:border-primary/30 transition-colors">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">forum</span>
+                    <h4 class="font-bold text-sm mb-1.5">STOMP 1:1 채팅</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">WebSocket 헤더 JWT 검증 및 Redis 기반 1초/1분 메시지 Rate Limit이 연동된 대화방.</p>
+                </div>
+
+                <div class="p-6 bg-surface-container border border-white/5 rounded-xl group hover:border-primary/30 transition-colors">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">database</span>
+                    <h4 class="font-bold text-sm mb-1.5">DB 이중화 및 캐싱</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">MariaDB Primary/Replica 읽기·쓰기 분리 및 자주 조회되는 게시글 Redis 캐싱.</p>
+                </div>
+
+                <div class="p-6 bg-surface-container border border-white/5 rounded-xl group hover:border-primary/30 transition-colors">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">hub</span>
+                    <h4 class="font-bold text-sm mb-1.5">Gateway API 라우터</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">Spring Cloud Gateway를 통한 라우팅 단일화 및 과도한 요청 완화용 Redis Rate Limit.</p>
+                </div>
+
+                <div class="p-6 bg-surface-container border border-white/5 rounded-xl group hover:border-primary/30 transition-colors">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">shield</span>
+                    <h4 class="font-bold text-sm mb-1.5">첨부파일 검증</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">경로 조작 공격 차단, Apache Tika를 활용한 이진 파일 타입 감지 및 이미지 썸네일 자동화.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Tech Stack -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">Tech Stack</h2>
+            <div class="bg-surface-container-low border border-white/5 p-6 rounded-2xl space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div>
+                        <div class="text-primary text-xs font-bold uppercase tracking-wider mb-2">Frontend</div>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">React 19</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">TypeScript</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Vite</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Zustand</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Tailwind CSS</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">STOMPjs</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-tertiary text-xs font-bold uppercase tracking-wider mb-2">Backend</div>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Java 17</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Spring Boot 3.4.5</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Security 6</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Spring Cloud Gateway</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">JPA / QueryDSL</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Kafka / Redis</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-on-surface text-xs font-bold uppercase tracking-wider mb-2">Infra / DB</div>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">MariaDB (Replication)</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Docker Compose</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Nginx</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Jenkins Pipeline</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Prometheus</span>
+                            <span class="px-2 py-1 bg-surface-container-highest rounded text-xs font-mono">Grafana</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. System Architecture (Visual CSS block) -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">System Architecture</h2>
+            
+            <div class="p-6 sm:p-8 bg-surface-container rounded-2xl border border-white/5 space-y-8 relative overflow-hidden">
+                <div class="absolute inset-0 bg-[radial-gradient(#27272a_1px,transparent_1px)] [background-size:24px_24px] opacity-20"></div>
+                
+                <!-- Diagram flow in CSS grid -->
+                <div class="relative z-10 flex flex-col items-center gap-6">
+                    <!-- Edge 1: Clients -->
+                    <div class="flex justify-center gap-4 w-full">
+                        <div class="px-4 py-2 bg-surface-container-highest border border-white/10 rounded-lg text-xs font-bold font-mono text-center shadow-md">
+                            사용자 브라우저 (React)
+                        </div>
+                        <div class="px-4 py-2 bg-surface-container-highest border border-white/10 rounded-lg text-xs font-bold font-mono text-center shadow-md">
+                            관리자 App (Kotlin)
+                        </div>
+                    </div>
+                    
+                    <span class="material-symbols-outlined text-on-surface-variant">arrow_downward</span>
+                    
+                    <!-- Edge 2: Proxy & Gateway -->
+                    <div class="w-full max-w-lg bg-background border border-white/10 rounded-xl p-4 text-center space-y-3">
+                        <div class="font-bold text-xs text-primary font-mono">Nginx Reverse Proxy & SSL</div>
+                        <span class="material-symbols-outlined text-xs text-on-surface-variant">arrow_downward</span>
+                        <div class="px-4 py-2.5 bg-primary/10 border border-primary/20 rounded-lg text-xs font-mono font-bold flex justify-between items-center">
+                            <span>Spring Cloud Gateway</span>
+                            <span class="text-[10px] bg-primary text-background font-bold px-2 py-0.5 rounded">Redis RateLimiter</span>
+                        </div>
+                    </div>
+                    
+                    <span class="material-symbols-outlined text-on-surface-variant">arrow_downward</span>
+                    
+                    <!-- Edge 3: Backend Services & MQ -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+                        <div class="p-4 bg-surface-container-low border border-white/5 rounded-xl space-y-3">
+                            <div class="font-bold text-xs text-tertiary font-mono text-center border-b border-white/5 pb-2">apiserver (Spring Boot)</div>
+                            <p class="text-[10px] text-on-surface-variant leading-relaxed">비즈니스 코어 트랜잭션 수행, Redis 캐싱 제어, WebSocket STOMP 세션 관리, Kafka 이벤트 발행</p>
+                        </div>
+                        
+                        <div class="p-4 bg-surface-container-low border border-white/5 rounded-xl space-y-3">
+                            <div class="font-bold text-xs text-tertiary font-mono text-center border-b border-white/5 pb-2">notification-service (Worker)</div>
+                            <p class="text-[10px] text-on-surface-variant leading-relaxed">Kafka 토픽(notification.events) 비동기 소비 ➔ Firebase FCM 연동 ➔ 관리자 모바일 앱 푸시 발송</p>
+                        </div>
+                    </div>
+                    
+                    <span class="material-symbols-outlined text-on-surface-variant">arrow_downward</span>
+                    
+                    <!-- Edge 4: Storage & Caches -->
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 w-full">
+                        <div class="flex-1 p-3 bg-surface-container-highest border border-white/5 rounded-lg text-center space-y-1 shadow-md">
+                            <div class="text-[10px] text-primary font-bold">Redis Cache / Token Store</div>
+                            <p class="text-[9px] text-on-surface-variant">JWT Refresh, 1:1 메시지 한도 limit, 게시글 조회 캐시</p>
+                        </div>
+                        <div class="flex-1 p-3 bg-surface-container-highest border border-white/5 rounded-lg text-center space-y-1 shadow-md">
+                            <div class="text-[10px] text-primary font-bold">MariaDB Primary (Write)</div>
+                            <p class="text-[9px] text-on-surface-variant">상담 예약 생성, Q&A 및 회원 정보 원본 기록</p>
+                        </div>
+                        <div class="flex-1 p-3 bg-surface-container-highest border border-white/5 rounded-lg text-center space-y-1 shadow-md">
+                            <div class="text-[10px] text-primary font-bold">MariaDB Replica (Read)</div>
+                            <p class="text-[9px] text-on-surface-variant">실시간 동기화 복제를 통한 읽기 전용 쿼리 부하 분산</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Main Implementation Details -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">Implementation Details</h2>
+            <div class="space-y-8">
+                <div class="space-y-4">
+                    <h3 class="font-display text-lg font-bold text-on-surface">1) JWT Refresh Token의 Redis 상태 관리 설계</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">
+                        무상태성(Stateless)을 갖는 JWT의 보안 한계(도난 시 통제 불가)를 절충하기 위해, 발급 만료가 긴 Refresh Token은 <strong>Redis 캐시 상태소(TTL 7일)</strong>에 보관하는 설계를 택했습니다. Access Token은 1시간의 짧은 생명주기를 부여하고, 만료 임박 시 서버가 Redis의 세션 존재 여부를 검증하고 연장 발급함으로써 <strong>관리자 단의 강제 로그아웃 통제력</strong>을 확보했습니다.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="font-display text-lg font-bold text-on-surface">2) STOMP WebSocket 연결 시 CONNECT 프레임 JWT 검증</h3>
+                    <p class="text-sm text-on-surface-variant leading-relaxed">
+                        WebSocket 연결 시 Spring Security 필터가 아닌 STOMP 프레임의 헤더에서 JWT를 추출해 비동기 인증을 수행해야 했습니다. 아래와 같이 <code>ChannelInterceptor</code>를 직접 커스터마이징하여 연결 성립 직전 토큰 신뢰성을 검증하도록 구현했습니다.
+                    </p>
+                    
+                    <div class="rounded-lg overflow-hidden border border-white/10 bg-[#0d0d0d]">
+                        <div class="px-4 py-2 bg-surface-container-highest flex justify-between items-center border-b border-white/10">
+                            <span class="font-mono text-xs text-on-surface-variant">StompAuthChannelInterceptor.java</span>
+                            <span class="material-symbols-outlined text-sm opacity-50 cursor-pointer hover:opacity-100" onclick="alert('복사되었습니다.')">content_copy</span>
+                        </div>
+                        <pre class="p-6 font-mono text-xs overflow-x-auto text-[#d4d4d4] leading-relaxed"><code>@Override
+public Message&lt;?&gt; preSend(Message&lt;?&gt; message, MessageChannel channel) {
+    StompHeaderAccessor accessor = MessageHeaderAccessor.getAccessor(message, StompHeaderAccessor.class);
+    
+    if (StompCommand.CONNECT.equals(accessor.getCommand())) {
+        String authHeader = accessor.getFirstNativeHeader("Authorization");
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            throw new IllegalArgumentException("Missing or invalid token.");
+        }
+        
+        String token = authHeader.substring(7);
+        try {
+            Authentication userAuth = jwtTokenProvider.getAuthentication(token);
+            accessor.setUser(userAuth); // WebSocket 세션 내 주체 설정
+        } catch (JwtException e) {
+            throw new IllegalArgumentException("Expired or malformed signature.");
+        }
+    }
+    return message;
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Troubleshooting / Problem Solving -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">Troubleshooting</h2>
+            <div class="space-y-6">
+                <!-- Troubleshooting Case 1 -->
+                <div class="p-8 bg-surface-container-low border border-white/5 rounded-2xl space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/20 text-primary font-bold text-sm">01</span>
+                        <h3 class="font-display text-lg font-bold text-on-surface">Redis 도입 전 게시판 조회 병목 임계 돌파</h3>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-tertiary-container/5 border border-tertiary/20 rounded-lg">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-tertiary text-background">Problem</span>
+                            <p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+                                Q&A 및 공지사항 상세조회가 반복 호출되면서 MariaDB CPU 점유율이 90%를 초과하였고, 60 VUs 부하 테스트 단계부터 p95 응답 속도가 1,155ms 이상으로 상승하여 타임아웃 오류 발생.
+                            </p>
+                        </div>
+                        <div class="p-4 bg-primary-container/5 border border-primary/20 rounded-lg">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-primary text-background">Solution</span>
+                            <p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+                                Spring Cache 표준 하에 상세조회 API 단에 Redis 캐시(TTL 2분)를 탑재. 새로운 문의글 생성/수정/삭제 트랜잭션 성공 시 <code>@CacheEvict</code>를 통해 캐시 무효화(Invalidation)를 수행해 정합성과 응답 속도를 함께 개선.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Troubleshooting Case 2 -->
+                <div class="p-8 bg-surface-container-low border border-white/5 rounded-2xl space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/20 text-primary font-bold text-sm">02</span>
+                        <h3 class="font-display text-lg font-bold text-on-surface">알림 전송 장애로 인한 코어 트랜잭션 롤백 방지</h3>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-tertiary-container/5 border border-tertiary/20 rounded-lg">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-tertiary text-background">Problem</span>
+                            <p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+                                상담 예약을 신청할 때 FCM 알림 서버에 순차적으로 접근하다가 타임아웃이나 FCM 에러 발생 시, 비즈니스 예약 로직까지 전부 롤백되어 사용자가 예약을 다시 작성해야 하는 비효율 발생.
+                            </p>
+                        </div>
+                        <div class="p-4 bg-primary-container/5 border border-primary/20 rounded-lg">
+                            <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-primary text-background">Solution</span>
+                            <p class="text-xs text-on-surface-variant mt-2 leading-relaxed">
+                                <code>@TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)</code>를 적용하여 DB 커밋 이후 알림 이벤트를 비동기로 처리. 알림 전송 실패가 예약 트랜잭션에 영향을 주지 않도록 Kafka 기반으로 분리.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Performance Improvement -->
+        <section class="section-spacing">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">Performance &amp; Security</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center p-8 bg-surface-container border border-white/5 rounded-xl">
+                    <div class="text-4xl font-extrabold text-primary font-display mb-1.5">48ms</div>
+                    <div class="text-xs text-on-surface font-semibold uppercase tracking-wider">p95 Response Latency</div>
+                    <p class="text-[11px] text-on-surface-variant mt-3 leading-relaxed">browse-only 60 VUs 기준, Redis 캐시 미적용 상태(1,155ms) 대비 48ms 수준으로 감소.</p>
+                </div>
+                <div class="text-center p-8 bg-surface-container border border-white/5 rounded-xl">
+                    <div class="text-4xl font-extrabold text-primary font-display mb-1.5">260 VUs</div>
+                    <div class="text-xs text-on-surface font-semibold uppercase tracking-wider">Max Stable Concurrency</div>
+                    <p class="text-[11px] text-on-surface-variant mt-3 leading-relaxed">browse-only 부하 테스트 기준 PASS 구간이 50 VUs에서 260 VUs로 확대.</p>
+                </div>
+                <div class="text-center p-8 bg-surface-container border border-white/5 rounded-xl">
+                    <div class="text-4xl font-extrabold text-primary font-display mb-1.5">MIME Check</div>
+                    <div class="text-xs text-on-surface font-semibold uppercase tracking-wider">Attachment Security</div>
+                    <p class="text-[11px] text-on-surface-variant mt-3 leading-relaxed">Apache Tika를 연동하여 파일 MIME 검증과 경로 조작 문자 차단 로직을 보강.</p>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- 11. GitHub / Deployment Links -->
+        <section class="section-spacing text-center">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4 text-left">Links</h2>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a class="flex items-center justify-center gap-2 bg-primary text-background px-8 py-3.5 font-bold rounded-xl hover:opacity-90 active:scale-95 transition-all w-full sm:w-auto text-sm shadow-md" href="https://kimlawoffice.duckdns.org/" target="_blank">
+                    <span class="material-symbols-outlined text-[16px]">link</span>
+                    <span>Live Service URL</span>
+                </a>
+                <a class="flex items-center justify-center gap-2 border border-white/10 px-8 py-3.5 font-semibold rounded-xl text-on-surface-variant hover:text-on-surface hover:border-white/25 transition-colors w-full sm:w-auto text-sm" href="https://github.com/leeho7029/lawoffice-public" target="_blank">
+                    <span class="material-symbols-outlined text-[16px]">code</span>
+                    <span>GitHub Repository</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 12. Retrospective -->
+        <section class="mb-20">
+            <h2 class="font-display text-2xl font-bold text-on-surface mb-8 border-l-4 border-primary pl-4">Retrospective</h2>
+            <div class="p-8 bg-surface-container-low border border-white/5 rounded-2xl space-y-4 text-sm text-on-surface-variant leading-relaxed">
+                <p>
+                    본 프로젝트는 사전 설계 문서와 구현 규칙을 Markdown으로 정의한 뒤, <strong>AI 페어 프로그래밍(Vibe Coding)</strong>을 활용해 구현 효율을 높인 사례입니다. 반복적인 보일러플레이트 작성은 Codex와 빠르게 처리하고, 핵심 설계와 검증 기준은 직접 정의하며 개발 리소스를 아꼈습니다.
+                </p>
+                <p>
+                    그 결과, 확보한 시간을 <strong>전체 시스템 구성요소(React, Gateway, API Server, Notification Service) 간의 통신 흐름, MariaDB Primary/Replica 읽기·쓰기 분리 DB 구성 설계, 그리고 캐시 무효화 및 트랜잭션 수명주기 설계</strong>와 같은 아키텍처 및 데이터 흐름을 학습하고 검증하는 데 집중할 수 있었습니다. 이를 통해 전체 데이터 인프라의 흐름을 더 넓은 관점에서 이해하는 경험을 얻었습니다.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Implementation -->
+    <footer class="w-full bg-surface-container-lowest border-t border-white/5 py-8">
+        <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center px-gutter gap-4 text-center md:text-left">
+            <div class="font-display text-lg font-bold text-on-surface">김이호.dev</div>
+            <p class="font-mono text-[11px] text-on-surface-variant">© 2026 Full-Stack Developer Kim Lee-ho. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a class="text-on-surface-variant text-xs hover:text-primary transition-colors font-mono" href="home.html">Home</a>
+                <a class="text-on-surface-variant text-xs hover:text-primary transition-colors font-mono" href="https://github.com/leeho7029" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const sliderInner = document.getElementById('slider-inner');
+        const dots = document.querySelectorAll('.dot');
+        
+        function moveSlider(direction) {
+            const slides = sliderInner.children.length;
+            currentSlide = (currentSlide + direction + slides) % slides;
+            updateSlider();
+        }
+
+        function updateSlider() {
+            sliderInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, idx) => {
+                if (idx === currentSlide) {
+                    dot.classList.replace('bg-surface-container-highest', 'bg-primary');
+                } else {
+                    dot.classList.replace('bg-primary', 'bg-surface-container-highest');
+                }
+            });
+        }
+
+        // Auto slide
+        let slideInterval = setInterval(() => moveSlider(1), 5000);
+
+        // Click on dots
+        dots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                currentSlide = idx;
+                updateSlider();
+                slideInterval = setInterval(() => moveSlider(1), 5000);
+            });
+        });
+
+        // Image Modal Functions
+        let modalImages = [];
+        let currentModalIdx = 0;
+
+        function openImageModal(src) {
+            const slideImgs = Array.from(document.querySelectorAll('#slider-inner img'));
+            modalImages = slideImgs.map(img => img.src);
+            currentModalIdx = modalImages.indexOf(src);
+            if (currentModalIdx === -1) currentModalIdx = 0;
+
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-img');
+            modalImg.src = modalImages[currentModalIdx];
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+                modalImg.classList.remove('scale-95', 'opacity-0');
+                modalImg.classList.add('scale-100', 'opacity-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+            window.addEventListener('keydown', handleModalKeydown);
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-img');
+            modalImg.classList.remove('scale-100', 'opacity-100');
+            modalImg.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+            }, 150);
+            document.body.style.overflow = '';
+            window.removeEventListener('keydown', handleModalKeydown);
+        }
+
+        function moveModalImage(direction, event) {
+            if (event) event.stopPropagation();
+            if (modalImages.length === 0) return;
+
+            const modalImg = document.getElementById('modal-img');
+            modalImg.classList.remove('scale-100', 'opacity-100');
+            modalImg.classList.add('scale-95', 'opacity-0');
+
+            setTimeout(() => {
+                currentModalIdx = (currentModalIdx + direction + modalImages.length) % modalImages.length;
+                modalImg.src = modalImages[currentModalIdx];
+                setTimeout(() => {
+                    modalImg.classList.remove('scale-95', 'opacity-0');
+                    modalImg.classList.add('scale-100', 'opacity-100');
+                }, 30);
+            }, 150);
+        }
+
+        function handleModalKeydown(event) {
+            if (event.key === 'ArrowLeft') {
+                moveModalImage(-1);
+            } else if (event.key === 'ArrowRight') {
+                moveModalImage(1);
+            } else if (event.key === 'Escape') {
+                closeImageModal();
+            }
+        }
+    </script>
+
+    <!-- Image Modal Backdrop -->
+    <div id="image-modal" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-md items-center justify-center p-4 cursor-zoom-out transition-all duration-300" onclick="closeImageModal()">
+        <!-- Close Button -->
+        <button class="absolute top-6 right-6 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-all z-10" onclick="closeImageModal()">
+            <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+
+        <!-- Left Nav Button -->
+        <button class="absolute left-6 top-1/2 -translate-y-1/2 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all z-10" onclick="moveModalImage(-1, event)">
+            <span class="material-symbols-outlined text-3xl">chevron_left</span>
+        </button>
+
+        <!-- Right Nav Button -->
+        <button class="absolute right-6 top-1/2 -translate-y-1/2 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all z-10" onclick="moveModalImage(1, event)">
+            <span class="material-symbols-outlined text-3xl">chevron_right</span>
+        </button>
+
+        <img id="modal-img" class="max-w-[85%] max-h-[85vh] object-contain rounded-xl shadow-2xl transition-all duration-250 scale-95 opacity-0 cursor-default" src="" alt="Full Screen Preview" onclick="event.stopPropagation()"/>
+    </div>
+</body>
+</html>
